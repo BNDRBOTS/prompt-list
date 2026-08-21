@@ -19255,4 +19255,2844 @@ VERIFICATION GATE: Script-proven invariants strictly gate output.
 </locked_layers>
 
 ---
+Below are the significantly enhanced prompt chains. I preserved all original steps and functionality, then added proven prompt engineering practices: role/persona assignment, explicit variable declarations, output schemas, source-quality standards, validation loops, ethical guardrails, and iterative refinement. Each prompt chain remains copy-pasteable with `~` separators.
 
+---
+
+## 1. Conduct AI Company Research — Enhanced
+
+```text
+Act as a senior equity research analyst specializing in AI and technology sector investments. Use web search and current, authoritative sources only.
+
+Variables:
+[BATCH_SIZE]=10
+[FOCUS_GEOGRAPHY]=Global
+[DATE_RANGE]=Latest available as of today
+
+Search the web for the latest information on publicly traded companies that are currently benefiting from the rise of AI. Include URL columns where I can learn more about each company, their competitive advantages, and any analyst ratings. Return this back in a table inline. We will research in batches of [BATCH_SIZE]=10; when I say "More" you find 10 more. Keep the information brief and all within the inline table.
+
+Required table columns:
+| Company Name | Stock Symbol | Competitive Advantages | Analyst Ratings | URL |
+
+Example row:
+| Company Name | Stock Symbol | Competitive Advantages | Analyst Ratings | URL |
+|--------------|--------------|------------------------------------------|------------------|----------------------------------------|
+| Company A | ABC | Leading AI technology, strong R&D | Strong Buy | Link |
+| Company B | XYZ | Dominant in AI software, extensive patents| Moderate Buy | Link |
+
+Rules:
+- Use reputable sources: SEC filings, company earnings releases, major financial news, analyst reports.
+- If analyst ratings conflict, present the consensus rating and note the range in the Analyst Ratings cell.
+- If a required data point is unavailable, write "Not disclosed"; do not invent data.
+- Provide exactly [BATCH_SIZE]=10 companies per batch unless fewer qualifying companies exist; then state how many you found and provide all.
+- Add a one-line note after the table: "Data sourced as of [date]."
+
+Please provide the latest information available.
+~ More: Using the exact same format, required columns, source standards, and batch size as the initial prompt, provide the next 10 publicly traded AI-beneficiary companies that have not appeared in any previous batch. If fewer than 10 new qualifying companies remain, state "Only N additional companies meet the criteria" and list all. If none remain, say "No additional qualifying companies found" and suggest adjacent AI infrastructure or AI-adjacent companies as an alternative.
+~ More: Same as previous "More" instruction; avoid duplicates. If duplicates are found, replace them with new qualifying companies and briefly note the replacement.
+~ More: Provide the final batch or confirm no more qualifying companies exist. Then produce a one-paragraph summary of the AI-beneficiary market landscape based on all companies researched so far, including dominant themes, risks, and standout opportunities.
+```
+
+---
+
+## 2. How to Make a Million Dollars with Your Skill Set — Enhanced
+
+```text
+Act as a high-net-worth wealth strategist and executive coach. You will create a realistic, action-oriented plan to make one million dollars using the following variables. Do not provide generic advice; tailor every step to the variables.
+
+[Skill Set] = A brief description of your primary skills and expertise
+[Time Frame] = The desired time frame to achieve one million dollars
+[Available Resources] = Resources currently available to you
+[Interests] = Personal interests that could be leveraged
+
+Output format: Each step must be numbered, use clear headings, and include specific, actionable details tied to the variables. At the end of each step, include a "Validation Check" bullet confirming alignment with the variables.
+
+Step 1: Based on the following skills: {Skill Set}, identify the top three skills that have the highest market demand and can be monetized effectively. For each skill, provide: market demand evidence, potential income streams, and why it fits the time frame {Time Frame}.
+~ Step 2: For each of the top three skills identified, list potential monetization strategies that could help generate significant income within {Time Frame}. Use numbered lists for clarity. For each strategy, include estimated income potential, required effort, scalability, and risk level.
+~ Step 3: Given your available resources: {Available Resources}, determine how they can be utilized to support the monetization strategies listed. Provide specific examples. For each resource, map it to one or more strategies and estimate the leverage it provides.
+~ Step 4: Consider your personal interests: {Interests}. Suggest ways to integrate these interests with the monetization strategies to enhance motivation and sustainability. For each interest, recommend a specific integration tactic and explain why it improves follow-through.
+~ Step 5: Create a step-by-step action plan outlining the key tasks needed to implement the selected monetization strategies. Organize the plan in a timeline to achieve the goal within {Time Frame}. Use phases such as 0-30 days, 31-90 days, quarterly thereafter. For each phase, assign owner, success metric, and dependencies.
+~ Step 6: Identify potential challenges and obstacles that might arise during the implementation of the action plan. Provide suggestions on how to overcome them. Include external risks, internal blockers, and market changes, each with a contingency plan.
+~ Step 7: Review the action plan and refine it to ensure it's realistic, achievable, and aligned with your skills and resources. Make adjustments where necessary. Output a final executive summary with: top three monetization strategies, required monthly actions, key milestones, and a risk mitigation summary.
+```
+
+---
+
+## 3. Generate Positive Affirmations Tailored to You — Enhanced
+
+```text
+Act as a certified positive psychology coach and NLP practitioner. Create affirmations that are specific, present-tense, first-person, emotionally resonant, and free of toxic positivity.
+
+Variables:
+{USER_NAME}=User’s name
+{USER_TRAITS}=List of specific positive traits or qualities about the user
+{USER_GOALS}=User’s primary goals or aspirations
+[AFFIRMATION_COUNT]=Number of affirmations to generate, default 5
+
+Step 1: Based on the user information, summarize key traits and goals. Given the following details about [USER_NAME]—positive traits: [USER_TRAITS]; primary goals: [USER_GOALS]—please create a brief summary that will set the context for generating affirmations. Output as a 3-5 bullet summary covering identity, strengths, goals, and emotional tone.
+~ Step 2: Using this context: "[SUMMARY_FROM_STEP_1]", generate [AFFIRMATION_COUNT] affirmations that encourage self-belief and positive action. Ensure each affirmation reflects one of the user’s traits or goals and is uplifting and direct. Output as a numbered list. Use first-person present tense: "I am...", "I choose...", "I am becoming...". Avoid conditional language like "I will" or "I should".
+~ Step 3: For each affirmation in "[AFFIRMATIONS_FROM_STEP_2]", enhance it with empowering words and make it concise. Ensure it’s in the present tense, so the user feels encouraged in the moment. Use sensory or emotional language. Keep each affirmation under 20 words. If an affirmation sounds generic, replace it with one that references a specific trait or goal of [USER_NAME].
+~ Step 4: Review the list of affirmations and make any final adjustments to ensure they sound natural, positive, and directly relevant to [USER_NAME]'s personal growth and goals. Output the final list as a table with columns: # | Affirmation | Trait/Goal Addressed | Emotional Tone. Then add a brief note on best times to repeat them.
+```
+
+---
+
+## 4. Mock Interview to Land Your Dream Job — Enhanced
+
+```text
+Act as a professional interview coach, former recruiter, and speech coach. You will prepare me for a mock interview using the following variables.
+
+{INTERVIEW_ROLE}=Desired job position
+{INTERVIEW_COMPANY}=Target company name
+{INTERVIEW_SKILLS}=Key skills required for the role
+{INTERVIEW_EXPERIENCE}=Relevant past experiences
+{INTERVIEW_QUESTIONS}=List of common interview questions for the role
+{INTERVIEW_FEEDBACK}=Constructive feedback on responses
+
+Step 1: Research the role of [INTERVIEW_ROLE] at [INTERVIEW_COMPANY] to understand the required skills and responsibilities. Output a role brief with top 5 required skills, company values, and likely interview focus areas.
+~ Step 2: Compile a list of [INTERVIEW_QUESTIONS] commonly asked for the [INTERVIEW_ROLE] position. Organize into categories: behavioral, technical, situational, and company-specific.
+~ Step 3: For each question in [INTERVIEW_QUESTIONS], draft a concise and relevant response based on your [INTERVIEW_EXPERIENCE]. Use the STAR method for behavioral questions and the PAR method for technical challenges. Output each response with the question.
+~ Step 4: Record yourself answering each question, focusing on clarity, confidence, and conciseness. Provide a self-assessment checklist: pace, filler words, answer length, and tone.
+~ Step 5: Review the recordings to identify areas for improvement in your responses. Produce a table with strengths and improvement areas for each answer.
+~ Step 6: Seek feedback from a mentor or use AI-powered platforms like [Mock Interviewer AI](https://www.mockinterviewer.ai/) to evaluate your performance. Incorporate that feedback into the next revision.
+~ Step 7: Refine your answers based on the feedback received, emphasizing areas needing enhancement. Rewrite weak answers using the STAR/PAR structure and reduce jargon.
+~ Step 8: Repeat steps 4-7 until you can deliver confident and well-structured responses. Define a stop condition: at least two consecutive self-assessments with no major improvement areas.
+~ Step 9: Practice non-verbal communication, such as maintaining eye contact and using appropriate body language. Provide a nonverbal checklist and practice drills for virtual and in-person interviews.
+~ Step 10: Conduct a final mock interview with a friend or mentor to simulate the real interview environment. Use a realistic script including opening, questions, closing, and time limits.
+~ Step 11: Reflect on the entire process, noting improvements and areas still requiring attention. Write a 1-page reflection with specific examples.
+~ Step 12: Schedule regular mock interviews to maintain and further develop your interview skills. Provide a 30-day practice schedule with frequency and focus areas.
+~ Step 13: Generate a readiness score out of 10 for each interview competency, an overall confidence rating, and a personalized final preparation checklist.
+```
+
+---
+
+## 5. Craft Highly Effective Contractor Proposals — Enhanced
+
+```text
+Act as a seasoned freelance proposal writer, conversion copywriter, and Upwork/Fiverr bidding strategist. You will craft a highly effective contractor proposal using the following variables.
+
+JOB_DESCRIPTION=[paste job posting]
+BID_AMOUNT=[your rate]
+RELEVANT_EXPERIENCE=[your matching skills/projects]
+TIMELINE=[delivery timeframe]
+
+Constraints:
+- Keep the final proposal under 2000 characters.
+- Use a professional but personable tone.
+- Avoid generic phrases like "I am a hard worker" or "I have good communication skills."
+- Every claim must be backed by evidence from RELEVANT_EXPERIENCE.
+
+Step 1: Analyze JOB_DESCRIPTION and identify: 1) Key requirements 2) Client pain points 3) Project scope 4) Any red flags or areas needing clarification. Output as a table with columns: Requirement | Why it matters | Evidence/Notes.
+~ Step 2: Generate a compelling first paragraph that: 1) References a specific detail from their posting 2) Demonstrates immediate understanding of their needs 3) Establishes relevant expertise from RELEVANT_EXPERIENCE. Write 2-3 sentences maximum.
+~ Step 3: Create the middle section addressing: 1) Your specific approach to their project 2) Similar work examples 3) Why you're uniquely qualified 4) Clear TIMELINE and deliverables 5) Any clarifying questions presented as professional observations. Use a numbered list or short paragraphs.
+~ Step 4: Draft the closing paragraph including: 1) BID_AMOUNT with clear deliverable breakdown 2) Call to action for next steps 3) Availability for discussion. Include a risk-reversal or guarantee if appropriate.
+~ Step 5: Format the full proposal with proper spacing and structure while keeping it under 2000 characters. Add 2-3 relevant portfolio items or work samples as numbered references. Output the final proposal in a code block.
+~ Step 6: Proofread and identify any phrases that could be more personalized or impactful. Then provide a revised version with tracked improvements and a brief note on what changed and why.
+```
+
+---
+
+## 6. Conduct Extensive Market Research with SearchGPT — Enhanced
+
+```text
+Act as a senior market intelligence analyst with access to real-time web search and industry databases. Use current, authoritative sources and provide citations for every factual claim.
+
+Variables:
+[INDUSTRY]=Target industry or market sector
+[COMPANY_NAME]=Primary company or product being analyzed
+[RESEARCH_DEPTH]=Level of detail (surface-level, moderate, in-depth)
+[GEOGRAPHICAL_FOCUS]=Target market region or regions
+[TIME_FRAME]=Analysis period (e.g., last 3 years, current year)
+
+Depth calibration:
+- surface-level: 1-2 paragraphs per section
+- moderate: 3-5 paragraphs plus tables
+- in-depth: full reports with appendices
+
+Step 1: Market Landscape Overview~
+1. Map out key players in [INDUSTRY]
+2. Identify top 10 competitors to [COMPANY_NAME]
+3. Calculate market share distribution
+4. Compile recent industry trends and disruptions
+Output a comprehensive market landscape summary. Include a table with competitor name, market share, key products, and source URL. Adjust detail to [RESEARCH_DEPTH].
+~ Step 2: Competitor Deep Dive~
+1. Analyze each competitor's:
+   - Business model
+   - Revenue streams
+   - Unique value propositions
+   - Recent strategic moves
+2. Create SWOT analysis for top 5 competitors
+3. Identify potential competitive gaps
+Output detailed competitor intelligence report. Use a separate SWOT table for each top-5 competitor. Include source citations.
+~ Step 3: Target Audience Segmentation~
+1. Define demographic profiles
+2. Map psychographic characteristics
+3. Analyze purchasing behaviors
+4. Identify unmet customer needs in [GEOGRAPHICAL_FOCUS]
+Output multi-dimensional audience persona document. Include 2-4 personas with demographics, psychographics, pain points, buying triggers, and preferred channels.
+~ Step 4: Financial and Performance Analysis~
+1. Gather revenue data for [INDUSTRY]
+2. Calculate growth rates
+3. Analyze investment trends
+4. Project potential market opportunities
+Output financial performance and trend analysis. Include charts or table data, compound annual growth rates, and sources. If exact data is unavailable, provide estimates clearly marked as such.
+~ Step 5: Strategic Recommendations~
+1. Synthesize insights from previous steps
+2. Develop strategic recommendations for [COMPANY_NAME]
+3. Outline potential market entry or expansion strategies
+4. Prioritize recommendations by potential impact
+Output strategic roadmap with actionable insights. Use an impact/effort matrix and provide 3-5 prioritized recommendations with rationale.
+~ Step 6: Research Validation and Refinement~
+1. Cross-reference data sources
+2. Check for potential biases
+3. Verify statistical significance
+4. Summarize key findings and confidence levels
+Output final research report with methodology notes. Include a confidence rating for each major finding and a limitations section.
+```
+
+---
+
+## 7. Create Translated Documents Across Multiple Languages — Enhanced
+
+```text
+Act as a senior localization project manager and professional translator with native-level proficiency in all target languages. You will translate and culturally adapt the provided content while preserving meaning, tone, and style.
+
+Variables:
+ORIGINAL_CONTENT=[Full text of the content to be translated]
+SOURCE_LANGUAGE=[Language of the original content]
+CONTENT_TYPE=[Type of content, e.g., marketing, technical, casual]
+TARGET_LANGUAGES=[List of target languages for translation]
+
+Global instructions:
+- Analyze the ORIGINAL_CONTENT in SOURCE_LANGUAGE. Identify key messages, tone, style, and any culturally specific references or idioms. Note any technical terms, brand names, or phrases that should remain untranslated. Create a brief summary of the content's main points and intended impact. Output as a "Source Analysis" block.
+- For each target language, follow the language-specific prompt below.
+- Maintain a glossary of terms that remain untranslated across languages.
+- Provide back-translations for any significantly adapted portions.
+- Use formal/informal register appropriate for CONTENT_TYPE and the target culture.
+- Flag any terms or concepts that may need additional explanation for the target audience.
+
+Spanish Translation: Translate ORIGINAL_CONTENT into Spanish, adapting any culturally specific references or idioms to resonate with a Spanish-speaking audience. Ensure the translation maintains the original tone and style appropriate for CONTENT_TYPE. Flag any terms or concepts that may need additional explanation for a Spanish-speaking audience. Provide a back-translation of any significantly adapted portions. Include a "Translator Notes" section.
+~ Mandarin Chinese Translation: Translate ORIGINAL_CONTENT into Mandarin Chinese, using Simplified Chinese characters. Adapt any Western concepts or idioms to culturally appropriate equivalents. Pay special attention to formal/informal language choices based on CONTENT_TYPE. Highlight any terms that have multiple possible translations and explain your choice. Provide a back-translation of any significantly adapted portions.
+~ Hindi Translation: Translate ORIGINAL_CONTENT into Hindi, being mindful of formal/informal speech levels appropriate for CONTENT_TYPE. Adapt any culturally specific references to resonate with an Indian audience. For any English terms commonly used in Hindi, provide both the Hindi translation and the English term in parentheses. Provide a back-translation of any significantly adapted portions.
+~ Arabic Translation: Translate ORIGINAL_CONTENT into Modern Standard Arabic. Be mindful of right-to-left script and any necessary adaptations for Arabic typography. Adjust any culturally specific references or idioms to be appropriate for a broad Arab audience. For any scientific or technical terms, provide both the Arabic translation and the English term in parentheses. Provide a back-translation of any significantly adapted portions.
+~ French Translation: Translate ORIGINAL_CONTENT into French, adapting any culturally specific references or idioms as needed. Ensure the translation maintains the original tone and style appropriate for CONTENT_TYPE. Pay special attention to formal/informal language choices, especially for pronouns such as tu/vous. Flag any terms or concepts that may have different connotations in French-speaking cultures. Provide a back-translation of any significantly adapted portions.
+~ German Translation: Translate ORIGINAL_CONTENT into German, being mindful of formal/informal speech levels such as Sie/du appropriate for CONTENT_TYPE. Adapt any culturally specific references as needed. Pay special attention to compound words and technical terms, providing explanations where necessary. Highlight any areas where sentence structure was significantly changed to sound natural in German. Provide a back-translation of any significantly adapted portions.
+~ Portuguese Translation: Translate ORIGINAL_CONTENT into Portuguese, specifying whether it's European or Brazilian Portuguese based on the primary target audience. Adapt any culturally specific references or idioms as needed. Ensure the translation maintains the original tone and style appropriate for CONTENT_TYPE. Flag any terms or concepts that may have different connotations in Portuguese-speaking cultures. Provide a back-translation of any significantly adapted portions.
+~ Review all translations: Review all translations for consistency in conveying the original message and maintaining appropriate tone for CONTENT_TYPE. Identify any common challenges or significant adaptations across languages. Provide a summary of key considerations for each language translation, including any terms or concepts that required special attention across multiple languages. Suggest any visual or formatting adaptations that might be necessary for different language versions, especially for languages with different scripts or reading directions. Output a final QA matrix with columns: Language | Key Adaptation | Back-translation | Register | Potential Issue.
+```
+
+---
+
+## 8. Conduct a Psychoanalysis with Professional Recommendations — Enhanced
+
+```text
+Act as an experienced psychological analyst and licensed clinical psychologist. Conduct a thorough initial assessment for NAME who presents with CONCERNS and wishes to achieve GOALS, while considering CONSTRAINTS. Focus on understanding their current situation, behavioral patterns, and emotional state.
+
+Variables:
+NAME=[client name]
+CONCERNS=[primary concerns/symptoms]
+GOALS=[desired outcomes]
+CONSTRAINTS=[time/resource limitations]
+
+Ethical guardrails:
+- This is psychoeducational and for personal development; it is not a substitute for in-person licensed mental health care, medical diagnosis, or emergency intervention.
+- If CONCERNS include crisis, self-harm, or harm to others, immediately include appropriate crisis resources and recommend urgent professional help.
+- Use tentative, non-diagnostic language such as "may indicate" or "could be consistent with" and avoid labels.
+- Maintain confidentiality by not requesting unnecessary identifying details.
+
+Based on the initial assessment, identify and analyze the following key areas:
+1. Current coping mechanisms
+2. Support systems
+3. Stress triggers
+4. Behavioral patterns
+5. Emotional regulation
+Provide specific examples and observations for each area. Format as a table with columns: Area | Observations | Potential Impact.
+~ Generate a detailed analysis of underlying factors that may be contributing to the current situation. Consider:
+1. Historical patterns
+2. Environmental influences
+3. Relationship dynamics
+4. Personal beliefs and values
+5. Life transitions
+For each factor, provide evidence from the initial assessment and a tentative hypothesis.
+~ Based on the analysis, identify three primary areas for therapeutic focus and personal development. For each area, provide:
+1. Current impact
+2. Development opportunities
+3. Potential challenges
+Output as a numbered list with clear headings.
+~ Create a comprehensive program recommendation that includes:
+1. Specific therapeutic approaches
+2. Practical exercises and tools
+3. Progress monitoring methods
+4. Timeline for implementation
+5. Expected outcomes
+Format as a structured action plan with clear steps and milestones. Include evidence-based modalities such as CBT, ACT, mindfulness, or solution-focused techniques.
+~ Develop three alternative program options varying in:
+1. Intensity (light/moderate/intensive)
+2. Time commitment
+3. Resource requirements
+4. Approach (cognitive/behavioral/holistic)
+Present each option with pros and cons. Use a table for comparison, then a paragraph for each option.
+~ Conclude with a summary that includes:
+1. Key insights from the analysis
+2. Recommended primary program choice
+3. Success metrics
+4. Follow-up recommendations
+Add a disclaimer that the user should consult a licensed professional for personalized care.
+```
+### 1. Turn a Blog Post into Various Social Media Content — Enhanced
+
+```text
+Act as a senior social media strategist, brand voice guardian, and content repurposing expert. You will transform a single blog post into platform-optimized social media content that drives engagement, maintains brand consistency, and maximizes repurposing efficiency.
+
+Variables:
+BLOG_CONTENT=[Full text of the blog post]
+BRAND=[Brand name]
+BRAND_VOICE=[3-5 adjectives describing brand voice, e.g., authoritative, friendly, witty]
+BRAND_VALUES=[2-4 core brand values to reflect]
+PLATFORMS=[List of target social media platforms, e.g., Twitter/X, LinkedIn, Facebook, Instagram, TikTok, Pinterest]
+PRIMARY_CTA=[Desired action, e.g., read blog, sign up, follow, share]
+HASHTAG_STRATEGY=[Brand hashtags, campaign hashtags, or none]
+
+Global output rules:
+- Every platform asset must include: content, visual concept, hashtags, and engagement/CTA.
+- Preserve BRAND voice in all copy.
+- Optimize for each platform's algorithm and user behavior.
+- Include accessibility notes for visual content (alt text, captions, color contrast).
+- At the end, validate all content against BRAND_VOICE and PLATFORMS best practices.
+
+Step 1: Analyze the provided BLOG_CONTENT. Identify the main topic, key points, notable quotes, and any statistics or data mentioned. Determine the overall tone and style of the blog post. Output a "Content Analysis" table with columns: Element | Detail | Suggested Use in Social Media.
+~ Step 2: Create a content brief for social media posts based on BLOG_CONTENT. Include the main message, 3-5 key takeaways, any relevant hashtags, and suggestions for visual elements that could accompany the posts. Ensure the brief aligns with BRAND's voice and values. Output as a structured brief with sections: Main Message, Key Takeaways (bullets), Hashtag Set, Visual Direction, Brand Alignment Check.
+~ Step 3: Twitter/X Posts: Craft a series of 3-5 tweets based on BLOG_CONTENT. Each tweet should be under 280 characters and capture a key point or interesting fact from the blog. Include relevant hashtags. Vary the style of tweets (e.g., question, statistic, quote, thread starter) to maintain interest. Suggest an accompanying image or GIF concept for each tweet. Output each tweet with character count, style label, hashtag list, and visual alt-text suggestion.
+~ Step 4: LinkedIn Post: Develop a longer-form LinkedIn post (1300-1700 characters) that summarizes the blog's main points and adds professional insights. Begin with an attention-grabbing first line. Use paragraph breaks and emoji bullets for readability. Include a call-to-action to engage in discussion. Suggest 3-5 relevant hashtags and a concept for a header image that would work well on LinkedIn. Output with character count and a "hook analysis" note.
+~ Step 5: Facebook Post: Create a Facebook post (150-300 words) that tells a story related to BLOG_CONTENT. Focus on elements that evoke emotion or encourage engagement. Include 1-2 questions to prompt comments. Suggest ideas for 2-3 images that could be used in a carousel format to illustrate key points. Add relevant hashtags and a call-to-action. Output with word count and engagement tactics.
+~ Step 6: Instagram Post: Design an Instagram carousel post concept with 5-7 slides. For each slide, provide a headline, a short caption (150-200 characters), and a description of the visual content. The first slide should grab attention, while subsequent slides should break down key points from BLOG_CONTENT. The last slide should include a call-to-action. Draft a main caption (up to 2200 characters) for the post that introduces the topic, includes relevant hashtags, and encourages followers to swipe through the carousel. Output as a slide table plus main caption.
+~ Step 7: TikTok/Instagram Reel Concept: Outline a 30-60 second video concept based on BLOG_CONTENT. Break down the video into 5-7 key scenes, describing the visual content and text overlay for each. Include ideas for background music, transitions, and any props or settings needed. Write a script for the voiceover or on-screen text that captures the main points of the blog in a fun, engaging way. Suggest 3-5 relevant hashtags to use with the video post. Output with scene table and full script.
+~ Step 8: Pinterest Pin: Design a concept for an infographic-style Pinterest Pin based on BLOG_CONTENT. Describe the visual layout, color scheme, and typography style. Provide text content for 5-7 key sections of the infographic, summarizing main points from the blog. Write a Pin title (40-60 characters) and description (150-300 characters) that will encourage users to save the Pin and click through to the blog. Suggest 5-7 relevant keywords to use as hashtags. Output as design spec + text sections + title/description.
+~ Step 9: Review all created social media content for consistency with BRAND voice and values. Ensure each piece of content is platform-appropriate and optimized for engagement. Suggest a posting schedule for the content, including optimal times for each platform and the order in which the content should be released. Output a QA table with any discrepancies and fixes, plus a posting schedule with rationale.
+```
+
+---
+
+### 2. Write a Whitepaper on Any Topic — Enhanced
+
+```text
+Act as a senior B2B content strategist, technical writer, and subject-matter expert with research and web search capabilities. You will write a high-quality, well-researched white paper that establishes thought leadership and drives action from the target audience.
+
+Variables:
+TOPIC=[white paper topic]
+INDUSTRY=[target industry]
+AUDIENCE=[primary reader demographic]
+LENGTH=[target page count]
+SOURCES_MINIMUM=[minimum number of authoritative sources, default 15]
+TONE=[desired tone, e.g., professional, analytical, persuasive]
+PRIMARY_OBJECTIVE=[lead generation, brand authority, education, etc.]
+
+Global requirements:
+- Use web search for current, credible sources only: industry reports, academic journals, government data, reputable publications, first-party research.
+- Use consistent citation style (e.g., APA, Chicago). Include in-text citations.
+- Every statistical claim must include source, date, and context.
+- Avoid plagiarism; paraphrase and attribute.
+- Keep paragraphs tight; use subheadings, bullet points, and callout boxes.
+- Include a list of figures/tables if applicable.
+- Ensure LENGTH is met without fluff.
+
+Step 1: Use web search to identify 5-7 key challenges or pain points in INDUSTRY related to TOPIC. Summarize each in 1-2 sentences. For each, note a possible source or data point to support the challenge. Output as table: Challenge | Summary | Supporting Evidence/Source.
+~ Step 2: Research and list 3-5 current trends or innovations in INDUSTRY that are relevant to TOPIC. Include statistics or data points to support each trend. For each trend, provide source and year. Output as table: Trend | Data/Statistic | Source | Relevance to TOPIC.
+~ Step 3: Develop a compelling title for the white paper that incorporates TOPIC and appeals to AUDIENCE. Create 3 options and briefly explain the rationale for each. Use title formulas: number + promise, how-to + outcome, question + urgency. Ensure titles are under 15 words.
+~ Step 4: Craft an executive summary (250-300 words) that outlines the white paper's main points, key findings, and value proposition for AUDIENCE. Use the "problem-solution-proof" structure. Include a one-sentence "why this matters now" opener.
+~ Step 5: Create a detailed outline for the white paper, including: 1. Introduction 2. Background/Context 3. 4-6 main sections addressing key challenges and solutions 4. Case study or real-world example 5. Future outlook 6. Conclusion and recommendations. Provide a brief description of the content for each section. Add estimated word count for each section aligned to LENGTH. Output as outline table: Section | Description | Estimated Word Count | Key Data/Graphics.
+~ Step 6: Write the introduction (500-750 words): 1. Hook the reader with a compelling statistic or scenario 2. Provide context for TOPIC in INDUSTRY 3. Clearly state the white paper's purpose and what AUDIENCE will gain 4. Include a brief overview of the main sections. Use the "inverted pyramid" structure.
+~ Step 7: For each main section: 1. Start with a clear subheading 2. Present the challenge or issue 3. Provide in-depth analysis, including data and expert insights 4. Offer potential solutions or best practices 5. Include relevant graphics, charts, or diagrams to illustrate key points. Aim for 1000-1500 words per main section. For each section, include a "Key Insight" callout box and a "Data Spotlight" with a specific statistic.
+~ Step 8: Develop a case study or real-world example (500-750 words) that illustrates successful implementation of the ideas presented. Include specific outcomes and lessons learned. Use a structured format: Background, Challenge, Solution, Results, Lessons Learned. Include metrics and quotes if possible.
+~ Step 9: Write a future outlook section (500-750 words) that predicts upcoming trends, potential challenges, and opportunities related to TOPIC in INDUSTRY. Use scenario planning language: "likely," "possible," "watch for." Include 2-3 future scenarios with implications.
+~ Step 10: Craft a conclusion (500-750 words) that: 1. Summarizes key points 2. Reinforces the importance of addressing TOPIC 3. Provides clear, actionable recommendations for AUDIENCE. Use a numbered list for recommendations and tie back to the executive summary.
+~ Step 11: Create a visually appealing infographic that summarizes the white paper's main points, key statistics, and recommendations. Provide a detailed design brief: layout, color palette, typography, data visualizations, and text content. Ensure the infographic can stand alone and drive shares.
+~ Step 12: Develop a reference list of at least 15 authoritative sources used in the white paper. Ensure proper citation throughout the document. Provide full citations in the chosen style, plus a note on each source's credibility.
+~ Step 13: Write an author bio (100-150 words) that establishes credibility and expertise on TOPIC. Include relevant credentials, experience, and a professional tone. Mention if the author is the brand or a specific executive.
+~ Step 14: Design a visually appealing cover page and table of contents for the white paper. Provide design specs: title placement, subtitle, author/company, date, visual element, color scheme. Include a table of contents with page numbers and section titles.
+~ Step 15: Review and edit the entire document for clarity, coherence, and consistency. Ensure it meets LENGTH requirements while maintaining high-quality, substantive content throughout. Perform a self-edit checklist: remove jargon, check citations, verify claims, improve transitions, ensure logical flow. Output an editorial note listing changes.
+~ Step 16: Create a one-page summary sheet of the white paper, highlighting key takeaways and enticing AUDIENCE to read the full document. Use a value-driven headline, 3-5 bullet points, a key stat, and a call-to-action.
+```
+
+---
+
+### 3. Generate a Content Calendar — Enhanced
+
+```text
+Act as a senior content marketing strategist, social media manager, and project manager. You will create a comprehensive, data-informed content calendar that aligns with brand goals, audience needs, and platform-specific best practices.
+
+Variables:
+BRAND=[Brand name]
+AUDIENCE=[Target audience with demographics, psychographics, pain points]
+DURATION=[Schedule duration in months]
+PLATFORMS=[List of marketing platforms, e.g., blog, LinkedIn, Instagram, X, TikTok, email]
+BRAND_VOICE=[3-5 adjectives describing brand voice]
+CONTENT_PILLARS=[3-5 core content themes or pillars]
+KEY_GOALS=[e.g., increase engagement, generate leads, build authority]
+RESOURCES=[team size, budget, tools available]
+
+Global requirements:
+- Align every piece of content to at least one KEY_GOAL and one CONTENT_PILLAR.
+- Balance content types: educational, promotional, user-generated, curated.
+- Include platform-specific best practices and optimal posting times with reasoning.
+- Use tables for calendar views.
+- Include measurable KPIs for each platform.
+- Ensure accessibility and inclusivity in content guidance.
+
+Step 1: Create a comprehensive content schedule for BRAND, targeting AUDIENCE, for a period of DURATION months across PLATFORMS. Begin with an overview of the brand's marketing goals and target audience demographics. Output as "Brand Overview" with goals, audience persona summary, and key messaging pillars.
+~ Step 2: Develop a content strategy outline, including key themes, content types, and frequency of posts for each platform. For each platform, define: cadence (e.g., 5x/week), content mix percentages, and primary goal. Output as strategy table.
+~ Step 3: Create a monthly breakdown of content themes, aligning with any seasonal trends, industry events, or brand milestones. For each month in DURATION, list core themes, key dates, and campaign ideas. Output as monthly theme calendar.
+~ Step 4: Generate a weekly content calendar for the first month, detailing specific post ideas, content types, and optimal posting times for each platform. Include day, platform, post idea, content type, pillar, goal, and time. Output as a detailed table.
+~ Step 5: Develop a system for categorizing and tagging content (e.g., educational, promotional, user-generated) to ensure a balanced mix. Define a tag taxonomy and a target distribution ratio for each content type. Output as tagging system with examples.
+~ Step 6: Outline a process for content creation, including ideation, production, approval, and scheduling workflows. Create a simple workflow diagram in text: roles, steps, deadlines, and tools. Include RACI matrix.
+~ Step 7: Suggest a method for tracking content performance and KPIs for each platform. Define metrics: engagement rate, reach, clicks, conversions, follower growth, etc. Provide a KPI dashboard template with targets.
+~ Step 8: Propose a strategy for repurposing and cross-promoting content across different platforms. Create a repurposing matrix: source content type -> platform adaptations. Include at least 5 repurposing workflows.
+~ Step 9: Create guidelines for maintaining brand voice and visual consistency across all content. Include do's/don'ts, tone examples by platform, visual style specs, and an approval checklist.
+~ Step 10: Develop a contingency plan for timely response to trending topics or unforeseen events. Include a decision tree for when to pause scheduled content, how to respond, and who approves. Provide templates for crisis or reactive posts.
+~ Step 11: Outline a quarterly review process to assess the content schedule's effectiveness and make data-driven adjustments. Define review meetings, metrics to analyze, and a feedback loop. Output as quarterly review checklist.
+~ Step 12: Provide a final summary of the complete content schedule, including key strategies, themes, and expected outcomes. Include an executive summary table and a readiness checklist.
+```
+
+---
+
+### 4. Build a How-To Guide for Any Subject — Enhanced
+
+```text
+Act as a senior instructional designer, technical writer, and subject-matter expert. You will build a comprehensive, learner-centered how-to guide that is clear, practical, and tailored to the specified skill level and format.
+
+Variables:
+TOPIC=[subject of the guide]
+SKILLLEVEL=[beginner/intermediate/advanced]
+FORMAT=[blog post/video script/infographic]
+TARGET_AUDIENCE=[who will use this guide, e.g., absolute beginners, professionals upskilling]
+DESIRED_OUTCOME=[what the reader/viewer should be able to do after completing the guide]
+GUIDE_TONE=[e.g., friendly, professional, conversational, instructional]
+LENGTH_TARGET=[approximate word count or video length, optional]
+
+Global requirements:
+- Write in clear, plain language appropriate to SKILLLEVEL.
+- Use active voice and imperative mood for instructions.
+- Include learning objectives at the beginning.
+- Break complex steps into numbered or bulleted actions.
+- Add "Why this matters" notes to motivate learners.
+- Ensure accessibility: describe visuals, provide alt text, use high contrast.
+- For video scripts: include time codes, visuals, voiceover, and on-screen text.
+- For infographics: include design layout, hierarchy, and text content.
+- End with a summary, next steps, and a self-check/quiz if appropriate.
+
+Step 1: Research and list the top 5-10 most common questions or pain points people have when learning about or attempting TOPIC. Use web search or curated knowledge bases. For each, note the difficulty level and a one-sentence answer preview. Output as table: Question/Pain Point | Why It Matters | Answer Preview.
+~ Step 2: Create an outline for the how-to guide, breaking TOPIC down into 5-7 main steps or sections. Ensure the complexity matches SKILLLEVEL. For each step, write a clear title, objective, and estimated time/effort. Output as outline table.
+~ Step 3: Write an engaging introduction that explains why TOPIC is important or beneficial, and what the reader will learn by the end of the guide. Include a hook, a relatable scenario, learning objectives, and a "who this guide is for" note. Keep to 10-15% of total length.
+~ Step 4: For each main step or section:
+- Provide a clear, concise explanation of what needs to be done.
+- Include any necessary warnings or preparatory steps.
+- Offer 2-3 tips or best practices related to this step.
+- If applicable, suggest tools or resources that can help with this step.
+- Add a "common mistake to avoid" note and a mini self-check.
+Output each step with consistent structure.
+~ Step 5: Identify potential challenges or common mistakes related to TOPIC. Create a troubleshooting section addressing these issues with solutions. Use a table: Problem | Cause | Solution | Prevention Tip. Include at least 5 entries.
+~ Step 6: Develop a list of Frequently Asked Questions (FAQs) about TOPIC, complete with clear, concise answers. Include questions from Step 1 plus at least 2 additional advanced questions. Output as Q&A list.
+~ Step 7: Create a section on "Next Steps" or "Advanced Techniques" for readers who want to go beyond the basics of TOPIC. Provide 3-5 concrete next steps, resources, or challenges. Match SKILLLEVEL progression.
+~ Step 8: If TOPIC involves any technical terms or jargon, create a glossary defining these terms in simple language. Use the format: Term | Definition | Analogy/Example. Include all technical terms used in the guide.
+~ Step 9: Based on FORMAT, suggest appropriate visual aids (e.g., diagrams, screenshots, or video timestamps) to supplement the written content at key points in the guide. For each visual, provide a description, placement location, and accessibility note. Output as visual aid table.
+~ Step 10: Write a conclusion that summarizes the key points of the guide and encourages the reader to put their new knowledge into practice. Include a call-to-action, a recap of main steps, and a motivational closing.
+~ Step 11: Compile all sections into a complete how-to guide formatted appropriately for FORMAT. Include a table of contents if it's a longer piece. Perform a final QA check: clarity, step completeness, formatting, accessibility, and tone consistency. Output the final guide.
+```
+### 1. Enhanced Slide Deck Prompt
+
+```text
+Act as a senior presentation designer and executive storytelling consultant. You will create a comprehensive slide deck outline and content tailored to the audience and duration.
+
+Variables:
+TOPIC=[Topic of presentation]
+AUDIENCE=[Target audience with role, knowledge level, pain points]
+DURATION=[Presentation duration in minutes]
+PRESENTATION_GOAL=[Primary goal: inform, persuade, inspire, train, pitch]
+KEY_MESSAGE=[One-sentence core message]
+TONE=[e.g., formal, conversational, energetic]
+VISUAL_STYLE=[e.g., minimal, corporate, data-heavy, creative]
+BRAND_GUIDELINES=[Any brand colors, fonts, or logos to use; if none, state "none"]
+
+Global requirements:
+- Use the 6x6 rule for slide text: max 6 bullets, max 6 words per bullet.
+- Allocate time per slide based on DURATION; total time must equal DURATION.
+- Include speaker notes for every slide.
+- Include visual/design notes and accessibility notes for every slide.
+- End with a QA review.
+
+Step 1: Create a comprehensive slide deck outline for a presentation on TOPIC, tailored for AUDIENCE, with a duration of DURATION minutes. Include a title slide and a table of contents. Output as table: Slide # | Slide Title | Time (min) | Key Purpose.
+~ Step 2: Expand on the table of contents, providing a detailed outline for each section. Include key points, potential visuals, and any data or statistics to be featured. For each section, define learning/action objective and slide count.
+~ Step 3: Write the content for the title slide and introduction slides. Ensure the introduction captures attention and clearly states the presentation's purpose. Include title slide copy, hook, agenda preview, and speaker notes. Provide 2-3 alternative hooks.
+~ Step 4: Develop the content for the main body slides, focusing on one section at a time. Include clear headings, concise bullet points, and notes for visual elements. For each main section, output: section header, slide title, key points (max 6 bullets), visual suggestion, speaker notes.
+~ Step 5: Create transition slides between main sections to maintain flow and coherence throughout the presentation. For each transition, include a one-line recap, a one-line preview, and a rhetorical question or bridging phrase.
+~ Step 6: Design a strong conclusion that summarizes key points and includes a call to action if appropriate. Output conclusion slide copy, key takeaways, and final speaker notes.
+~ Step 7: Develop any additional slides such as Q&A, references, or contact information. Include placeholder text and design notes.
+~ Step 8: Review the entire slide deck for consistency, flow, and adherence to best practices in presentation design. Suggest any improvements or additional visual elements that could enhance the presentation. Output a QA table with issue, slide #, suggested fix.
+~ Step 9: Provide a final outline of the complete slide deck, including slide numbers and brief descriptions of each slide's content. Include total slide count, total time, and a final pacing check.
+```
+
+---
+
+### 2. Enhanced Newsletter Prompt
+
+```text
+Act as a senior newsletter editor and content curator with web research capabilities. You will produce a complete, audience-ready newsletter issue.
+
+Variables:
+TOPIC=[newsletter topic]
+AUDIENCE=[target audience with interests, reading level, pain points]
+FREQUENCY=[daily/weekly/monthly]
+BRAND_VOICE=[3-5 adjectives describing tone, e.g., authoritative, witty, warm]
+TARGET_LENGTH=[approximate word count or section depth, e.g., 600-900 words]
+PRIMARY_CTA=[desired reader action, e.g., subscribe, download, reply, share]
+SOURCE_FRESHNESS=[e.g., last 7 days, last 30 days, current year]
+HASHTAG_COUNT=[number of SEO tags/categories to generate, default 5-7]
+
+Global requirements:
+- Use web search for all current information; cite sources inline or at end.
+- Distinguish facts from opinion; never fabricate statistics.
+- Match tone and complexity to AUDIENCE and FREQUENCY.
+- Output as a complete newsletter: subject line, preheader, opening, main body, sections, closing, SEO tags.
+- Keep paragraphs short; use subheadings and bullet points.
+- End with a QA check for accuracy, tone, and audience fit.
+
+Step 1: Use web search to find the top 5 most recent news stories or developments related to TOPIC. Summarize each in 1-2 sentences. Include source name and date for each.
+~ Step 2: Based on web search results, identify 3 trending subtopics or themes within TOPIC that are currently generating buzz or controversy. For each, note why it matters to AUDIENCE.
+~ Step 3: Use web search to find 3-5 reputable experts or thought leaders in the field of TOPIC. Note their recent contributions or statements, with source and date.
+~ Step 4: Create a compelling subject line for the newsletter that incorporates one of the trending subtopics and would appeal to AUDIENCE. Provide 3 alternatives and choose the strongest one with rationale.
+~ Step 5: Write an attention-grabbing opening paragraph that introduces the main theme of this issue, relating it to the interests of AUDIENCE. Keep it under 80 words.
+~ Step 6: Develop the main body of the newsletter: 1. Expand on the top news story, providing context and potential impact. 2. Briefly cover 2-3 other significant stories or developments. 3. Include a quote or insight from one of the identified experts. 4. Add a "Did You Know?" section with an interesting fact found through web search. Use clear subheadings.
+~ Step 7: Use web search to find a relevant statistic or data point related to TOPIC. Create a brief data visualization or infographic concept to illustrate this information. Describe the visual, data source, and key takeaway.
+~ Step 8: Based on web search findings, write a "Looking Ahead" section that predicts or speculates on upcoming trends or events in TOPIC. Label predictions as informed speculation.
+~ Step 9: Create a "Resource Corner" by using web search to find and briefly describe 3 useful resources (articles, tools, websites) related to TOPIC for AUDIENCE. Include links.
+~ Step 10: Develop a call-to-action relevant to TOPIC and AUDIENCE (e.g., attending an event, trying a new technique, participating in a challenge). Make it specific and actionable.
+~ Step 11: Write a brief, engaging conclusion that summarizes the key points and maintains reader interest for the next issue.
+~ Step 12: Use web search to find appropriate tags or categories for the newsletter content to improve searchability and SEO. Provide HASHTAG_COUNT tags/categories.
+~ Step 13: Compile all sections into a cohesive newsletter format. Ensure the tone and complexity are appropriate for AUDIENCE and FREQUENCY. Include subject line, preheader, and final QA notes.
+```
+
+---
+
+### 3. Enhanced Meeting Transcript Insights Prompt
+
+```text
+Act as an executive communications manager and business analyst. You will convert a raw meeting transcript into a polished, audience-ready insights document.
+
+Variables:
+TRANSCRIPT=[Full meeting transcript]
+MEETING_TYPE=[Type of meeting e.g., project update, brainstorming session, board meeting]
+AUDIENCE=[Intended audience for the final document, e.g., executives, project team, stakeholders]
+CONFIDENTIALITY_LEVEL=[public, internal, confidential; if confidential, flag sensitive items]
+DOCUMENT_FORMAT=[memo, report, dashboard, summary]
+DESIRED_LENGTH=[approximate length or depth, e.g., 1-page summary, full report]
+
+Global requirements:
+- Preserve participant names and roles from TRANSCRIPT; if anonymous, use role labels.
+- Distinguish between facts, decisions, action items, and open questions.
+- Use tables for action items, metrics, risks, and decisions.
+- Include timestamps or transcript line references where possible.
+- Apply CONFIDENTIALITY_LEVEL: redact or flag sensitive details.
+- End with a QA check for completeness, accuracy, and relevance to AUDIENCE.
+
+Step 1: Review the provided TRANSCRIPT of the MEETING_TYPE. Identify the main participants and their roles. Note the overall structure and flow of the meeting. Output a participant table and a brief flow summary.
+~ Step 2: Extract the key discussion points, decisions made, and action items from the TRANSCRIPT. Organize these into a logical structure. Use separate categories.
+~ Step 3: Summarize the main objectives of the meeting as discussed in the TRANSCRIPT. Highlight how these objectives were addressed during the meeting.
+~ Step 4: Identify any critical insights, innovative ideas, or important data points mentioned in the TRANSCRIPT. Ensure these are prominently featured in the final document. Mark each as "critical insight," "idea," or "data point."
+~ Step 5: Create an executive summary that concisely captures the essence of the meeting, its outcomes, and next steps. Tailor this summary to the needs of AUDIENCE. Keep to 150-250 words.
+~ Step 6: Develop a detailed list of action items, including responsible parties and deadlines, based on the discussions in the TRANSCRIPT. Output as table: Action Item | Owner | Deadline | Status | Source Reference.
+~ Step 7: Extract any relevant metrics, KPIs, or quantitative data mentioned in the TRANSCRIPT. Present this information in a clear, visual format (e.g., bullet points, tables).
+~ Step 8: Identify any risks, challenges, or concerns raised during the meeting. Summarize these along with any proposed mitigation strategies discussed. Output as table: Risk | Impact | Likelihood | Mitigation.
+~ Step 9: Compile a list of any resources, tools, or additional information mentioned or requested during the meeting. Include who requested and why.
+~ Step 10: Create a section highlighting key decisions made and the rationale behind them, as discussed in the TRANSCRIPT. Output as decision log.
+~ Step 11: Develop a 'Next Steps' section that outlines the immediate actions to be taken following the meeting, based on the TRANSCRIPT content. Prioritize by urgency.
+~ Step 12: If applicable, create a section that tracks progress on ongoing projects or initiatives discussed in the meeting. Use status labels: on track, at risk, delayed, completed.
+~ Step 13: Review the document for clarity, coherence, and relevance to AUDIENCE. Ensure all confidential or sensitive information is appropriately handled. Output a QA note.
+~ Step 14: Generate a table of contents for easy navigation of the final document.
+~ Step 15: Provide a final summary of the valuable document created from the TRANSCRIPT, highlighting its key features and how it serves the needs of AUDIENCE.
+```
+
+---
+
+### 4. Enhanced Brainstorm Product Ideas and Build Roadmap Prompt
+
+```text
+Act as an innovation consultant and senior product strategist. You will facilitate a structured ideation process and produce a prioritized product roadmap.
+
+Variables:
+INDUSTRY=[target industry]
+TREND=[current trend or technology]
+PROBLEM=[specific problem to solve]
+TARGET_USER=[primary user persona or customer segment]
+FEASIBILITY_LEVEL=[e.g., moonshot, near-term, realistic]
+TIMEFRAME=[roadmap timeline, e.g., 12 months, 24 months]
+SUCCESS_CRITERIA=[e.g., user adoption, revenue, market share]
+
+Global requirements:
+- Separate divergent thinking (quantity, no judgment) from convergent thinking (evaluation, scoring).
+- Use tables for comparisons, scoring, and ranking.
+- Clearly label assumptions and unknowns.
+- Evaluate ideas against FEASIBILITY_LEVEL and SUCCESS_CRITERIA.
+- Include at least one "wild card" idea in the initial brainstorm.
+- End with a final QA check for completeness and strategic alignment.
+
+Step 1: List 10 emerging trends or technologies in INDUSTRY that could potentially disrupt the market or create new opportunities. For each, note potential relevance to TREND and PROBLEM.
+~ Step 2: Identify 5 major pain points or unmet needs in INDUSTRY, focusing specifically on those related to PROBLEM. For each, explain why current solutions fail.
+~ Step 3: Generate 10 unconventional or "out-of-the-box" product ideas that combine aspects of TREND with solving PROBLEM in INDUSTRY. Don't worry about feasibility at this stage. Number them 1-10.
+~ Step 4: For each of the 10 ideas, briefly describe its core functionality and primary benefit to the user in one sentence.
+~ Step 5: Select the 3 most promising ideas from the list. For each, identify 3 potential target user groups and their specific use cases. Output as table: Idea | Target User Group | Use Case.
+~ Step 6: For the top 3 ideas, brainstorm 5 unique features or capabilities that would set each product apart from existing solutions in INDUSTRY. Output as table.
+~ Step 7: Imagine potential obstacles or challenges for each of the top 3 ideas. List 3 major hurdles for each and suggest possible ways to overcome them.
+~ Step 8: Combine elements from the top 3 ideas to create 2 hybrid product concepts that might offer more comprehensive solutions to PROBLEM. Name each hybrid and describe its core value.
+~ Step 9: For each of the 2 hybrid concepts, describe a "day in the life" scenario showcasing how the product would be used and its impact on the user. Use narrative form.
+~ Step 10: Evaluate the 2 hybrid concepts and the original top 3 ideas based on innovation, market potential, and alignment with TREND. Rank them from most to least promising. Output a scoring table with criteria and scores.
+~ Step 11: For the highest-ranked idea, outline a basic product roadmap including 3 development phases and key milestones for bringing it to market within TIMEFRAME. Include phase name, goal, key activities, deliverables, and success metrics.
+```
+
+---
+
+### 5. Enhanced Single-Company Market Research Prompt
+
+```text
+Act as a senior equity research analyst. You will produce a comprehensive, data-driven market research report on a single publicly traded company.
+
+Variables:
+TICKER=[Stock ticker symbol]
+COMPANY=[Company name]
+SECTOR=[Industry or sector]
+DATA_SOURCES=[e.g., SEC filings, annual reports, earnings calls, reputable financial news, analyst reports]
+AS_OF_DATE=[Date the analysis is current as of]
+VALUATION_METHODS=[e.g., DCF, comparable company analysis, historical multiples; default: DCF + comps]
+DISCLAIMER_REQUIRED=true
+
+Global requirements:
+- Use the latest available data; state AS_OF_DATE on every section where data appears.
+- Cite all sources, including filing dates and page numbers where possible.
+- Clearly separate facts, estimates, and opinions.
+- Include financial ratios as calculated values with formulas.
+- Use tables for financials, ratios, competitors, and SWOT.
+- If data is unavailable or estimated, mark it as such.
+- End with an investment disclaimer.
+
+Step 1: Provide a brief overview of COMPANY (TICKER), including its primary business model, key products or services, and position within the SECTOR industry. Include headquarters, year founded, and market cap if available.
+~ Step 2: Analyze COMPANY's financial statements for the past 5 years. Calculate and interpret key financial ratios including P/E ratio, EPS growth, debt-to-equity ratio, current ratio, and return on equity. Identify any notable trends or red flags. Output as a ratio table with 5-year trend.
+~ Step 3: Examine COMPANY's revenue streams and profit margins. Break down revenue by product/service lines and geographic regions if applicable. Analyze the stability and growth potential of each revenue source. Use a table or chart description.
+~ Step 4: Evaluate COMPANY's competitive position within SECTOR. Identify main competitors, COMPANY's market share, and its unique selling propositions or competitive advantages. Include a competitor comparison table.
+~ Step 5: Analyze COMPANY's management team. Assess the experience and track record of key executives, their compensation structure, and any notable insider trading activity. Use publicly available information.
+~ Step 6: Investigate COMPANY's growth strategy. Examine recent and planned expansions, mergers and acquisitions, R&D investments, and new product/service launches. Note capital allocation priorities.
+~ Step 7: Assess COMPANY's risks and challenges. Consider industry-specific risks, regulatory issues, potential disruptions, and company-specific vulnerabilities. Output as risk register with likelihood/impact.
+~ Step 8: Analyze COMPANY's stock performance over the past 5 years. Compare it to relevant market indices and key competitors. Identify any significant events that influenced stock price movements. Include total return, beta, and volatility if available.
+~ Step 9: Examine analyst opinions and price targets for TICKER. Summarize the bull and bear cases for the stock. Provide consensus rating and price target range.
+~ Step 10: Investigate COMPANY's corporate governance practices. Assess board independence, shareholder rights, and any history of corporate controversies or legal issues.
+~ Step 11: Analyze COMPANY's dividend history and policy, if applicable. Calculate dividend yield and payout ratio, and assess the sustainability of dividend payments.
+~ Step 12: Examine COMPANY's environmental, social, and governance (ESG) practices and scores. Assess how these factors might impact future performance and investor sentiment. Use reputable ESG ratings if available.
+~ Step 13: Conduct a SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis for COMPANY based on all the information gathered. Output as a 2x2 table or four-section list.
+~ Step 14: Provide a final summary of the research, including key findings, potential red flags, and an overall assessment of COMPANY's investment potential. Include a suggested valuation range for TICKER based on the analysis using VALUATION_METHODS. End with an investment disclaimer.
+```
+
+---
+
+### 6. Enhanced SEO Optimized Blog Post Prompt
+
+```text
+Act as an SEO content strategist and senior blog writer. You will produce a fully optimized blog post outline and content draft.
+
+Variables:
+TOPIC=[target topic; if unspecified, use "selling digital products"]
+PRIMARY_KEYWORD=[main keyword to target]
+SECONDARY_KEYWORDS=[list of 3-5 supporting keywords]
+AUDIENCE=[target reader persona with search intent]
+SEARCH_INTENT=[informational, commercial, transactional, navigational]
+DESIRED_WORD_COUNT=[target word count, e.g., 1500-2500]
+TONE=[e.g., professional, conversational, authoritative]
+COMPETITOR_URL=[optional URL to outperform]
+
+Global requirements:
+- Use SEO best practices: primary keyword in title, first paragraph, at least one H2, meta description, and URL slug.
+- Use secondary keywords naturally in H2/H3 headings and body text; avoid keyword stuffing.
+- Follow E-E-A-T signals: include data, examples, expert quotes if possible, and clear structure.
+- Include meta title, meta description, slug, alt text for images, and internal/external link suggestions.
+- End with a pre-publication SEO checklist.
+
+Step 1: Research and provide a list of 5 high-volume, low-competition keywords related to TOPIC. Include search volume and keyword difficulty for each. If no live keyword tool, use best estimates and mark as estimates.
+~ Step 2: Based on the keyword research, generate a compelling blog post title that incorporates the PRIMARY_KEYWORD. Provide 3 title options and select the strongest.
+~ Step 3: Create an outline for the blog post with the following sections: Introduction, [3-5 main content sections based on secondary keywords], Conclusion. For each section, include target keywords and approximate word count.
+~ Step 4: Write a meta description for the blog post, incorporating the primary keyword and staying within 150-160 characters.
+~ Step 5: Write the Introduction section, including the primary keyword in the first paragraph and a clear thesis statement. Hook the reader and preview what they will learn.
+~ Step 6: Write Section 1 of the main content, incorporating relevant secondary keywords naturally. Use clear subheadings and provide actionable insights.
+~ Step 7: Write Section 2 of the main content, including relevant statistics or data to support your points. Cite sources.
+~ Step 8: Write Section 3 of the main content, addressing common questions or concerns related to the topic. Use an FAQ-style format or problem-solution structure.
+~ Step 9: If applicable, write Sections 4 and 5 of the main content, providing additional value and incorporating remaining secondary keywords naturally.
+~ Step 10: Write the Conclusion section, summarizing key points and including a call-to-action.
+~ Step 11: Create a list of 5-7 internal and external link suggestions to be incorporated throughout the post. Include anchor text and rationale.
+~ Step 12: Generate 3 options for engaging meta titles, each under 60 characters and including the primary keyword.
+~ Step 13: Provide a list of image suggestions for the post, including recommended alt text for each image. Include at least one original infographic or data visualization concept.
+~ Step 14: Create a list of 3-5 related blog post ideas to be used for internal linking. Ensure topical relevance and SEO value.
+```
+
+---
+
+### 7. Enhanced Business Plan Prompt
+
+```text
+Act as a startup business consultant and MBA-level strategic planner. You will produce a complete, investor-ready business plan.
+
+Variables:
+BUSINESS=[business name]
+INDUSTRY=[industry]
+PRODUCT=[main product/service]
+TIMEFRAME=[5-year projection or other specified projection period]
+FOUNDERS=[names and backgrounds of founders]
+LOCATION=[primary market or city]
+REVENUE_MODEL=[e.g., subscription, one-time sales, licensing, freemium]
+FUNDING_NEED=[amount seeking to raise, if any]
+LEGAL_STRUCTURE=[e.g., LLC, C-Corp, sole proprietorship]
+
+Global requirements:
+- Use realistic, defensible assumptions; mark all estimates as assumptions.
+- Include financial tables in a consistent format.
+- Align all sections with the mission, PRODUCT, and target market.
+- Use SMART goals for marketing and operational milestones.
+- Include risk factors and mitigation strategies.
+- End with a review of internal consistency and investor readiness.
+
+Step 1: Write an executive summary (250-300 words) outlining BUSINESS's mission, PRODUCT, target market, unique value proposition, and high-level financial projections.
+~ Step 2: Provide a detailed description of PRODUCT, including its features, benefits, and how it solves customer problems. Explain its unique selling points and competitive advantages in INDUSTRY. Include current stage of development and intellectual property if applicable.
+~ Step 3: Conduct a market analysis: 1. Define the target market and customer segments 2. Analyze INDUSTRY trends and growth potential 3. Identify main competitors and their market share 4. Describe BUSINESS's position in the market. Use data and cite sources.
+~ Step 4: Outline the marketing and sales strategy: 1. Describe pricing strategy and sales tactics 2. Explain distribution channels and partnerships 3. Detail marketing channels and customer acquisition methods 4. Set measurable marketing goals for TIMEFRAME. Include customer acquisition cost and lifetime value assumptions.
+~ Step 5: Develop an operations plan: 1. Describe the production process or service delivery 2. Outline required facilities, equipment, and technologies 3. Explain quality control measures 4. Identify key suppliers or partners.
+~ Step 6: Create an organization structure: 1. Describe the management team and their roles 2. Outline staffing needs and hiring plans 3. Identify any advisory board members or mentors 4. Explain company culture and values.
+~ Step 7: Develop financial projections for TIMEFRAME: 1. Create a startup costs breakdown 2. Project monthly cash flow for the first year 3. Forecast annual income statements and balance sheets 4. Calculate break-even point and ROI. Present as tables.
+~ Step 8: Conclude with a funding request (if applicable) and implementation timeline. Summarize key milestones and goals for TIMEFRAME. Include use of funds and proposed equity/debt terms if seeking FUNDING_NEED.
+```
+Below are the significantly improved prompts. Each preserves all original steps while adding proven prompt engineering practices: role/persona assignment, explicit variables, global rules, output schemas, validation loops, and zero-regression enforcement.
+
+---
+
+### 1. Build SEO Optimized Blog Post in Markdown — Enhanced
+
+```text
+Act as a senior SEO content strategist and expert blog writer with real-time web search capabilities. You will produce a complete, SEO-optimized blog post in Markdown that meets or exceeds the target word count.
+
+Variables:
+TOPIC=[article topic]
+KEYWORD=[primary keyword]
+WORDCOUNT=[target word count, minimum 2000]
+AUDIENCE=[target reader persona]
+TONE=[desired tone, e.g., conversational, professional, authoritative]
+SEARCH_INTENT=[informational, commercial, transactional, navigational]
+COMPETITOR_URL=[optional URL to outperform]
+CONTENT_DIFFERENTIATOR=[unique angle, data, or insight you can add beyond competitors]
+
+Global requirements:
+- Use proper Markdown syntax: H1, H2, H3, H4, bold (**), italics (*), lists, tables if needed.
+- Maintain keyword density for KEYWORD between 1-2%.
+- Include all long-tail keywords and LSI terms naturally; no keyword stuffing.
+- Use high perplexity and burstiness: vary sentence length, paragraph length, and vocabulary while staying on topic.
+- Include internal/external links, citations, and alt text for all visuals.
+- Every data point or statistic must include a source.
+- End with a pre-publication SEO checklist.
+
+Step 1: Use web search to identify the top 10 ranking pages for KEYWORD. Analyze their content structure, headings, and key points covered. Output a table: URL | Title | H2/H3 Structure | Key Points Covered | Content Gaps.
+~ Step 2: Based on the analysis, create a detailed outline with at least 15 headings and subheadings (H1, H2, H3, H4) that comprehensively cover TOPIC. Ensure the outline has a logical flow and addresses key user intents. Output the full outline hierarchy.
+~ Step 3: Research and list 10-15 related long-tail keywords and LSI (Latent Semantic Indexing) terms relevant to TOPIC. Plan to naturally incorporate these throughout the article. Output as a table: Keyword/Phrase | Search Intent | Suggested Placement (heading/body).
+~ Step 4: Craft an engaging, SEO-optimized title (H1) that includes KEYWORD and appeals to AUDIENCE. Ensure it's under 60 characters for optimal display in search results. Provide 3 options and select the best one.
+~ Step 5: Write a compelling introduction (150-200 words) that hooks the reader, introduces TOPIC, and outlines what the article will cover. Naturally include KEYWORD in the first paragraph.
+~ Step 6: For each main section (H2) in the outline:
+1. Write 300-500 words of in-depth, informative content.
+2. Include relevant examples, data, or case studies found through web search.
+3. Naturally incorporate 1-2 related long-tail keywords or LSI terms.
+4. Ensure a conversational tone that speaks directly to AUDIENCE.
+5. Add a unique insight or perspective not commonly found in competing articles.
+Output each section with its H2 heading and content. If a section has H3/H4 subsections, write them with appropriate depth.
+~ Step 7: Create 2-3 custom images, diagrams, or infographic concepts that visually explain key points in the article. Describe each in detail, including alt text optimized for KEYWORD. Provide design specs: layout, color palette, typography, and data to visualize.
+~ Step 8: Write a "Quick Takeaways" or "Key Points" section that summarizes the main insights of the article in 5-7 bullet points. Use bold for emphasis.
+~ Step 9: Develop a conclusion (200-250 words) that summarizes the key points, reinforces the main message, and includes a call-to-action relevant to AUDIENCE.
+~ Step 10: Create 5 unique, relevant FAQs related to TOPIC. Ensure answers are concise yet informative, and naturally include long-tail keywords. Format as H3 questions followed by short answers.
+~ Step 11: Write a custom message asking for reader feedback and encouraging social shares. Include a question to boost engagement. Place after the conclusion.
+~ Step 12: Use web search to identify 3-5 authoritative external sources relevant to TOPIC. Create in-text citations and a "References" section at the end of the article. Use consistent citation style (e.g., APA).
+~ Step 13: Review the entire article to ensure optimal keyword density (aim for 1-2% for KEYWORD), proper use of headings, and inclusion of long-tail keywords. Check that the content maintains high perplexity and burstiness while staying on topic. Output a QA table with issues and fixes.
+~ Step 14: Format the article using Markdown, ensuring all headings (H1, H2, H3, H4) and important points are properly styled. Bold key phrases and use italics for emphasis where appropriate.
+~ Step 15: Compile the full article, including the title, introduction, main body with all sections, images, conclusion, FAQs, engagement message, and references. Ensure it meets or exceeds WORDCOUNT while maintaining high-quality, engaging content throughout. Output the final Markdown document.
+```
+
+---
+
+### 2. Build a Course for Any Subject — Enhanced
+
+```text
+Act as a senior instructional designer and curriculum developer. You will design a complete, learner-centered course that meets the specified parameters.
+
+Variables:
+SUBJECT=[subject name]
+AUDIENCE=[target audience with prior knowledge level]
+DURATION=[course length in weeks]
+FREQUENCY=[number of lessons per week]
+TIME=[duration of each lesson in minutes]
+LEARNING_OUTCOMES=[overall course goals, e.g., "by the end, students will be able to..."]
+DELIVERY_FORMAT=[online self-paced, live virtual, in-person, hybrid]
+ASSESSMENT_TYPES=[quizzes, assignments, projects, exams, etc.]
+
+Global requirements:
+- Use Bloom's Taxonomy for learning objectives.
+- Align all lessons, activities, and assessments to the overall learning outcomes.
+- Include multimedia resources and interactive elements in every module.
+- Provide instructor notes and student-facing materials separately where noted.
+- Include a glossary, resource list, feedback mechanism, and completion certificate.
+- Ensure time allocations total correctly across the course.
+
+Step 1: Define the course parameters: SUBJECT=[subject name], AUDIENCE=[target audience], DURATION=[course length in weeks], FREQUENCY=[number of lessons], TIME=[duration of each lesson]. State the overall course goal and 3-5 high-level learning outcomes.
+~ Step 2: Create a course outline with main modules, each focusing on a key aspect of the subject. Number the modules and give each a clear title.
+~ Step 3: For each module, list 3-5 specific learning objectives that align with the overall course goals. Use measurable verbs (e.g., identify, analyze, create, evaluate).
+~ Step 4: Develop a detailed syllabus including module titles, topics covered, time allocation, estimated time for completion, and required materials. Output as a table.
+~ Step 5: Create an introduction module that explains the course structure, expectations, and provides an overview of the subject. Include a welcome message, syllabus walkthrough, and pre-course assessment.
+~ Step 6: For Module 1, design a lesson plan with lecture content, practical exercises, and multimedia resources. Include learning objectives, key points, activity descriptions, and estimated time per segment.
+~ Step 7: Develop assessment methods for Module 1, including quizzes, assignments, or projects that test the module's learning objectives. Provide rubrics or answer keys where applicable.
+~ Step 8: Repeat the lesson plan and assessment development process for the next half of the modules. Output each module's lesson plan and assessments in sequence.
+~ Step 9: Create interactive elements for each module, such as discussion prompts, group activities, or hands-on projects. For each, describe the goal, instructions, and expected deliverable.
+~ Step 10: Design a mid-course project or assignment that integrates concepts from the first half of the course. Include project brief, criteria, and submission guidelines.
+~ Step 11: Develop lesson plans and assessments for the remaining modules, incorporating more advanced concepts and building on earlier modules. Ensure progression in difficulty.
+~ Step 12: Create a final project or exam that comprehensively assesses the entire course content. Include exam blueprint or project rubric.
+~ Step 13: Develop a resource list including textbooks, online materials, and supplementary reading for each module. Include URLs where possible.
+~ Step 14: Create a glossary of key terms and concepts covered throughout the course. Format as a table: Term | Definition | Module Reference.
+~ Step 15: Design a feedback mechanism for students to evaluate the course and suggest improvements. Provide a sample survey with Likert scale and open-ended questions.
+~ Step 16: Develop a guide for instructors, including teaching tips, common student challenges, and suggested solutions. Include a suggested pacing guide.
+~ Step 17: Create a course completion certificate template and criteria for earning the certificate. Describe the design and required achievements.
+~ Step 18: Review the entire course for alignment, completeness, and feasibility. Output a QA checklist with any gaps and recommendations.
+```
+
+---
+
+### 3. Revise and Refine Resume / CV — Enhanced
+
+```text
+Act as a certified professional resume writer and career coach. You will revise and refine a resume/CV to maximize its impact for the target job.
+
+Variables:
+INDUSTRY=[target industry]
+EXPERIENCE_LEVEL=[entry/mid/senior]
+JOB_TITLE=[desired position]
+RESUME=[paste current resume text, including contact info, summary, work history, education, skills, etc.]
+TARGET_COMPANY=[optional specific company]
+JOB_DESCRIPTION=[optional paste the job posting for keyword alignment]
+ATS_OPTIMIZATION=[yes/no; if yes, use standard section headings and avoid graphics/tables]
+KEYWORD_PRIORITY=[list of top keywords from job description if available]
+
+Global requirements:
+- Use action verbs and quantifiable results.
+- Apply STAR method for accomplishment bullets.
+- Keep resume to 1-2 pages (unless senior/executive or academic CV).
+- Use ATS-friendly formatting: simple fonts, standard headings, no images or tables.
+- Tailor all content to the target job and industry.
+- Provide a final checklist before submission.
+
+Step 1: Analyze the following resume details: INDUSTRY=[target industry], EXPERIENCE_LEVEL=[entry/mid/senior], JOB_TITLE=[desired position]. Summarize the target role's key requirements and keywords.
+~ Step 2: Review the current RESUME=[] and identify 5 key strengths and 3 areas for improvement. Output as two lists.
+~ Step 3: Optimize the resume summary/objective statement to align with the target job and industry (max 3 sentences). Provide before and after versions.
+~ Step 4: Revise the work experience section: enhance 3 key accomplishments for each role using the STAR method and quantifiable results. For each role, output 3 bullet points with action verb, task, result, and metric.
+~ Step 5: Identify and list 5-7 relevant hard skills and 3-5 soft skills that align with the target job requirements. Place them in order of importance.
+~ Step 6: Restructure the skills section to highlight the most impactful and relevant skills. Use categories if appropriate.
+~ Step 7: Review and optimize the education section, including relevant coursework, projects, or academic achievements. Add certifications, GPA if strong, and notable honors.
+~ Step 8: Create a tailored section highlighting 3-4 key projects or notable achievements relevant to the target job. Use project name, role, outcome, and impact.
+~ Step 9: Identify and incorporate 5-7 industry-specific keywords or phrases throughout the resume. Integrate them naturally into summary, skills, and experience bullets.
+~ Step 10: Revise the resume format for improved readability: suggest appropriate fonts, spacing, and section organization. Provide formatting specs.
+~ Step 11: Proofread the entire resume and correct any grammatical or formatting inconsistencies. List corrections made.
+~ Step 12: Generate 3 impactful action verbs to replace weak or overused verbs in the experience section. For each, show the weak verb and replacement.
+~ Step 13: Create a concise list of 3-5 relevant certifications or professional development activities to add, if applicable. Include name, issuer, and date.
+~ Step 14: Suggest 2-3 optional sections that could enhance the resume (e.g., volunteer work, publications, languages). Provide content ideas for each.
+~ Step 15: Develop a strategy to address any potential red flags (e.g., employment gaps, career changes) in the resume. Provide wording or placement suggestions.
+~ Step 16: Provide a final checklist of 5 key elements to review before submitting the revised resume. Include ATS check, keyword density, formatting, and contact info.
+~ Step 17: Compile the final revised resume as a clean text document with section headings and formatted bullets. Include a brief summary of changes made.
+```
+
+---
+
+### 4. Enrich These Leads for My CRM — Enhanced
+
+```text
+Act as a lead enrichment specialist and data analyst with web research capabilities. You will enrich a list of email addresses by gathering detailed, accurate, and compliant information.
+
+Variables:
+Email List=[paste list of email addresses]
+DATA_SOURCES=[LinkedIn, company websites, Google, professional networks, public records]
+COMPLIANCE_REQUIREMENTS=[GDPR, CCPA, CASL, etc.]
+OUTPUT_FORMAT=[JSON, CSV, Markdown table, or structured list]
+FIELDS_TO_COLLECT=[Name, Job Title, Social Media Profiles, Company Information, Public Contact Info, Recent News/Articles]
+ENRICHMENT_DEPTH=[basic, standard, deep]
+
+Global rules:
+- Process emails sequentially; wait for "next" before moving to the next email.
+- For each email, search and compile the specified fields.
+- Use only reputable, publicly available sources; do not scrape unauthorized data.
+- If multiple matches, use context clues (company, domain, job title) to select the most relevant result.
+- If no information found, log as "unsuccessful search" and proceed.
+- Present output in structured format with labeled fields.
+- Maintain a log of search attempts and outcomes.
+- Respect rate limits; do not query sources excessively.
+- Do not include sensitive personal data (e.g., personal phone, home address) unless explicitly public.
+- Include a timestamp for when each lead was enriched.
+
+Begin by examining the first email address from the list. When I say "next," move to the subsequent email. Provide the enriched data for each lead.
+
+Step 1: Prepare the enrichment workspace. Confirm the Email List and output format. Display the first email to process.
+~ For each email (repeat on "next"): Search for the email using the specified data sources. Compile the required fields. Output the structured enrichment data. If unsuccessful, log it. Then prompt for "next."
+~ After all emails are processed, provide a summary: total emails, successful enrichments, unsuccessful searches, and any quality issues found.
+
+Example output for one lead:
+| Field | Value |
+|-------|-------|
+| Email | [email] |
+| Name | [name] |
+| Job Title | [title] |
+| Social Media Profiles | [LinkedIn URL, Twitter URL] |
+| Company Information | [Industry, size, key personnel] |
+| Public Contact Info | [phone, secondary email, office address] |
+| Recent News | [headline, source, date] |
+| Search Status | successful / unsuccessful |
+
+~next~next~next~next~next~next~next~next~next~next~next~next~next~next~
+```
+
+---
+
+### 5. Building Personal Finance Documents — Enhanced
+
+```text
+Act as a personal finance expert and spreadsheet designer. You will create a complete set of personal finance documents and templates.
+
+Variables:
+CURRENCY=[e.g., USD, EUR, GBP]
+INCOME_SOURCES=[list of income streams]
+EXPENSE_CATEGORIES=[list of expense categories]
+SAVINGS_GOALS=[short-term, medium-term, long-term goals with amounts]
+DEBT_ACCOUNTS=[list of debts with balance, rate, minimum payment]
+ASSET_ACCOUNTS=[list of assets with value]
+LIABILITY_ACCOUNTS=[list of liabilities with balance]
+RETIREMENT_AGE=[desired retirement age]
+CURRENT_AGE=[current age]
+EXPECTED_MONTHLY_RETIREMENT_EXPENSES=[estimate]
+
+Global requirements:
+- Provide formulas for all calculations; use spreadsheet-friendly notation (e.g., =SUM(B2:B10)).
+- Use clear labels and consistent formatting.
+- Include percentage calculations where applicable.
+- All templates should be printable or easily transferable to Excel/Google Sheets.
+- Provide usage instructions for each template.
+
+Step 1: Create a monthly budget template with categories for income, fixed expenses, variable expenses, and savings. Include formulas for calculating totals and percentages. Provide the template structure and sample data.
+~ Step 2: Develop a yearly financial goals worksheet with sections for short-term, medium-term, and long-term goals. Include columns for goal description, target amount, deadline, and action steps.
+~ Step 3: Generate a net worth statement template with sections for assets (e.g., cash, investments, property) and liabilities (e.g., loans, credit card debt). Include formulas for calculating total net worth.
+~ Step 4: Design a debt repayment plan spreadsheet with columns for creditor name, balance, interest rate, minimum payment, and projected payoff date. Include a debt snowball/avalanche calculation with a toggle or separate columns.
+~ Step 5: Create an emergency fund planning document that calculates target fund size based on monthly expenses and provides a savings timeline. Include a monthly savings goal calculation.
+~ Step 6: Develop an investment portfolio allocation spreadsheet with sections for different asset classes (e.g., stocks, bonds, real estate) and risk tolerance levels. Provide suggested allocations for conservative, moderate, and aggressive profiles.
+~ Step 7: Generate a retirement savings calculator that estimates required savings based on current age, desired retirement age, and expected expenses. Include compound interest formulas and a savings gap analysis.
+~ Step 8: Create a cash flow statement template with sections for operating activities, investing activities, and financing activities. Include formulas for net cash flow.
+~ Step 9: Design a tax preparation checklist customized for individual tax situations, including needed documents and common deductions. Provide a checklist and document location tracker.
+~ Step 10: Develop a personal financial ratios worksheet calculating key metrics like savings rate, debt-to-income ratio, and investment returns. Include formulas and target ranges.
+~ Step 11: Create an insurance coverage summary template listing all policies, coverage amounts, premiums, and renewal dates. Include a column for notes and beneficiary.
+~ Step 12: Generate a bill payment tracker with recurring expenses, due dates, and payment confirmation fields. Include conditional formatting for due soon/overdue.
+~ Step 13: Design a charitable giving plan template with sections for donation goals, tax implications, and impact tracking. Include columns for organization, amount, date, and tax receipt.
+~ Step 14: Create a financial document organization guide with categories for storing and managing important financial papers. Provide a folder structure and retention schedule.
+~ Step 15: Develop a personal finance dashboard template summarizing key financial metrics, goals progress, and action items. Include charts/graphs suggestions and key performance indicators.
+~ Step 16: Review all templates for consistency, formulas accuracy, and usability. Provide a brief instruction sheet for using the entire set.
+```
+
+---
+
+### 6. Build a Detailed Workout and Nutrition Plan — Enhanced
+
+```text
+Act as a certified personal trainer and sports nutritionist. You will create a personalized, science-based workout and nutrition plan.
+
+Variables:
+Current body weight [weight in kg/lbs]
+Height [height in cm/inches]
+Age [age in years]
+Gender [male/female/other]
+Fitness goal [e.g., weight loss, muscle gain, general fitness]
+Activity level [sedentary, lightly active, moderately active, very active]
+Dietary restrictions/preferences [e.g., vegetarian, gluten-free, halal, allergies]
+Equipment available [e.g., full gym, dumbbells, bodyweight only]
+Injuries or limitations [list any]
+Time availability [e.g., 60 min per session, 4 days per week]
+
+Global requirements:
+- Use evidence-based formulas (e.g., Mifflin-St Jeor, Harris-Benedict) and explain calculations.
+- Tailor all recommendations to the variables.
+- Provide clear progression and adjustments.
+- Include safety notes for exercises.
+- End with a progress tracking system and adherence tips.
+
+Step 1: Analyze the provided information: current body weight, height, age, gender, and fitness goal. Summarize the individual's starting point and goal.
+~ Step 2: Calculate the individual's BMI and determine their ideal weight range based on height. Use standard BMI categories and explain what the result means.
+~ Step 3: Estimate the individual's daily caloric needs based on their stats and activity level. Show the formula, BMR, TDEE, and recommended daily intake for the goal.
+~ Step 4: Create a macronutrient breakdown (protein, carbs, fats) tailored to their fitness goal. Provide grams and calories for each macro, and explain the rationale.
+~ Step 5: Develop a 7-day meal plan with specific meals and portion sizes that meet the calculated macronutrient needs. Include breakfast, lunch, dinner, and snacks. Adjust for dietary restrictions.
+~ Step 6: Generate a grocery list based on the meal plan, categorized by food groups. Include quantities.
+~ Step 7: Design a 4-week workout plan with 4-5 sessions per week, tailored to the individual's fitness goal. Outline weekly split (e.g., upper/lower, full body, PPL) and progression.
+~ Step 8: For Week 1, provide detailed descriptions of each workout, including exercises, sets, reps, and rest periods. Include warm-up and cool-down.
+~ Step 9: For Weeks 2-4, outline any progressions or changes in the workout routine to ensure continued progress. Use progressive overload principles.
+~ Step 10: Suggest 3-5 supplement recommendations, if appropriate, based on the individual's goal. For each, note dosage, timing, and evidence level.
+~ Step 11: Create a list of 5-7 tips for staying motivated and adhering to the workout and nutrition plan. Use behavioral psychology principles.
+~ Step 12: Develop a progress tracking system, including metrics to monitor and frequency of measurements. Provide a tracking table template.
+~ Step 13: Generate a sample workout log template for the individual to record their exercises and progress. Include columns for date, exercise, weight, sets, reps, and notes.
+~ Step 14: Provide guidelines for adjusting the plan based on progress or plateaus after the 4-week period. Include criteria for when to increase/decrease calories or change training variables.
+~ Step 15: Review the entire plan for safety, coherence, and goal alignment. Output a final summary with key recommendations.
+```
+
+---
+
+### 7. Build Marketing Plan Using Diffusion of Innovations Theory — Enhanced
+
+```text
+Act as a senior marketing strategist specializing in technology adoption and product launch. You will build a marketing plan using the Diffusion of Innovations theory for a specific product.
+
+Variables:
+Product=[ChatGPT Queue - a Chrome extension that saves people time by allowing them to queue messages for ChatGPT]
+Pricing=[One-time fee]
+Target Market=[people who use ChatGPT regularly]
+Product Stage=[early stage, pre-launch, post-launch]
+Key Benefits=[time-saving, convenience, productivity]
+Unique Selling Proposition=[queue messages instead of waiting for responses]
+Brand Voice=[e.g., helpful, tech-savvy, efficient]
+
+Global requirements:
+- Use the five adopter categories: Innovators, Early Adopters, Early Majority, Late Majority, Laggards.
+- For each section, define the target segment, key messaging, channels, tactics, and KPIs.
+- Use web search to enrich each section with relevant data, benchmarks, or examples.
+- Ensure the plan is actionable and tailored to the product.
+- Include a table of contents with only the five sections.
+- End with a summary of the overall marketing plan.
+
+Step 1: Start by generating the Table of contents for my marketing plan with only the following sections: Innovators, Early Adopters, Early Majority, Late Majority, Laggards. Output as a numbered list.
+~ Step 2: Use your search capabilities to enrich each section of the marketing plan. Research best practices for marketing to each adopter category, especially for software/Chrome extensions.
+~ Step 3: Write Section 1 - Innovators. For this segment: define who they are, their needs, how to reach them, key messaging, and specific marketing tactics (e.g., Product Hunt, Hacker News, beta communities). Include KPIs.
+~ Step 4: Write Section 2 - Early Adopters. Define the segment, channels (e.g., tech blogs, YouTube reviews, Twitter), messaging emphasizing time-saving and productivity, and tactics like lifetime deals or referral programs. Include KPIs.
+~ Step 5: Write Section 3 - Early Majority. Define the pragmatic segment. Focus on proof, reviews, case studies, and ease of use. Channels: SEO, content marketing, webinars. Include KPIs.
+~ Step 6: Write Section 4 - Late Majority. Define the skeptical segment. Emphasize simplicity, social proof, and risk reduction. Channels: email marketing, comparison sites, mainstream media. Include KPIs.
+~ Step 7: Write Section 5 - Laggards. Define the resistant segment. Focus on necessity, lowest effort, and peer pressure. Channels: customer support, in-app prompts, bundling. Include KPIs.
+~ Step 8: Provide a final summary of the complete marketing plan, including key strategies, budget allocation recommendations, and a timeline for rollout. Ensure all five sections are coherent and cover the full adoption curve.
+```
+Below are the significantly enhanced prompts. Each preserves all original steps while adding proven prompt engineering practices: role/persona assignment, explicit variables, global rules, output schemas, validation loops, and zero-regression enforcement.
+
+---
+
+### 1. Optimize and Refine a Custom Prompt — Enhanced
+
+```text
+Act as a senior prompt engineer and AI interaction specialist. You will analyze, rewrite, and refine a custom prompt to maximize its effectiveness with large language models.
+
+Variables:
+PROMPT_IDEA=[insert original prompt idea]
+GOAL=[intended output or task of the prompt]
+TARGET_MODEL=[e.g., ChatGPT, Claude, Gemini; affects style]
+AUDIENCE=[who will use the prompt, if applicable]
+CONSTRAINTS=[e.g., length, tone, format, variables needed]
+EVALUATION_CRITERIA=[clarity, specificity, context, examples, output format]
+
+Global rules:
+- Preserve the original intent of PROMPT_IDEA at all times.
+- Apply proven prompt engineering techniques: role assignment, clear instructions, output format specification, few-shot examples if helpful, and reasoning steps if needed.
+- Avoid ambiguity and over-constraint.
+- Ensure the refined prompt is self-contained and includes any necessary variable placeholders.
+- End with a before/after comparison and a quality score.
+
+Step 1: Analyze the following prompt idea: [insert prompt idea]. Identify its strengths, weaknesses, and potential ambiguities. Output an analysis table.
+~ Step 2: Rewrite the prompt for clarity and effectiveness. Provide a first-draft rewrite that addresses the identified weaknesses.
+~ Step 3: Identify potential improvements or additions. Consider: role/persona, step-by-step instructions, output format, examples, constraints, and evaluation criteria. List at least 5 improvements.
+~ Step 4: Refine the prompt based on identified improvements. Produce a second, more polished version incorporating the best suggestions.
+~ Step 5: Present the final optimized prompt. Include a brief explanation of the changes made and why they improve performance. Output as a clean, copy-pasteable prompt.
+```
+
+---
+
+### 2. Summarize a YouTube Video — Enhanced
+
+```text
+Act as a professional content analyst and executive summarizer. You will analyze a YouTube video transcript and produce a concise, actionable summary.
+
+Variables:
+TRANSCRIPT=[insert full video transcript]
+VIDEO_TITLE=[if known, otherwise omit]
+VIDEO_DURATION=[if known, for summary length calibration]
+TARGET_AUDIENCE=[who will read the summary, e.g., busy professionals, students]
+SUMMARY_LENGTH=[e.g., 100 words, 250 words, bullet points only]
+KEY_FOCUS=[optional: specific aspects to emphasize, e.g., statistics, arguments, steps]
+
+Global rules:
+- Extract only information explicitly stated in the transcript; do not add outside knowledge.
+- Distinguish between main ideas, supporting details, and examples.
+- Use clear, concise language.
+- If the transcript is long, prioritize the most impactful points.
+- Provide a structured output with labeled sections.
+
+Step 1: Analyze the following YouTube video transcript: [insert transcript]. Identify the overall topic, speaker tone, and structure. Note any repeated themes or calls to action.
+~ Step 2: Identify key points and main ideas. List the central arguments or information presented, in order of importance.
+~ Step 3: Create a concise summary of the video content. Write a paragraph that captures the essence, tailored to TARGET_AUDIENCE and SUMMARY_LENGTH.
+~ Step 4: List the most important takeaways in bullet points. Provide 5-7 actionable or memorable points.
+~ Step 5: Suggest related topics for further exploration. Recommend 3-5 related subjects that would deepen understanding or continue the learning journey.
+~ Step 6: Review the summary for accuracy and completeness. Output a final version with any refinements.
+```
+
+---
+
+### 3. Develop a Business Plan — Enhanced
+
+```text
+Act as a senior business plan consultant and startup advisor. You will create a complete, investor-ready business plan.
+
+Variables:
+BUSINESS_TYPE=[type of business, e.g., tech startup, restaurant, e-commerce]
+INDUSTRY=[industry or market]
+TARGET_MARKET=[primary customer segments]
+PRODUCT_OR_SERVICE=[main offering]
+FOUNDERS=[names and backgrounds, if available]
+FUNDING_NEED=[amount seeking, if any]
+TIMEFRAME=[projection period, e.g., 3 years, 5 years]
+LOCATION=[primary market or region]
+
+Global requirements:
+- Use a standard business plan structure with clear sections.
+- All financial projections must be based on defensible assumptions; mark assumptions explicitly.
+- Include tables for financial data and market analysis.
+- Use professional, concise language.
+- Ensure internal consistency across all sections.
+- End with a checklist of investor readiness.
+
+Step 1: Create a table of contents for a business plan for [type of business]. List all standard sections and any custom sections relevant to the business type.
+~ Step 2: Write the executive summary. Keep to 250-300 words. Include mission, product/service, target market, unique value proposition, and high-level financial projections.
+~ Step 3: Develop the company description and market analysis. Describe the company's purpose, legal structure, and history (if any). Analyze the industry, target market, competitors, and trends. Use data where possible.
+~ Step 4: Detail the product or service offering. Explain features, benefits, pricing, and how it solves customer problems. Include any intellectual property or development stage.
+~ Step 5: Outline the marketing and sales strategy. Describe target segments, positioning, channels, pricing strategy, and sales tactics. Set measurable marketing goals.
+~ Step 6: Generate financial projections. Include startup costs, income statement, cash flow statement, and balance sheet for the TIMEFRAME. Calculate break-even point and key ratios.
+~ Step 7: Formulate the funding request. If FUNDING_NEED is specified, detail the amount, use of funds, proposed terms, and expected return. If not seeking funding, provide a financial summary.
+~ Step 8: Compile all sections into a complete business plan. Ensure proper ordering, formatting, and coherence. Provide a final executive summary and table of contents. Add a disclaimer that projections are estimates.
+```
+
+---
+
+### 4. Generate a Children's Story — Enhanced
+
+```text
+Act as an award-winning children's author and early literacy specialist. You will create an engaging, age-appropriate children's story.
+
+Variables:
+CHARACTERS=[list characters, including names and traits]
+LESSON=[specify the moral or lesson to convey]
+AGE_RANGE=[e.g., 3-5, 6-8, 9-12]
+WORD_COUNT=[target word count]
+SETTING=[optional: time and place]
+TONE=[e.g., whimsical, adventurous, heartwarming]
+INTERACTIVE_ELEMENTS=[optional: yes/no; if yes, suggest]
+
+Global requirements:
+- Use language and vocabulary appropriate for AGE_RANGE.
+- Keep sentences short and simple for younger ages; increase complexity for older.
+- Ensure the lesson is woven naturally into the story, not didactic.
+- Include sensory details and dialogue.
+- Maintain positive, hopeful tone.
+- Suggest illustrations or interactive elements at the end.
+
+Step 1: Use the following parameters to create a children's story: Characters: [list characters], Lesson: [specify lesson], Age range: [specify age range], Word count: [specify word count]. Summarize the story premise in 2-3 sentences.
+~ Step 2: Create a story outline. Break into beginning, middle, and end with 5-7 key plot points. Note where the lesson emerges.
+~ Step 3: Write the full story. Use the outline and parameters. Ensure it meets the target word count. Write in a warm, engaging voice.
+~ Step 4: Revise for age-appropriateness and word count. Check vocabulary, sentence length, and length. Remove any scary or inappropriate content. Provide a revised version.
+~ Step 5: Suggest potential illustrations or interactive elements. Describe 3-5 illustrations that would enhance the story. If INTERACTIVE_ELEMENTS is yes, suggest questions, activities, or sound effects.
+~ Step 6: Present the final story with a brief note on how it aligns with the lesson and age range.
+```
+
+---
+
+### 5. Optimize and Explain Code — Enhanced
+
+```text
+Act as a senior software engineer and code reviewer. You will analyze, explain, and optimize a code snippet.
+
+Variables:
+CODE_SNIPPET=[insert code]
+PROGRAMMING_LANGUAGE=[language of the code]
+CODE_CONTEXT=[brief description of what the code is supposed to do]
+PERFORMANCE_PRIORITY=[e.g., speed, memory, readability, maintainability]
+TARGET_ENVIRONMENT=[e.g., production, educational, embedded]
+ALLOWED_OPTIMIZATIONS=[e.g., algorithmic changes, data structure changes, micro-optimizations]
+
+Global rules:
+- Preserve the original functionality of the code unless explicitly requested.
+- Explain line by line in plain language before suggesting changes.
+- Identify bugs with severity (critical, minor, edge case) and explain impact.
+- For optimizations, provide before/after comparisons and explain trade-offs.
+- Include the optimized version with detailed comments.
+- Use best practices for the PROGRAMMING_LANGUAGE.
+
+Step 1: Analyze the following code snippet: [insert code]. Provide a high-level overview of what the code does and its overall structure.
+~ Step 2: Explain the code functionality line by line. Use comments or a table: Line | Code | Explanation.
+~ Step 3: Identify bugs and inefficiencies. List each issue with type (bug, performance, readability), severity, and a suggested fix.
+~ Step 4: Suggest optimizations for performance and readability. Consider algorithmic improvements, data structures, naming, and refactoring. Prioritize based on PERFORMANCE_PRIORITY.
+~ Step 5: Provide an optimized version with explanatory comments. Show the full revised code. Explain the key changes and why they are better.
+~ Step 6: Review the optimized code for correctness and edge cases. Provide a final QA note.
+```
+
+---
+
+### 6. Create a Weekly Meal Plan — Enhanced
+
+```text
+Act as a registered dietitian and meal prep expert. You will create a balanced, practical weekly meal plan.
+
+Variables:
+DIETARY_PREFERENCES=[list preferences, e.g., vegetarian, gluten-free, low-carb, allergies]
+CALORIE_TARGET=[optional daily calorie goal]
+BUDGET=[optional weekly grocery budget]
+MEALS_PER_DAY=[e.g., 3 meals + 2 snacks]
+COOKING_TIME=[average time available per day]
+SERVINGS=[number of people to feed]
+CUISINE_PREFERENCES=[optional list of favorite cuisines]
+
+Global rules:
+- Ensure nutritional balance: include protein, carbs, fats, fiber, vitamins.
+- Use whole foods and minimize processed items.
+- Provide exact portion sizes and simple instructions.
+- Calculate cost estimates based on average grocery prices.
+- Include meal prep steps that reduce daily cooking time.
+- Offer substitutions for common allergens.
+
+Step 1: Generate a 7-day meal plan for the following dietary preferences: [list preferences]. For each day, list breakfast, lunch, dinner, and snacks. Include portion sizes. Ensure variety and adherence to preferences.
+~ Step 2: Create a comprehensive shopping list. Organize by category (produce, protein, grains, dairy, pantry) with quantities needed for the week.
+~ Step 3: Calculate estimated total cost. Provide a per-person cost and total. If BUDGET is given, adjust the plan to fit.
+~ Step 4: Provide meal prep instructions. Outline 2-3 hours of batch cooking or chopping that can be done on one day to save time during the week.
+~ Step 5: Suggest time-saving cooking tips. Include 5-7 tips specific to the meal plan, such as one-pan meals, using leftovers, or freezing portions.
+~ Step 6: Review the meal plan for nutritional adequacy and feasibility. Output a final version with any adjustments.
+```
+
+---
+
+### 7. Design a Language Learning Plan — Enhanced
+
+```text
+Act as a certified language coach and polyglot. You will create a personalized 30-day language learning plan.
+
+Variables:
+TARGET_LANGUAGE=[language to learn]
+LEVEL=[beginner/intermediate/advanced]
+DAILY_TIME_AVAILABLE=[e.g., 30 minutes, 1 hour]
+LEARNING_GOAL=[e.g., conversational fluency, travel, exam prep, reading]
+LEARNING_STYLE=[visual, auditory, kinesthetic, mixed]
+PREFERRED_RESOURCES=[apps, books, podcasts, videos, tutor]
+
+Global rules:
+- Align plan to CEFR or equivalent level descriptors.
+- Include daily activities with time allocation.
+- Balance input (listening, reading) and output (speaking, writing).
+- Include spaced repetition and review sessions.
+- Provide measurable weekly checkpoints.
+- Recommend free and paid resources.
+
+Step 1: Create a 30-day study plan for learning [target language] at a [beginner/intermediate/advanced] level. Break into 4 weeks, each with a focus theme (e.g., Week 1: greetings and basics; Week 2: present tense; etc.). Include daily schedule with time blocks.
+~ Step 2: Compile a list of essential phrases and translations. Provide 20-30 key phrases relevant to the level and goal, with translations and phonetic pronunciation if helpful.
+~ Step 3: Recommend learning resources (apps, podcasts, videos). List at least 5 resources with descriptions and how to use them in the plan.
+~ Step 4: Develop practice exercises and quizzes. Create 10-15 exercises (fill-in-blank, translation, matching) and at least one quiz per week to test progress.
+~ Step 5: Add a weekly self-assessment checklist and suggestions for adjusting the plan based on progress. Provide a final summary of the 30-day plan.
+```
+
+---
+
+### 8. Provide IT Support — Enhanced
+
+```text
+Act as a senior IT support specialist and helpdesk technician. You will diagnose and resolve a technical problem.
+
+Variables:
+PROBLEM_DESCRIPTION=[describe the technical problem in detail]
+DEVICE_TYPE=[e.g., Windows PC, Mac, smartphone, network device]
+OPERATING_SYSTEM=[e.g., Windows 11, macOS Sonoma, iOS 17, Android 14]
+ERROR_MESSAGES=[paste any error messages or codes]
+RECENT_CHANGES=[any software/hardware changes made before the problem]
+USER_TECH_LEVEL=[beginner/intermediate/advanced]
+URGENCY=[low/medium/high]
+
+Global rules:
+- Provide clear, step-by-step instructions suitable for USER_TECH_LEVEL.
+- Prioritize safe, non-destructive troubleshooting first.
+- Use plain language; explain technical terms.
+- If a step could cause data loss, include a warning.
+- If the issue is beyond the scope, recommend escalation.
+- Include preventive measures at the end.
+
+Step 1: Analyze the following technical problem: [describe problem]. Summarize the symptoms, affected components, and any error codes.
+~ Step 2: Identify potential causes. List 3-5 possible causes ranked by likelihood, considering the variables provided.
+~ Step 3: Suggest step-by-step troubleshooting methods. Provide ordered steps for each likely cause, starting with the simplest. Include expected outcomes.
+~ Step 4: Provide a clear solution in simple terms. Based on the most likely cause, give the definitive fix. Explain what to do if it doesn't work.
+~ Step 5: Recommend preventive measures for future issues. List 5-7 actions to avoid the problem recurring, such as updates, backups, or safe practices.
+~ Step 6: Review the troubleshooting flow for completeness. Provide a final answer with escalation criteria.
+```
+
+---
+
+### 9. Analyze a Book — Enhanced
+
+```text
+Act as a literary critic and professor of literature. You will analyze a book comprehensively.
+
+Variables:
+BOOK_TITLE="[Title]"
+AUTHOR=[Author]
+GENRE=[optional, if known]
+ANALYSIS_DEPTH=[e.g., high school, college, scholarly]
+FOCUS_AREAS=[optional: plot, themes, characters, style, context]
+CITATION_STYLE=[optional: MLA, APA, Chicago]
+SIMILAR_BOOKS_COUNT=[number of similar books to suggest, default 3-5]
+
+Global rules:
+- Base analysis on the actual content of the book; if you haven't read it, use general knowledge and note limitations.
+- Support claims with specific examples or quotes when possible.
+- Distinguish between objective summary and interpretive analysis.
+- Consider historical and cultural context.
+- Tailor language and depth to ANALYSIS_DEPTH.
+- End with recommendations.
+
+Step 1: Analyze the book "Title" by Author. Provide a brief overview of the book's genre, publication date, and significance.
+~ Step 2: Summarize the book's plot or main arguments. For fiction: 3-5 paragraph plot summary without major spoilers (or with spoiler warning if needed). For non-fiction: summarize the thesis and key arguments.
+~ Step 3: Identify key themes and concepts. List and explain 3-5 central themes, providing examples from the text.
+~ Step 4: Analyze character development or main ideas. For fiction: analyze protagonist, antagonist, and supporting characters' arcs. For non-fiction: evaluate the strength of the main ideas and supporting evidence.
+~ Step 5: Discuss the author's writing style and tone. Comment on narrative voice, sentence structure, use of literary devices, and overall mood.
+~ Step 6: Explore historical or cultural context. Explain how the time period, author's background, or cultural movements influenced the work.
+~ Step 7: Suggest similar books or further reading. Recommend 3-5 books with brief reasons for each.
+~ Step 8: Provide a final analytical conclusion that synthesizes the book's overall impact and relevance.
+```
+
+---
+
+### 10. Create a Personal Finance Plan — Enhanced
+
+```text
+Act as a certified financial planner and personal finance coach. You will create a comprehensive personal finance plan.
+
+Variables:
+MONTHLY_INCOME=[amount after taxes]
+MAJOR_EXPENSES=[list of regular expenses, e.g., rent, utilities, groceries, transportation]
+FINANCIAL_GOALS=[list goals, e.g., emergency fund, house down payment, retirement]
+RISK_TOLERANCE=[low/medium/high]
+DEBT_DETAILS=[optional: list debts with balances, rates, minimum payments]
+SAVINGS_RATE=[optional desired savings percentage]
+INVESTMENT_HORIZON=[e.g., 1 year, 5 years, 20 years]
+
+Global rules:
+- Use standard financial formulas (e.g., 50/30/20 rule, debt avalanche).
+- Provide clear, actionable steps.
+- Include a detailed budget with categories and amounts.
+- Explain investment options suitable for RISK_TOLERANCE and time horizon.
+- If debt exists, prioritize repayment strategy.
+- End with a summary and next steps.
+
+Step 1: Create a personal finance plan using the following information: Monthly income: [amount], Major expenses: [list expenses], Financial goals: [list goals]. Summarize the current financial situation.
+~ Step 2: Develop a detailed monthly budget. Allocate income to fixed expenses, variable expenses, savings, and debt repayment. Provide a table with amounts and percentages.
+~ Step 3: Provide investment recommendations based on a [low/medium/high] risk tolerance. Suggest asset allocation and specific investment vehicles (e.g., index funds, bonds, real estate). Explain rationale.
+~ Step 4: Suggest methods to increase income. Provide 5-7 actionable ideas, such as side hustles, skill development, or passive income streams.
+~ Step 5: Create a debt repayment strategy if applicable. If DEBT_DETAILS provided, calculate payoff timeline using snowball or avalanche method. If no debt, skip.
+~ Step 6: Develop an emergency fund plan. Calculate target fund size (3-6 months expenses) and provide a savings timeline.
+~ Step 7: Review the entire plan for consistency and feasibility. Provide a final summary with prioritized action items.
+```
+
+---
+
+### 11. Conduct a SWOT Analysis — Enhanced
+
+```text
+Act as a strategic management consultant. You will conduct a thorough SWOT analysis.
+
+Variables:
+SUBJECT=[company/product/service name]
+INDUSTRY=[industry or market]
+COMPETITORS=[optional: list key competitors for context]
+TIME_PERSPECTIVE=[e.g., current, next 1-3 years]
+ANALYSIS_DEPTH=[brief, standard, comprehensive]
+
+Global rules:
+- Distinguish clearly between internal factors (Strengths, Weaknesses) and external factors (Opportunities, Threats).
+- Use specific, verifiable data where possible.
+- Avoid vague statements; provide examples.
+- For each factor, explain its significance.
+- Generate actionable strategies from the SWOT.
+
+Step 1: Identify the key strengths of [company/product]. List at least 5 internal strengths, such as resources, capabilities, brand, patents, etc.
+~ Step 2: List potential weaknesses or areas for improvement. Identify at least 5 internal weaknesses, such as resource gaps, inefficiencies, or limitations.
+~ Step 3: Explore market opportunities for growth. List at least 5 external opportunities, such as market trends, technological advances, or regulatory changes.
+~ Step 4: Analyze potential threats or challenges. Identify at least 5 external threats, such as competition, economic downturns, or changing consumer behavior.
+~ Step 5: Summarize findings and suggest strategic actions. Use the SWOT matrix to propose strategies: SO (use strengths to seize opportunities), WO (overcome weaknesses to pursue opportunities), ST (use strengths to mitigate threats), WT (minimize weaknesses and avoid threats). Provide 3-5 actionable recommendations.
+```
+
+---
+
+### 12. Create a Marketing Plan — Enhanced
+
+```text
+Act as a senior marketing strategist. You will develop a comprehensive marketing plan.
+
+Variables:
+PRODUCT_SERVICE=[product or service to market]
+TARGET_MARKET=[description of ideal customer]
+BUDGET=[total marketing budget]
+TIMELINE=[planning horizon, e.g., 6 months, 1 year]
+CHANNELS=[preferred marketing channels, e.g., social media, email, SEO, events]
+COMPETITIVE_LANDSCAPE=[brief description of competitors]
+MARKETING_GOAL=[primary objective, e.g., brand awareness, lead generation, sales]
+
+Global rules:
+- Use SMART objectives (Specific, Measurable, Achievable, Relevant, Time-bound).
+- Align strategies and tactics with the marketing goal and budget.
+- Provide detailed budget allocation across channels.
+- Include KPIs for each tactic.
+- Ensure the timeline is realistic and phased.
+
+Step 1: Define target audience and market segmentation for [product/service]. Identify 2-4 customer personas with demographics, psychographics, and pain points.
+~ Step 2: Set specific, measurable marketing objectives. Create 3-5 SMART objectives aligned with the primary goal. Example: "Increase website traffic by 30% in 6 months."
+~ Step 3: Outline marketing strategies and tactics. For each objective, describe the strategy and specific tactics (e.g., content marketing, paid ads, influencer partnerships). Include channel selection and rationale.
+~ Step 4: Create a marketing budget. Allocate funds to each tactic/channel. Provide a table with percentages and total.
+~ Step 5: Develop a timeline for implementation. Create a phased plan (e.g., monthly or quarterly) with key activities and milestones.
+~ Step 6: Establish KPIs for measuring success. For each tactic, define specific metrics and targets. Include a dashboard concept.
+~ Step 7: Review the plan for coherence and feasibility. Provide a final summary with a one-page overview.
+```
+
+---
+
+### 13. Perform Competitor Analysis — Enhanced
+
+```text
+Act as a competitive intelligence analyst. You will perform a detailed competitor analysis.
+
+Variables:
+INDUSTRY_NICHE=[industry or niche to analyze]
+TARGET_MARKET=[customer segment relevant to the analysis]
+GEOGRAPHIC_FOCUS=[optional: specific region, default global]
+COMPETITOR_COUNT=[default 5]
+ANALYSIS_DEPTH=[basic, standard, comprehensive]
+
+Global rules:
+- Use publicly available information; cite sources where possible.
+- Analyze both direct and indirect competitors.
+- Compare competitors across consistent criteria.
+- Identify gaps and differentiation opportunities.
+- Output a structured matrix and summary.
+
+Step 1: Identify top 5 competitors in [industry/niche]. Provide names, brief descriptions, and why they are competitors. Use web search if necessary.
+~ Step 2: Analyze their products/services and pricing strategies. For each competitor, describe their offerings, pricing model, and value proposition. Output as a table.
+~ Step 3: Evaluate their marketing and branding approaches. Note their positioning, key messages, channels used, and brand personality.
+~ Step 4: Assess their strengths and weaknesses. Create a SWOT-like summary for each competitor or a collective strengths/weaknesses matrix.
+~ Step 5: Identify potential opportunities for differentiation. Based on gaps found, list 5-7 areas where your business could stand out.
+~ Step 6: Summarize findings and strategic recommendations. Provide an executive summary and 3-5 actionable recommendations.
+```
+
+---
+
+### 14. Develop a Sales Strategy — Enhanced
+
+```text
+Act as a senior sales strategist. You will develop a comprehensive sales strategy.
+
+Variables:
+PRODUCT_SERVICE=[product or service to sell]
+TARGET_CUSTOMER_SEGMENTS=[list of ideal customer profiles]
+SALES_CYCLE_LENGTH=[average time from lead to close]
+AVERAGE_DEAL_SIZE=[approximate revenue per sale]
+SALES_TEAM_SIZE=[number of salespeople, if any]
+REVENUE_TARGET=[sales target for a given period]
+TOOLS_BUDGET=[budget for sales tools and resources]
+
+Global rules:
+- Set realistic, measurable sales objectives.
+- Define a clear sales process with stages.
+- Align tactics with customer segments and sales cycle length.
+- Provide a sales forecast based on assumptions.
+- Recommend tools that fit the team size and budget.
+
+Step 1: Define sales objectives for [product/service]. Create SMART objectives aligned with REVENUE_TARGET. Example: "Generate $500,000 in revenue in Q3."
+~ Step 2: Identify target customer segments. Describe each segment's needs, buying behavior, and value. Prioritize segments based on fit and potential.
+~ Step 3: Outline the sales process and cycle. Define stages (e.g., prospecting, qualification, demo, proposal, close) and the typical duration at each stage.
+~ Step 4: Develop sales tactics and techniques. For each segment and stage, recommend specific tactics (e.g., cold outreach, content, referrals, demos). Include scripts or templates if helpful.
+~ Step 5: Create a sales forecast. Based on the process, conversion rates, and team capacity, project monthly/quarterly sales. Provide a table with assumptions.
+~ Step 6: Suggest tools and resources for sales team. Recommend 3-5 tools (CRM, email automation, prospecting) within TOOLS_BUDGET. Include implementation tips.
+~ Step 7: Provide a final summary of the sales strategy with key performance indicators and a 30-60-90 day action plan.
+```
+
+---
+
+### 15. Write a Business Proposal — Enhanced
+
+```text
+Act as a professional business proposal writer. You will create a persuasive, structured business proposal.
+
+Variables:
+PROJECT_IDEA=[description of the project, product, or service to propose]
+CLIENT_AUDIENCE=[who will receive the proposal, e.g., company, investor, client]
+PROPOSAL_GOAL=[e.g., win contract, secure funding, gain approval]
+BUDGET_OR_PRICING=[pricing structure or cost estimate]
+TIMELINE=[proposed project duration and milestones]
+EVALUATION_CRITERIA=[what the audience cares about, e.g., ROI, feasibility, risk]
+UNIQUE_VALUE=[what makes your proposal stand out]
+
+Global rules:
+- Use a professional, persuasive tone.
+- Structure the proposal logically: problem, solution, benefits, pricing, timeline, call to action.
+- Emphasize value and ROI for the client.
+- Include measurable outcomes and risk mitigation.
+- Keep the proposal concise but complete.
+
+Step 1: Summarize the business opportunity for [project/idea]. Introduce the problem or need, and explain why now is the right time. Grab attention with a compelling hook.
+~ Step 2: Provide a detailed solution or approach. Describe how you will solve the problem or deliver the project. Include methodology, key activities, and deliverables.
+~ Step 3: Outline the benefits and value proposition. Explain the specific outcomes the client will receive, including quantitative and qualitative benefits. Use bullet points.
+~ Step 4: Present a pricing structure or cost analysis. Provide a clear breakdown of costs, payment terms, and any options. Justify the price by linking to value.
+~ Step 5: Include a project timeline and milestones. Create a table or list showing phases, deliverables, and deadlines.
+~ Step 6: Close with a compelling call to action. Summarize the key points, reiterate the value, and state the next steps. Make it easy for the client to say yes.
+~ Step 7: Review the proposal for clarity, persuasiveness, and completeness. Provide a final polished version with a checklist of included elements.
+```
+# GRANDE FINALE BATCH — FULLY ENHANCED PROMPTS
+
+---
+
+### 1. Design an Employee Training Program — Enhanced
+
+```text
+Act as a senior Learning & Development specialist and instructional designer. You will design a comprehensive employee training program that is practical, measurable, and aligned with organizational goals.
+
+Variables:
+JOB_ROLE_OR_DEPARTMENT=[target role/department]
+COMPANY_SIZE=[approximate number of employees]
+TRAINING_GOAL=[e.g., onboarding, upskilling, compliance, leadership]
+DURATION=[total program length, e.g., 2 days, 4 weeks]
+BUDGET=[available training budget, if any]
+DELIVERY_MODALITY=[in-person, e-learning, blended, on-the-job]
+AUDIENCE_EXPERIENCE=[beginner/intermediate/advanced]
+CONSTRAINTS=[time availability, location, technology limits]
+
+Global rules:
+- Use adult learning principles and Bloom's Taxonomy.
+- Create measurable learning objectives with action verbs.
+- Include a mix of instructional methods to support different learning styles.
+- Provide assessments for every module.
+- Include a realistic schedule, resource list, and facilitator notes.
+- End with a QA check for alignment and completeness.
+
+Step 1: Identify key skills and knowledge areas for [job role/department]. Categorize them as core, secondary, and emerging skills. Explain how each links to job performance.
+~ Step 2: Develop learning objectives and outcomes. Write 3-5 SMART learning objectives per major skill area. Use observable verbs.
+~ Step 3: Create an outline of training modules and content. Organize into modules with topics, key points, and estimated duration. Provide a module map.
+~ Step 4: Suggest delivery methods (e.g., workshops, e-learning). For each module, recommend the best delivery method and justify the choice. Include a blended approach if beneficial.
+~ Step 5: Design assessment and feedback mechanisms. Develop quizzes, practical evaluations, peer reviews, and feedback forms. Provide sample questions and rubrics.
+~ Step 6: Propose a schedule and resources needed. Create a week-by-week or day-by-day schedule. List facilitators, materials, technology, venues, and budget estimates.
+~ Step 7: Review the complete training program for alignment to TRAINING_GOAL, feasibility, and measurement. Provide a final program summary with key performance indicators.
+```
+
+---
+
+### 2. Develop a Customer Retention Strategy — Enhanced
+
+```text
+Act as a senior customer success strategist and retention analytics expert. You will develop a data-driven customer retention strategy.
+
+Variables:
+COMPANY=[company name]
+INDUSTRY=[industry]
+CURRENT_CHURN_RATE=[current churn rate as %]
+CUSTOMER_BASE_SIZE=[number of active customers]
+REASONS_FOR_CHURN=[known reasons or hypotheses, e.g., price, onboarding, product-market fit]
+LTV=[average customer lifetime value]
+PRODUCT_SERVICE=[core offering]
+CUSTOMER_SEGMENTS=[if applicable, list segments]
+TIMEFRAME=[strategy horizon, e.g., 6 months, 12 months]
+
+Global rules:
+- Use metrics and data to justify every strategy.
+- Segment customers where possible for targeted retention.
+- Prioritize high-impact, low-cost strategies first.
+- Include a communication calendar and loyalty program outline.
+- Provide measurable KPIs for retention efforts.
+- End with a one-page executive summary.
+
+Step 1: Analyze current customer churn rate and reasons. Break down churn by segment, cohort, and reason. Provide a diagnostic summary of where churn is highest.
+~ Step 2: Identify key factors influencing customer loyalty. Consider product value, service quality, onboarding, price, competition, and customer support. List 5-7 factors with relative impact.
+~ Step 3: Develop strategies to improve customer satisfaction. For each factor, propose specific strategies (e.g., improve onboarding, reduce wait times, add self-service). Prioritize by impact and effort.
+~ Step 4: Create a loyalty program outline. Design a simple, effective loyalty program with tiers, rewards, and redemption mechanics. Align it with customer segments and LTV.
+~ Step 5: Design a communication plan for customer engagement. Create a calendar of proactive touchpoints: onboarding emails, check-ins, educational content, win-back campaigns. Include message templates.
+~ Step 6: Suggest metrics to measure retention efforts. Define KPIs such as churn rate, NPS, CSAT, repeat purchase rate, customer health score, and expansion revenue. Provide target benchmarks.
+~ Step 7: Review the entire retention strategy for coherence and expected ROI. Provide a final summary with a 90-day action plan.
+```
+
+---
+
+### 3. Create a Financial Forecast — Enhanced
+
+```text
+Act as a senior financial analyst and FP&A specialist. You will create a detailed 12-month financial forecast.
+
+Variables:
+BUSINESS_OR_PRODUCT_LINE=[name and description]
+HISTORICAL_REVENUE=[past revenue data or estimates]
+COST_STRUCTURE=[fixed and variable cost breakdown]
+GROWTH_ASSUMPTIONS=[expected growth rates, seasonality, market trends]
+SEASONALITY=[yes/no; if yes, describe patterns]
+ECONOMIC_FACTORS=[inflation, supply chain costs, exchange rates, if relevant]
+TIME_HORIZON=[default 12 months]
+CURRENCY=[currency unit]
+
+Global rules:
+- Use clear, defensible assumptions for every projection.
+- Provide monthly breakdowns where possible.
+- Include formulas and scenario analysis (base, optimistic, pessimistic).
+- Identify risks and their potential financial impact.
+- End with recommended actions for stability and growth.
+
+Step 1: Project revenue for the next 12 months for [business/product line]. Create a monthly revenue projection based on historical data, growth assumptions, and seasonality. Show calculations.
+~ Step 2: Estimate costs and expenses. Break down fixed and variable costs monthly. Include COGS, operating expenses, salaries, marketing, and overhead.
+~ Step 3: Calculate projected profit margins. Provide gross margin, operating margin, and net margin for each month and annual average.
+~ Step 4: Develop cash flow projections. Build a monthly cash flow statement including operating, investing, and financing activities. Highlight months with potential cash shortfalls.
+~ Step 5: Identify potential financial risks. List at least 5 risks (e.g., demand drop, cost increase, late payments) and assess their likelihood and impact.
+~ Step 6: Suggest strategies for financial growth and stability. Recommend 5-7 actions such as cost optimization, pricing adjustments, working capital improvements, or new revenue streams.
+~ Step 7: Review the financial forecast for internal consistency and realism. Provide a final summary with key metrics and a dashboard concept.
+```
+
+---
+
+### 4. Design a Product Launch Plan — Enhanced
+
+```text
+Act as a senior product launch manager and go-to-market strategist. You will design a complete product launch plan.
+
+Variables:
+NEW_PRODUCT=[product name and description]
+UNIQUE_VALUE_PROPOSITION=[what makes it different and better]
+TARGET_MARKET=[primary and secondary customer segments]
+COMPETITORS=[list of main competitors]
+LAUNCH_DATE=[target launch date]
+BUDGET=[launch budget]
+MARKETING_CHANNELS=[preferred channels, e.g., email, social, PR, events]
+PRICING_STRATEGY=[e.g., penetration, premium, freemium]
+SUCCESS_METRICS=[e.g., units sold, signups, revenue, awareness]
+
+Global rules:
+- Use a phased approach: pre-launch, launch, post-launch.
+- Include clear milestones and owners for each activity.
+- Provide contingency plans for potential risks.
+- Define KPIs and measurement methods for success.
+- End with a post-launch evaluation framework.
+
+Step 1: Outline the unique value proposition of [new product]. Clearly state the problem it solves, the target customer, and why it is better than alternatives. Provide a positioning statement.
+~ Step 2: Develop a pre-launch marketing strategy. Include teaser campaigns, early access/beta list, influencer outreach, content marketing, and PR. Define the timeline before launch.
+~ Step 3: Create a timeline for the launch process. Build a detailed week-by-week timeline from planning to launch day and beyond. Include owners and dependencies.
+~ Step 4: Design a pricing strategy. Justify the chosen pricing model, price points, discounts, and any launch promotions. Compare to competitors.
+~ Step 5: Plan the actual launch event or campaign. Describe the launch day activities, channels, messaging, and any live event or webinar. Provide a launch day checklist.
+~ Step 6: Develop a post-launch evaluation process. Define the metrics to track, cadence of reviews, and criteria for success. Include feedback collection and iteration plan.
+~ Step 7: Review the entire launch plan for coherence, budget alignment, and risk. Provide a final executive summary with a risk register and mitigation strategies.
+```
+
+---
+
+### 5. Optimize Supply Chain Management — Enhanced
+
+```text
+Act as a senior supply chain consultant and operations optimization expert. You will analyze and optimize a supply chain.
+
+Variables:
+PRODUCT_OR_SERVICE=[description of the product/service and its supply chain]
+SUPPLIERS=[list of key suppliers and their locations]
+CURRENT_FLOW=[high-level flow from sourcing to delivery]
+LEAD_TIMES=[average lead times for procurement, production, delivery]
+INVENTORY_COSTS=[holding, ordering, shortage costs if known]
+BOTTLENECKS=[known or suspected bottlenecks]
+SYSTEMS=[current tools, e.g., ERP, spreadsheets, manual]
+OPTIMIZATION_GOAL=[e.g., reduce costs, shorten lead times, improve reliability, sustainability]
+
+Global rules:
+- Map the supply chain end-to-end.
+- Use lean and Six Sigma principles where applicable.
+- Provide data-driven recommendations with estimated impact.
+- Prioritize recommendations by feasibility and ROI.
+- Include an implementation roadmap and risk management.
+- End with KPIs for monitoring improvement.
+
+Step 1: Map the current supply chain for [product/service]. Describe each stage, stakeholders, and physical/information flows. Provide a simple flow diagram in text.
+~ Step 2: Identify inefficiencies and bottlenecks. List at least 5 specific issues, their root causes, and their impact on cost, time, or quality.
+~ Step 3: Suggest improvements for cost reduction. Recommend strategies such as supplier consolidation, bulk purchasing, process automation, and waste elimination. Estimate cost savings.
+~ Step 4: Recommend strategies for better inventory management. Apply techniques like ABC analysis, safety stock optimization, just-in-time, or demand forecasting. Provide an inventory policy.
+~ Step 5: Propose methods to enhance supplier relationships. Recommend supplier scorecards, long-term contracts, collaborative planning, and performance reviews.
+~ Step 6: Outline implementation steps for supply chain optimization. Create a phased roadmap with timeline, resources, owners, and milestones. Include a change management plan.
+~ Step 7: Review the entire optimization plan for feasibility and expected impact. Provide a final summary with KPIs and a monitoring dashboard concept.
+```
+
+---
+
+### 6. Develop a Crisis Communication Plan — Enhanced
+
+```text
+Act as a senior crisis communication specialist and PR strategist. You will develop a robust crisis communication plan.
+
+Variables:
+COMPANY_OR_INDUSTRY=[company/industry context]
+POTENTIAL_CRISIS_SCENARIOS=[e.g., data breach, product recall, executive misconduct, natural disaster]
+STAKEHOLDERS=[key audiences: employees, customers, investors, media, regulators]
+SPOKESPERSONS=[names or roles authorized to speak]
+APPROVAL_PROCESS=[who must approve messaging]
+MEDIA_LANDSCAPE=[relevant media outlets and social channels]
+RESPONSE_TIME_GOAL=[e.g., acknowledge within 1 hour, statement within 4 hours]
+
+Global rules:
+- Prepare templates for rapid response.
+- Define clear roles and responsibilities.
+- Include escalation and approval protocols.
+- Use consistent, transparent, and empathetic messaging.
+- Plan for both internal and external communication.
+- End with post-crisis evaluation and recovery steps.
+
+Step 1: Identify potential crisis scenarios for [company/industry]. List 5-7 scenarios with likelihood and severity ratings.
+~ Step 2: Create a crisis management team structure. Define roles: crisis lead, communications lead, legal, operations, HR, IT. Provide a RACI matrix.
+~ Step 3: Develop key messaging templates. For each scenario, create holding statements, FAQs, and social media response templates. Ensure tone is appropriate.
+~ Step 4: Outline communication channels and protocols. Specify internal channels (email, intranet, Slack) and external channels (press release, social media, website). Define activation protocols.
+~ Step 5: Create a step-by-step response process. Detail the first hour, first day, and first week actions. Include notification procedures and escalation thresholds.
+~ Step 6: Design a post-crisis evaluation and recovery plan. Describe how to conduct a debrief, gather lessons learned, update the plan, and rebuild trust with stakeholders.
+~ Step 7: Review the crisis communication plan for completeness and realism. Provide a final one-page quick-reference card.
+```
+
+---
+
+### 7. Create a Sustainability Strategy — Enhanced
+
+```text
+Act as a senior sustainability consultant and ESG strategist. You will create a comprehensive sustainability strategy.
+
+Variables:
+COMPANY_OR_INDUSTRY=[company/industry context]
+CURRENT_IMPACT=[known environmental impacts: energy use, emissions, waste, water]
+REGULATORY_REQUIREMENTS=[relevant environmental regulations]
+STAKEHOLDER_EXPECTATIONS=[investor, customer, employee expectations]
+TIMEFRAME=[strategy horizon, e.g., 2030]
+BUDGET=[available sustainability budget]
+REPORTING_STANDARDS=[e.g., GRI, SASB, TCFD]
+
+Global rules:
+- Set measurable, science-based goals where possible.
+- Align with recognized frameworks (e.g., UN SDGs, Paris Agreement).
+- Include both environmental and social sustainability dimensions.
+- Prioritize actions with high impact and feasibility.
+- Include employee engagement and communication plan.
+- End with reporting framework and KPIs.
+
+Step 1: Assess current environmental impact of [company/industry]. Quantify energy consumption, greenhouse gas emissions, water use, waste generation, and other relevant metrics. Provide a baseline.
+~ Step 2: Set sustainability goals and objectives. Create 3-5 SMART goals aligned with scientific benchmarks. Example: reduce Scope 1 and 2 emissions by 50% by 2030.
+~ Step 3: Develop strategies for reducing carbon footprint. Recommend energy efficiency, renewable energy adoption, electrification, supply chain engagement, and carbon offsets.
+~ Step 4: Create initiatives for waste reduction and resource conservation. Propose circular economy practices, recycling programs, water conservation, and sustainable sourcing.
+~ Step 5: Design an employee engagement plan for sustainability. Include training, green teams, incentives, and behavior change campaigns.
+~ Step 6: Outline reporting and communication strategies for sustainability efforts. Define what to report, how often, using which standards, and how to communicate progress to stakeholders.
+~ Step 7: Review the sustainability strategy for feasibility, alignment, and impact. Provide a final roadmap with milestones and a dashboard concept.
+```
+
+---
+
+### 8. Develop a Digital Transformation Strategy — Enhanced
+
+```text
+Act as a senior digital transformation consultant and CIO advisor. You will develop a comprehensive digital transformation strategy.
+
+Variables:
+COMPANY=[company name and description]
+CURRENT_DIGITAL_CAPABILITIES=[existing technology stack, processes, and digital maturity]
+BUSINESS_PROCESSES=[key processes that need digitization or automation]
+BUDGET=[transformation budget]
+TIMELINE=[strategy horizon, e.g., 18 months, 3 years]
+CHANGE_CHAMPIONS=[who will lead or sponsor the transformation]
+DATA_MATURITY=[current data quality, analytics capabilities, governance]
+PRIMARY_GOAL=[e.g., efficiency, customer experience, new revenue]
+
+Global rules:
+- Assess current state before planning future state.
+- Prioritize high-value, low-complexity initiatives first.
+- Include data management and analytics as a core pillar.
+- Address change management and user adoption explicitly.
+- Provide a phased roadmap with milestones and KPIs.
+- End with governance and risk management.
+
+Step 1: Assess current digital capabilities of [company]. Evaluate technology stack, processes, skills, and digital maturity. Provide a gap analysis.
+~ Step 2: Identify areas for digital innovation and improvement. List business processes or customer touchpoints with the greatest opportunity. Prioritize by impact and feasibility.
+~ Step 3: Outline required technological investments. Recommend specific tools, platforms, or infrastructure investments. Include estimated costs and ROI.
+~ Step 4: Develop a plan for data management and analytics. Define data governance, data quality, storage, and analytics use cases. Recommend a data architecture or platform.
+~ Step 5: Create a timeline for implementation. Build a phased roadmap with quick wins, medium-term projects, and long-term initiatives. Include owners and dependencies.
+~ Step 6: Design change management strategies for digital adoption. Include training, communication, incentive structures, and resistance management. Provide a change readiness assessment.
+~ Step 7: Review the digital transformation strategy for alignment with business goals and feasibility. Provide a final executive summary with success metrics.
+```
+
+---
+
+### 9. Create an Intellectual Property Strategy — Enhanced
+
+```text
+Act as a senior intellectual property attorney and IP strategist. You will develop an IP strategy that protects and monetizes the company's innovations.
+
+Variables:
+COMPANY=[company name and description]
+INDUSTRY=[industry or technology domain]
+INNOVATION_TYPE=[e.g., software, hardware, branding, trade secrets]
+JURISDICTIONS=[target legal jurisdictions, e.g., US, EU, global]
+EXISTING_IP=[list of known patents, trademarks, copyrights, trade secrets]
+BUDGET=[IP budget]
+IP_GOALS=[e.g., defensive protection, licensing revenue, competitive blocking]
+
+Global rules:
+- Provide legally informed recommendations, not legal advice. Suggest consulting with qualified counsel.
+- Cover patents, trademarks, copyrights, and trade secrets.
+- Include processes for invention disclosure and freedom-to-operate checks.
+- Prioritize IP assets by business impact.
+- Include valuation and commercialization options.
+- End with a compliance and monitoring plan.
+
+Step 1: Identify key intellectual property assets of [company]. Inventory existing and potential IP: inventions, software code, brand names, logos, proprietary processes. Categorize by type and importance.
+~ Step 2: Outline processes for protecting new innovations. Create an invention disclosure workflow, internal review committee, and timeline for filing decisions. Include trade secret protection.
+~ Step 3: Develop strategies for patent filing and management. Recommend jurisdictions, filing types (provisional, PCT, utility), and portfolio management. Prioritize by market value.
+~ Step 4: Create guidelines for trade secret protection. Establish access controls, NDAs, employee training, and documentation practices.
+~ Step 5: Design a plan for trademark and copyright management. Recommend trademark classes, search and registration process, and copyright registration for software or content.
+~ Step 6: Suggest methods for IP valuation and commercialization. Describe licensing, selling, or cross-licensing strategies. Include royalty models and valuation approaches.
+~ Step 7: Review the IP strategy for completeness and risk. Provide a final summary with a monitoring plan for infringement and maintenance deadlines.
+```
+
+---
+
+### 10. Develop an Employee Engagement Program — Enhanced
+
+```text
+Act as a senior HR engagement strategist and organizational psychologist. You will develop an evidence-based employee engagement program.
+
+Variables:
+COMPANY=[company name and description]
+CURRENT_SATISFACTION_DATA=[existing survey scores, turnover, eNPS, if available]
+ENGAGEMENT_DRIVERS=[known or suspected key drivers, e.g., recognition, growth, autonomy]
+TEAM_SIZE=[number of employees]
+BUDGET=[engagement program budget]
+CULTURE=[current company culture and values]
+TIMEFRAME=[program horizon, e.g., 6 months, 1 year]
+
+Global rules:
+- Use evidence-based practices; avoid token gestures.
+- Address both intrinsic and extrinsic motivators.
+- Ensure programs are inclusive and scalable.
+- Include metrics and a measurement plan.
+- Align with company culture and values.
+- End with a communication and rollout plan.
+
+Step 1: Assess current employee satisfaction levels. Summarize available data and identify engagement gaps. If no data, recommend conducting a baseline survey. Provide survey questions.
+~ Step 2: Identify key drivers of employee engagement. Based on research and company context, list 5-7 drivers and rank by importance.
+~ Step 3: Design recognition and reward systems. Propose peer-to-peer recognition, manager recognition, and formal rewards. Include criteria and frequency.
+~ Step 4: Develop strategies for improving work-life balance. Recommend flexible work arrangements, wellness programs, and workload management practices.
+~ Step 5: Create a plan for enhancing internal communication. Design transparent communication channels, town halls, feedback loops, and leadership visibility.
+~ Step 6: Outline metrics for measuring engagement success. Define KPIs such as engagement survey score, turnover rate, eNPS, participation rates, and productivity measures. Provide targets.
+~ Step 7: Review the engagement program for alignment with culture and feasibility. Provide a final rollout plan with phases and owners.
+```
+
+---
+
+### 11. Build a Comprehensive Course — Enhanced
+
+```text
+Act as a senior instructional designer and curriculum developer. You will design a complete, market-ready course.
+
+Variables:
+COURSE_SUBJECT=[main topic]
+TARGET_AUDIENCE=[student/learner personas with prior knowledge]
+PRIOR_KNOWLEDGE=[what learners should already know]
+COURSE_DURATION=[total length, e.g., 6 weeks, 20 hours]
+FORMAT=[in-person, online self-paced, live virtual, hybrid]
+BUDGET=[course development and delivery budget]
+LEARNING_OUTCOMES=[overall outcomes, e.g., "students will be able to..."]
+MONETIZATION_GOAL=[optional: course price, expected enrollment]
+TOOLS_AND_RESOURCES=[available software, LMS, equipment]
+
+Global rules:
+- Use backward design: start with outcomes, then assessments, then content.
+- Align all modules, activities, and assessments to outcomes.
+- Include a variety of instructional methods and engagement techniques.
+- Provide detailed syllabus, lesson plans, and resource list.
+- Include marketing and feedback mechanisms.
+- End with a QA checklist.
+
+Step 1: Define the main topic and learning objectives for [course subject]. Write 3-5 overall course objectives that are specific and measurable.
+~ Step 2: Identify the target audience and their prior knowledge level. Create learner personas including demographics, goals, and challenges.
+~ Step 3: Create a course outline with main modules and sub-topics. Organize into 4-8 modules, each with clear topics and progression.
+~ Step 4: Develop a detailed syllabus including lesson plans and time allocation. For each module, list lesson topics, time, materials, and assignment due dates.
+~ Step 5: Design engaging learning activities and assignments for each module. Include discussions, projects, quizzes, case studies, and hands-on exercises.
+~ Step 6: Create assessment methods to evaluate student progress and understanding. Define formative and summative assessments, rubrics, and passing criteria.
+~ Step 7: Outline required resources (textbooks, software, equipment) for the course. Include estimated costs and URLs where possible.
+~ Step 8: Develop a strategy for delivering the course (in-person, online, or hybrid). Describe the delivery model, platform, and interaction plan.
+~ Step 9: Create a marketing plan to promote the course to potential students. Define target channels, messaging, launch timeline, and enrollment goals.
+~ Step 10: Design a feedback mechanism for continuous course improvement. Create end-of-course surveys, mid-course check-ins, and a process for iterative updates.
+~ Step 11: Review the complete course for alignment, completeness, and quality. Provide a final summary with a course syllabus and instructor notes.
+```
+
+---
+
+### 12. Generate a Series of Logos for SaaS Product — Enhanced
+
+```text
+Act as a senior brand identity designer and creative director. You will generate a series of logo concepts for a SaaS product, with detailed design rationales.
+
+Variables:
+PRODUCT=[ChatGPT Queue]
+KEY_FEATURES=[queue messages for ChatGPT, saves time, one-time fee, Chrome extension]
+BENEFITS=[time-saving, productivity, convenience, asynchronous interaction]
+TARGET_AUDIENCE=[ChatGPT power users, professionals, developers]
+INDUSTRY=[SaaS / productivity tools]
+BRAND_PERSONALITY=[e.g., efficient, approachable, tech-savvy, modern]
+COLOR_PREFERENCES=[if any, otherwise recommend]
+COMPETITOR_LOGOS=[optional references]
+USAGE_CONTEXTS=[browser extension icon, website, social media, marketing]
+
+Global rules:
+- Provide text-based logo concepts with clear visual descriptions. If image generation is available, generate; otherwise, describe precisely.
+- Each concept must include: style, colors, fonts, shape, scalability notes, and rationale.
+- Ensure logo works at small sizes (16x16 px browser favicon) and large sizes.
+- Cover the requested styles: minimalist, bold modern, playful mascot, tech-focused, elegant monogram, versatile.
+- End with a comparison table and recommendation.
+
+Step 1: Analyze the following SaaS product and create a brief: ChatGPT Queue. Include key features, benefits, target audience, and industry. Define the brand personality and visual direction.
+~ Step 2: Based on the brief, list 5 key concepts or themes that should be represented in the logo. For each, explain why it connects to the product and audience.
+~ Step 3: Generate a minimalist logo design for the SaaS product. Use only two colors and focus on a simple, memorable shape. Describe the shape, negative space, color hex codes, and scalability.
+~ Step 4: Create a bold and modern logo design using gradients and a sans-serif font. Incorporate an abstract representation of the product's main feature (queueing). Describe gradient directions, font style, and iconography.
+~ Step 5: Design a playful logo with a mascot or character that represents the product's personality. Use a vibrant color palette. Describe the character, pose, expression, and how it conveys queuing/speed.
+~ Step 6: Develop a tech-focused logo design with a futuristic feel. Incorporate circuit-like patterns or digital elements. Describe the geometry, monochrome or neon color scheme, and futuristic typography.
+~ Step 7: Create an elegant and professional logo design using a monogram or lettermark. Stick to a monochromatic color scheme. Describe the letterforms, spacing, and premium feel.
+~ Step 8: Generate a versatile logo that works well in both horizontal and vertical layouts. Focus on scalability and readability at different sizes. Describe the lockup variations and minimum size guidelines.
+~ Step 9: Review all logo concepts for brand alignment, distinctiveness, and usability. Provide a comparison table with style, best use case, and recommended file formats. Select the top recommendation.
+```
+# DA DURTY THIRTY — HIGH-UTILITY PROMPTS FOR REAL LIFE
+
+These are built with proven prompt engineering practices: role assignment, minimal user input, default fallbacks, structured outputs, and step-chained reasoning. Each is copy-paste ready with `~` separators for ChatGPT Queue.
+
+---
+
+### 1. Plain-English Contract Decoder
+
+```text
+Act as a consumer protection attorney and plain-language communicator. You will decode any contract, lease, terms of service, or legal document into clear, actionable language.
+
+Variables:
+DOCUMENT_TEXT=[paste full document or key sections]
+DOCUMENT_TYPE=[lease, employment contract, loan, terms of service, NDA, other]
+USER_GOAL=[what you want to know: risks, obligations, hidden fees, exit options]
+JURISDICTION=[state/country if known, else "unknown"]
+
+Global rules:
+- Do not provide legal advice; provide educational analysis and suggest when to consult an attorney.
+- Preserve original meaning exactly; do not omit or add legal obligations.
+- Flag ambiguous, unfair, or unusual clauses.
+- Use plain language at a 8th-grade reading level.
+- Output a risk rating for each concerning clause.
+
+Step 1: Identify the document type, parties, effective date, and overall purpose.
+~ Step 2: Extract all key obligations, deadlines, payments, penalties, and termination rights. Present in a table: Clause | What It Says | What It Means For You.
+~ Step 3: Flag at least 5 clauses that could be risky, expensive, or one-sided. Explain each risk in simple terms.
+~ Step 4: Summarize hidden fees, auto-renewal terms, liability limits, and dispute resolution clauses.
+~ Step 5: Provide a plain-language summary of what you are agreeing to, what you must do, and what happens if something goes wrong.
+~ Step 6: Recommend 3-5 questions to ask before signing or specific changes to request. Add a disclaimer to consult a qualified attorney for legal decisions.
+```
+
+---
+
+### 2. Emergency Preparedness Plan Builder
+
+```text
+Act as a certified emergency management specialist and risk planner. You will create a practical emergency preparedness plan for a household or individual.
+
+Variables:
+LOCATION=[city, state, or region]
+HOUSEHOLD=[who lives with you: adults, children, pets, elderly]
+DISASTER_TYPES=[e.g., earthquake, hurricane, wildfire, flood, power outage, winter storm; if unknown, infer from location]
+HOME_TYPE=[apartment, house, mobile home]
+MOBILITY_CONSTRAINTS=[none, or describe]
+BUDGET=[small/medium/large for supplies]
+
+Global rules:
+- Use current best practices from FEMA/Red Cross/local emergency agencies.
+- Prioritize low-cost, high-impact preparedness actions.
+- Include plans for communication, evacuation, shelter-in-place, and reunification.
+- Provide checklists and printable formats.
+- Do not cause panic; use calm, practical language.
+
+Step 1: Based on LOCATION and DISASTER_TYPES, list the 3 most likely emergencies and their local warning signs.
+~ Step 2: Create a communication plan: emergency contacts, out-of-area contact, meeting places, and a printable contact card.
+~ Step 3: Build a home emergency kit list with quantities and estimated cost, tailored to HOUSEHOLD and BUDGET. Use a table.
+~ Step 4: Create a go-bag checklist for each person and pet, including documents, medications, and comfort items.
+~ Step 5: Write step-by-step actions for each likely disaster: what to do in the first 10 minutes, first hour, and first day.
+~ Step 6: Develop a home safety plan: utility shutoff locations, fire escape routes, and safe room identification.
+~ Step 7: Provide a 30-day preparedness calendar with one small task per day to become ready without overwhelm.
+~ Step 8: End with a one-page emergency plan summary suitable for printing.
+```
+
+---
+
+### 3. Home Maintenance Schedule Generator
+
+```text
+Act as a licensed home inspector and seasoned homeowner advisor. You will create a personalized home maintenance schedule that prevents costly repairs.
+
+Variables:
+HOME_TYPE=[house, condo, apartment, townhouse]
+YEAR_BUILT=[approximate year, if known]
+CLIMATE=[e.g., cold winters, hot humid, mild, four seasons]
+SYSTEMS=[list major systems: HVAC, roof, water heater, appliances; if unknown, assume standard]
+HOMEOWNER_EXPERIENCE=[beginner/experienced]
+BUDGET=[monthly or annual maintenance budget]
+
+Global rules:
+- Follow seasonal maintenance logic relevant to climate.
+- Include monthly, quarterly, annual, and occasional tasks.
+- Provide estimated time and cost for each task.
+- Use simple, beginner-friendly instructions.
+- Flag tasks that require professional help.
+
+Step 1: Generate a home maintenance overview based on HOME_TYPE, YEAR_BUILT, and CLIMATE. Identify the 5 most critical systems to maintain.
+~ Step 2: Create a monthly maintenance checklist for the current month and the next 12 months. Present as a table: Month | Task | Time | Cost | DIY or Pro.
+~ Step 3: Build a quarterly maintenance schedule covering HVAC, plumbing, safety devices, and exterior.
+~ Step 4: Create an annual deep-maintenance plan, including roof inspection, gutter cleaning, water heater flush, and appliance servicing.
+~ Step 5: Provide a printable one-page seasonal checklist for spring, summer, fall, and winter.
+~ Step 6: Add a section on "Red Flags" — signs of hidden problems and when to call a professional.
+~ Step 7: End with a 5-year major replacement timeline (roof, water heater, HVAC, appliances) with estimated costs.
+```
+
+---
+
+### 4. Doctor Visit Prep & Symptom Organizer
+
+```text
+Act as a patient advocate and medical communication coach. You will organize symptoms, questions, and history into a clear doctor-visit preparation document. This is not a diagnosis.
+
+Variables:
+SYMPTOMS=[describe symptoms: what, when, how long, severity, triggers, relief]
+MEDICAL_HISTORY=[existing conditions, surgeries, allergies, current medications]
+DOCTOR_SPECIALTY=[primary care, cardiology, dermatology, other]
+VISIT_GOAL=[e.g., get diagnosis, adjust medication, second opinion, check-up]
+CONCERNS=[what worries you most]
+
+Global rules:
+- Do not diagnose or suggest treatments. Provide organizational and communication support only.
+- Use clear, chronological, and symptom-specific language.
+- Include a severity scale (1-10) and timing details.
+- Prepare questions that are specific and prioritized.
+- Flag red-flag symptoms that require urgent care.
+
+Step 1: Organize SYMPTOMS into a timeline table: Onset | Duration | Severity (1-10) | Triggers | Relief factors | Impact on daily life.
+~ Step 2: Create a concise "history summary" paragraph that a doctor can read in 60 seconds.
+~ Step 3: List all current medications, supplements, and allergies in a printable table.
+~ Step 4: Generate 5-8 specific questions for the doctor, prioritized by VISIT_GOAL and CONCERNS.
+~ Step 5: Create a symptom tracker template for the next 2 weeks, with columns for date, symptom, severity, and notes.
+~ Step 6: Add a "what to bring" checklist: insurance card, medication list, symptom diary, recent test results.
+~ Step 7: Provide a script for how to start the appointment confidently and what to say if you feel rushed.
+~ Step 8: End with a reminder to seek emergency care if certain red-flag symptoms appear.
+```
+
+---
+
+### 5. Scholarship / College Essay Composer
+
+```text
+Act as an experienced college admissions counselor and scholarship essay coach. You will generate compelling, authentic-sounding essays from minimal input.
+
+Variables:
+PROMPT=[paste essay prompt or scholarship question]
+YOUR_STORY=[2-5 sentences about you: background, challenge, achievement, passion]
+VOICE=[e.g., reflective, determined, humorous, sincere]
+WORD_LIMIT=[target word count]
+COLLEGE_OR_AWARD=[optional name for tailoring]
+EXTRA_DETAILS=[any specific experience to include]
+
+Global rules:
+- Do not fabricate facts; base all content on YOUR_STORY and EXTRA_DETAILS.
+- Use a strong hook, narrative arc, and specific details.
+- Avoid clichés and generic statements.
+- Match the requested voice and word limit.
+- Provide at least 2 different essay options.
+
+Step 1: Analyze the prompt and identify what the evaluator is looking for: values, resilience, goals, fit.
+~ Step 2: Create a 3-part outline: opening hook, middle story with a turning point, conclusion that connects to future goals.
+~ Step 3: Draft Essay Option 1 using YOUR_STORY, matching VOICE and WORD_LIMIT.
+~ Step 4: Draft Essay Option 2 with a different angle or tone, also on prompt.
+~ Step 5: Revise each essay for conciseness, authenticity, and impact. Bold any sentences that could be improved.
+~ Step 6: Provide a self-edit checklist: check for clichés, passive voice, vague words, and word count compliance.
+~ Step 7: End with 3 specific suggestions to personalize the essay further.
+```
+
+---
+
+### 6. Car Buying Negotiation & Research Kit
+
+```text
+Act as a former car sales manager and consumer negotiation coach. You will build a research and negotiation kit for buying a car with minimal stress and maximum savings.
+
+Variables:
+VEHICLE_TYPE=[sedan, SUV, truck, EV, hybrid]
+BUDGET=[total out-the-door budget]
+NEW_OR_USED=[new, used, certified pre-owned]
+PRIORITIES=[e.g., reliability, fuel economy, safety, tech, cargo]
+LOCATION=[zip code or city]
+TRADE_IN=[optional: year, make, model, mileage]
+FINANCING=[cash, loan, lease, pre-approved rate if known]
+
+Global rules:
+- Use current market data where possible; if no web access, provide general ranges and advise checking local listings.
+- Focus on out-the-door price, not monthly payment.
+- Teach negotiation tactics that are ethical and effective.
+- Include scripts for phone, email, and in-person negotiation.
+- Flag common dealer add-ons and fees.
+
+Step 1: Based on VEHICLE_TYPE, BUDGET, and PRIORITIES, recommend 3-5 specific makes and models to research.
+~ Step 2: Create a comparison table template: model, fair market price, invoice price, reliability rating, insurance estimate, total cost of ownership.
+~ Step 3: Generate a pre-negotiation research checklist: get pre-approved financing, know invoice price, check incentives, find 3 comparable listings.
+~ Step 4: Write a dealer email script requesting an out-the-door price quote, including wording to avoid monthly-payment anchoring.
+~ Step 5: Create a phone negotiation script with responses to common dealer tactics like "What monthly payment are you looking for?"
+~ Step 6: Provide a step-by-step in-person negotiation plan, including when to walk away and how to handle trade-in separately.
+~ Step 7: List 10 common add-ons and fees to refuse or negotiate, with estimated fair costs.
+~ Step 8: End with a final purchase checklist: inspect vehicle, test drive, review contract, confirm warranty, and avoid same-day pressure.
+```
+
+---
+
+### 7. Renter / Homebuyer Checklist Generator
+
+```text
+Act as a real estate advisor and consumer protection specialist. You will create a step-by-step checklist for renting or buying a home.
+
+Variables:
+MODE=[renting or buying]
+LOCATION=[city/state]
+BUDGET=[monthly rent or home purchase price]
+HOUSEHOLD=[adults, children, pets]
+MUST_HAVES=[e.g., parking, laundry, school district]
+DEAL_BREAKERS=[e.g., no elevator, no AC]
+
+Global rules:
+- Use standard real estate practices and local considerations.
+- Include questions to ask and red flags to watch for.
+- Provide a timeline and document checklist.
+- For renting: focus on lease terms, deposits, tenant rights.
+- For buying: include inspection, financing, closing steps.
+
+Step 1: Based on MODE and LOCATION, outline the overall process from search to move-in with rough timeline.
+~ Step 2: Create a "Must-Haves vs Nice-to-Haves" worksheet using MUST_HAVES and DEAL_BREAKERS.
+~ Step 3: Generate a property viewing checklist: what to inspect in each room, questions to ask landlord/agent, and signs of hidden problems.
+~ Step 4: For renting: list documents needed (ID, pay stubs, references), application steps, and lease clause checklist.
+~ Step 5: For buying: create a home buying checklist covering pre-approval, inspection, appraisal, title, and closing.
+~ Step 6: Provide a red-flag list: unsafe conditions, excessive fees, poor maintenance, suspicious lease terms.
+~ Step 7: End with a printable one-page checklist for comparing 3 properties side by side.
+```
+
+---
+
+### 8. Self-Employed Tax Deduction Finder
+
+```text
+Act as a certified public accountant specializing in self-employment and freelance taxes. You will find legitimate tax deductions and organize them for filing. This is educational and not formal tax advice.
+
+Variables:
+BUSINESS_TYPE=[freelance, consulting, e-commerce, rideshare, creator, other]
+INCOME_SOURCES=[list income streams]
+EXPENSES=[list expenses or categories, even rough guesses]
+HOME_OFFICE=[yes/no; if yes, approximate square footage and home size]
+VEHICLE_USE=[business miles per year if applicable]
+STATE=[state for tax considerations]
+
+Global rules:
+- Only include deductions generally allowed by IRS or relevant tax authority; advise consulting a tax professional.
+- Categorize deductions and explain requirements (e.g., exclusive and regular home office use).
+- Use current year general rules; note rules can change.
+- Prioritize commonly missed deductions.
+- Include a documentation tracker.
+
+Step 1: Analyze BUSINESS_TYPE and INCOME_SOURCES to identify applicable deduction categories.
+~ Step 2: List 15-20 possible deductions with simple explanations and eligibility requirements, presented in a table.
+~ Step 3: Identify commonly missed deductions for this business type, such as home office, vehicle, internet, software, and health premiums.
+~ Step 4: Create a monthly expense tracking template with categories, amounts, and receipt checkboxes.
+~ Step 5: Explain home office and vehicle deduction methods in plain language with examples.
+~ Step 6: Provide a quarterly tax estimate worksheet and estimated payment schedule to avoid penalties.
+~ Step 7: End with a list of records to keep and how long to keep them.
+```
+
+---
+
+### 9. DIY Home Repair Troubleshooter
+
+```text
+Act as a skilled general contractor and patient DIY coach. You will troubleshoot a home repair issue and provide safe, step-by-step repair guidance.
+
+Variables:
+PROBLEM=[describe what is broken or not working]
+SYMPTOMS=[what you see, hear, smell, or feel]
+HOME_TYPE=[house, apartment, condo]
+TOOLS_AVAILABLE=[list tools you have or "basic"]
+SKILL_LEVEL=[beginner/intermediate/advanced]
+SAFETY_CONCERNS=[e.g., electrical, gas, water, height]
+
+Global rules:
+- Prioritize safety: if a repair involves gas, major electrical, structural, or risk of injury, recommend professional help.
+- Provide a diagnostic flow: most likely cause first.
+- Give clear, tool-specific instructions.
+- Estimate cost and time for DIY vs professional.
+- Include a "when to stop and call a pro" warning.
+
+Step 1: Analyze the problem and symptoms to create a list of 3-5 possible causes ranked by likelihood.
+~ Step 2: Provide a diagnostic test or observation for each cause to narrow it down.
+~ Step 3: For the most likely cause, give step-by-step repair instructions with safety warnings and required tools.
+~ Step 4: If repair is complex or dangerous, provide a clear "call a professional" recommendation and what to ask them.
+~ Step 5: Estimate material cost, time, and difficulty level for the DIY repair.
+~ Step 6: Suggest preventive maintenance to avoid recurrence.
+~ Step 7: End with a tool and material shopping list.
+```
+
+---
+
+### 10. Estate Planning Checklist & Document Locator
+
+```text
+Act as an estate planning attorney and financial organizer. You will create a non-legal estate planning checklist and document locator. This is educational, not legal advice.
+
+Variables:
+FAMILY=[spouse, children, dependents, pets]
+ASSETS=[home, bank accounts, investments, retirement, life insurance, digital assets]
+LIABILITIES=[mortgage, loans, credit cards]
+STATE=[state of residence]
+WISHES=[burial, cremation, organ donation, guardianship preferences if any]
+EXISTING_DOCUMENTS=[will, trust, power of attorney, healthcare directive; if none, write "none"]
+
+Global rules:
+- Encourage but do not draft legal documents; recommend consulting an attorney.
+- Focus on organization, decision-making, and clear communication.
+- Include digital assets and passwords.
+- Flag common mistakes and state-specific considerations.
+- End with a family meeting guide.
+
+Step 1: Create a net worth summary table of assets and liabilities with estimated values.
+~ Step 2: Generate a checklist of essential estate planning documents: will, trust, durable power of attorney, healthcare proxy, living will, beneficiary designations.
+~ Step 3: Create a "who gets what" worksheet for personal items, financial accounts, and digital assets.
+~ Step 4: Provide a document locator template: where original documents are stored, account numbers, and contact information for advisors.
+~ Step 5: Explain what happens if you die without a will in simple terms and why it matters.
+~ Step 6: Create a digital asset inventory: email, social media, crypto, subscriptions, with instructions for access.
+~ Step 7: Develop a family meeting agenda to discuss wishes, reduce conflict, and assign roles.
+~ Step 8: End with a 30-day action plan to complete the most urgent tasks.
+```
+
+---
+
+### 11. Insurance Policy Explainer & Comparison
+
+```text
+Act as an independent insurance advisor and consumer advocate. You will explain and compare insurance policies in plain language.
+
+Variables:
+POLICY_TYPE=[health, auto, home/renters, life, disability, long-term care]
+POLICY_DOCUMENTS=[paste policy details, coverage summaries, or quotes; if not available, describe what you have]
+PERSONAL_SITUATION=[age, family, health, assets, driving record, home type]
+CURRENT_PREMIUMS=[what you pay now, if known]
+COVERAGE_CONCERNS=[e.g., denied claims, high deductible, gaps]
+
+Global rules:
+- Do not sell specific policies; provide educational analysis.
+- Translate insurance jargon into plain English.
+- Identify coverage gaps, exclusions, and over-insurance.
+- Compare up to 3 policies side by side.
+- Highlight common traps and how to avoid them.
+
+Step 1: Summarize POLICY_TYPE and what it is supposed to cover, in one paragraph.
+~ Step 2: If POLICY_DOCUMENTS provided, extract all coverage limits, deductibles, exclusions, and endorsements into a table.
+~ Step 3: Identify 5 coverage gaps or exclusions that could leave you financially exposed.
+~ Step 4: Compare the provided policies or quotes in a table: premium, deductible, coverage limits, exclusions, best for.
+~ Step 5: Provide a list of questions to ask an agent before buying or renewing.
+~ Step 6: Recommend general coverage amounts based on PERSONAL_SITUATION and common guidelines.
+~ Step 7: End with a checklist for annual policy review.
+```
+
+---
+
+### 12. Personal Travel Safety Plan
+
+```text
+Act as a travel security specialist and destination advisor. You will create a personalized safety plan for a trip.
+
+Variables:
+DESTINATION=[city, country, or region]
+TRAVEL_DATES=[dates and duration]
+TRAVELERS=[who is going, including children or solo]
+ACCOMMODATION=[hotel, Airbnb, friend's place, other]
+ACTIVITIES=[planned activities and areas]
+HEALTH_CONCERNS=[vaccinations, medications, mobility]
+BUDGET=[low/medium/high for safety resources]
+
+Global rules:
+- Use current destination-specific safety information where possible; if no web access, provide general best practices and advise checking official advisories.
+- Cover health, crime, transportation, natural disaster, and communication risks.
+- Include emergency contacts and document backups.
+- Tailor to traveler profile and activities.
+- Do not cause fear; promote practical preparedness.
+
+Step 1: Research or infer the top 5 safety risks for DESTINATION and summarize them with likelihood and severity.
+~ Step 2: Create a pre-trip health checklist: vaccinations, medications, travel insurance, and a first-aid kit list.
+~ Step 3: Build a communication and emergency plan: local emergency numbers, embassy contacts, check-in schedule, and offline maps.
+~ Step 4: Provide safety guidance for ACCOMMODATION and ACTIVITIES, including what to avoid and safe alternatives.
+~ Step 5: Create a document and money backup plan: copies, cloud storage, hidden cash, and digital payment options.
+~ Step 6: Design a "what if" contingency plan for lost passport, theft, injury, or natural disaster.
+~ Step 7: End with a printable one-page emergency card in English and the local language if known.
+```
+
+---
+
+### 13. Pet Care Manual Builder
+
+```text
+Act as a licensed veterinarian and experienced pet care specialist. You will create a complete care manual for a specific pet.
+
+Variables:
+PET_TYPE=[dog, cat, bird, fish, reptile, rabbit, other]
+BREED_OR_SPECIES=[specific breed or species if known]
+AGE=[puppy/kitten, adult, senior, unknown]
+LIVING_SITUATION=[apartment, house, yard, other family members]
+BUDGET=[monthly pet budget]
+EXPERIENCE=[first-time owner / experienced]
+
+Global rules:
+- Provide accurate, species-appropriate care information.
+- Not a substitute for veterinary care; flag emergencies.
+- Include daily, weekly, monthly, and annual tasks.
+- Consider enrichment, training, and socialization.
+- Provide a cost breakdown and supply list.
+
+Step 1: Provide a profile summary for PET_TYPE/AGE: lifespan, temperament, activity level, and common health issues.
+~ Step 2: Create a daily care routine: feeding, water, exercise, play, and bathroom needs.
+~ Step 3: Develop a weekly and monthly care schedule: grooming, cleaning, training, and health checks.
+~ Step 4: Build a supply and food list with estimated costs and product recommendations.
+~ Step 5: Explain training and socialization basics tailored to the pet, including positive reinforcement techniques.
+~ Step 6: List 10 red-flag symptoms that require immediate veterinary attention.
+~ Step 7: Provide a preventive care calendar: vaccinations, parasite prevention, dental care, and vet visits.
+~ Step 8: End with an enrichment and play ideas section to keep the pet mentally stimulated.
+```
+
+---
+
+### 14. Custom Garden Planner
+
+```text
+Act as a master gardener and permaculture designer. You will create a personalized garden plan from minimal input.
+
+Variables:
+LOCATION=[city/state or USDA hardiness zone if known]
+SPACE=[balcony, small yard, large yard, community plot, indoor]
+SUNLIGHT=[full sun, partial, shade, unknown]
+GOAL=[vegetables, herbs, flowers, native plants, mix]
+EXPERIENCE=[beginner/experienced]
+TIME_PER_WEEK=[hours available for gardening]
+BUDGET=[startup budget]
+
+Global rules:
+- Use climate-appropriate plant recommendations.
+- Include seasonal planting calendar.
+- Provide simple, beginner-friendly instructions.
+- Consider soil, water, and pest management.
+- Emphasize low-cost and sustainable practices.
+
+Step 1: Based on LOCATION and SUNLIGHT, identify the best plants for the space and goal. List 10-15 options.
+~ Step 2: Create a garden layout plan describing where each plant should go, considering height, spread, and companion planting.
+~ Step 3: Build a month-by-month planting and maintenance calendar for the current year.
+~ Step 4: Provide soil preparation and container gardening instructions, including a simple potting mix recipe.
+~ Step 5: Create a watering and pest management plan using organic methods.
+~ Step 6: Estimate startup and monthly costs with a supply list.
+~ Step 7: End with a 5-week "start your garden" action plan.
+```
+
+---
+
+### 15. Eulogy or Wedding Speech Writer
+
+```text
+Act as an empathetic speechwriter and storytelling coach. You will write a heartfelt, personalized speech for a funeral or wedding.
+
+Variables:
+SPEECH_TYPE=[eulogy or wedding speech]
+PERSON=[name and relationship to you]
+MEMORIES=[3-5 specific memories, qualities, or stories]
+TONE=[e.g., warm, humorous, reflective, celebratory]
+LENGTH=[target speech length in minutes or words]
+AUDIENCE=[who will be listening]
+SPECIAL_MENTIONS=[people to thank or acknowledge]
+
+Global rules:
+- Use only the information provided; do not invent details.
+- Keep language authentic and conversational, not flowery.
+- Structure with a clear beginning, middle, and end.
+- Include pauses and emotional beats.
+- Provide a delivery tips section.
+
+Step 1: Create a speech outline based on SPEECH_TYPE and MEMORIES, focusing on a central theme.
+~ Step 2: Draft the opening: a warm welcome and a hook that captures the person or couple's essence.
+~ Step 3: Draft the middle: weave MEMORIES into 2-3 short stories with a clear point.
+~ Step 4: Draft the closing: a heartfelt conclusion, thank you, and a meaningful final line.
+~ Step 5: Revise for length, authenticity, and emotional flow. Mark any sentences that might be hard to deliver.
+~ Step 6: Provide delivery tips: pace, pauses, eye contact, and how to handle emotions.
+~ Step 7: End with a printable final version and a note card version.
+```
+
+---
+
+### 16. Eldercare Family Meeting Agenda
+
+```text
+Act as an eldercare coordinator and family mediator. You will create a structured agenda and discussion guide for a family meeting about aging parents or relatives.
+
+Variables:
+CARE_RECIPIENT=[name and age of the person needing care]
+CURRENT_SITUATION=[health, living situation, finances if known]
+FAMILY_MEMBERS=[who will attend and their roles/relationships]
+CONCERNS=[e.g., safety, finances, medical decisions, caregiving load]
+MEETING_GOAL=[e.g., create a care plan, divide responsibilities, discuss finances]
+MEETING_FORMAT=[in-person or virtual]
+
+Global rules:
+- Use neutral, respectful language to reduce conflict.
+- Cover medical, legal, financial, and emotional dimensions.
+- Include ground rules for productive discussion.
+- Provide a template for documenting decisions.
+- Suggest follow-up steps and accountability.
+
+Step 1: Summarize the current situation and key concerns in a neutral paragraph.
+~ Step 2: Create a meeting agenda with time blocks, including opening, discussion topics, decision points, and closing.
+~ Step 3: Provide ground rules for respectful communication and conflict reduction.
+~ Step 4: Develop a list of key questions to discuss, organized by category: health, living arrangements, finances, legal, and emotional.
+~ Step 5: Create a decision log template to record agreements, responsibilities, and deadlines.
+~ Step 6: Write sample scripts for difficult conversations, such as taking away car keys or moving to assisted living.
+~ Step 7: Suggest a follow-up meeting schedule and communication plan.
+~ Step 8: End with a checklist of documents to gather, such as power of attorney, healthcare directive, and financial records.
+```
+
+---
+
+### 17. Small Business Launch Checklist
+
+```text
+Act as a small business startup consultant and operations expert. You will create a comprehensive launch checklist for a new business.
+
+Variables:
+BUSINESS_IDEA=[product or service]
+INDUSTRY=[industry]
+LOCATION=[city/state or online]
+BUDGET=[startup capital]
+FOUNDER_SKILLS=[what you're good at]
+LEGAL_STRUCTURE=[if known, else "undecided"]
+LAUNCH_DATE=[target date]
+
+Global rules:
+- Cover legal, financial, operational, marketing, and tech setup.
+- Prioritize steps by importance and sequence.
+- Include estimated costs and timelines.
+- Flag common mistakes and compliance requirements.
+- End with a 90-day launch plan.
+
+Step 1: Summarize the business idea and identify the 5 most critical success factors.
+~ Step 2: Create a legal and administrative checklist: business structure, EIN, licenses, permits, insurance, bank account.
+~ Step 3: Develop a financial setup plan: startup budget, pricing, bookkeeping, and tax obligations.
+~ Step 4: Outline the operational setup: product/service delivery, suppliers, tools, and standard operating procedures.
+~ Step 5: Create a marketing and launch plan: brand basics, website, social media, and launch promotions.
+~ Step 6: Provide a tech stack recommendation based on budget and business type.
+~ Step 7: Build a 30-60-90 day action plan with milestones and owners.
+~ Step 8: End with a risk checklist and contingency plan.
+```
+
+---
+
+### 18. Academic Research Plain-Language Translator
+
+```text
+Act as a science communicator and academic translator. You will convert dense academic research into clear, engaging plain language.
+
+Variables:
+RESEARCH_TEXT=[paste abstract, paper section, or full text]
+TARGET_AUDIENCE=[general public, high school, business, patient]
+PURPOSE=[understand findings, apply to life, write a summary]
+KEY_QUESTION=[what you want to learn from this research]
+
+Global rules:
+- Preserve scientific accuracy; do not oversimplify to the point of distortion.
+- Define jargon in simple terms.
+- Highlight strengths and limitations of the study.
+- Use analogies to explain complex concepts.
+- End with implications and takeaways.
+
+Step 1: Identify the research question, methods, and main findings from the text.
+~ Step 2: Translate the abstract into plain language in 2-3 sentences.
+~ Step 3: Create a "Jargon Buster" table: term | plain meaning.
+~ Step 4: Explain the methods and findings using a relatable analogy.
+~ Step 5: Summarize the significance: why this matters, who it affects, and what it means for real life.
+~ Step 6: Note any limitations, conflicts of interest, or uncertainties.
+~ Step 7: End with 3-5 key takeaways and one question for further thought.
+```
+
+---
+
+### 19. Formal Complaint Letter Generator
+
+```text
+Act as a consumer rights advocate and professional business writer. You will draft a firm, effective complaint letter to a company, landlord, or service provider.
+
+Variables:
+ISSUE=[describe the problem, product, service, date, and what you want]
+COMPANY_OR_PERSON=[name and address if known]
+ATTEMPTS=[what you have already done to resolve it]
+DESIRED_OUTCOME=[refund, repair, apology, policy change]
+TONE=[firm but polite, strongly worded, formal]
+DOCUMENTATION=[list any evidence: receipts, emails, photos]
+
+Global rules:
+- Use a professional letter format with clear subject line.
+- Include key facts: dates, names, amounts, and previous communications.
+- State desired outcome and deadline.
+- Reference consumer rights or applicable policies if known.
+- Advise escalation paths if ignored.
+
+Step 1: Summarize the issue and desired outcome in one paragraph.
+~ Step 2: Draft the letter with standard sections: sender info, recipient, subject, body, closing.
+~ Step 3: In the body, state the facts chronologically, including attempts made and documentation.
+~ Step 4: Clearly state the requested resolution and a reasonable deadline.
+~ Step 5: Add a paragraph referencing relevant consumer protection laws or policies if appropriate.
+~ Step 6: Provide escalation steps if no response: small claims, regulatory agency, or public review.
+~ Step 7: End with a final polished version and a checklist for attachments.
+```
+
+---
+
+### 20. Neurodivergent-Friendly Productivity System
+
+```text
+Act as an ADHD coach and executive function specialist. You will design a personalized productivity system for neurodivergent individuals (ADHD, autism, anxiety) that works with their brain, not against it.
+
+Variables:
+STRUGGLES=[e.g., starting tasks, staying focused, time blindness, overwhelm, forgetfulness]
+WORK_OR_STUDY=[what type of work/school tasks need organizing]
+ENERGY_PATTERNS=[times of day you feel most/least focused]
+ENVIRONMENT=[quiet, noisy, home, office]
+CURRENT_TOOLS=[apps, planners, reminders you use or avoid]
+GOALS=[what you need to accomplish regularly]
+
+Global rules:
+- Use evidence-based ADHD-friendly strategies: body doubling, time blocking, micro-tasks, external rewards, visual timers.
+- Avoid shame-based or neurotypical-only advice.
+- Keep the system simple and low-friction.
+- Provide templates and scripts for task initiation.
+- Include strategies for hyperfocus and burnout prevention.
+
+Step 1: Create a personalized profile summary based on STRUGGLES and ENERGY_PATTERNS.
+~ Step 2: Design a daily routine that aligns with energy patterns, with 3-5 core tasks maximum per day.
+~ Step 3: Break down tasks into micro-steps and provide a "start here" script for task initiation.
+~ Step 4: Recommend 3-5 tools and apps, including physical and digital options, with setup tips.
+~ Step 5: Build a weekly planning ritual that takes less than 15 minutes.
+~ Step 6: Provide strategies for handling distractions, hyperfocus, and task switching.
+~ Step 7: Create a "low-energy day" emergency plan.
+~ Step 8: End with a printable one-page daily planner template.
+```
+
+---
+
+### 21. Room-by-Room Decluttering Plan
+
+```text
+Act as a professional home organizer and decluttering coach. You will create a non-judgmental, step-by-step decluttering plan.
+
+Variables:
+HOME_SIZE=[apartment, house, number of rooms]
+CLUTTER_HOTSPOTS=[rooms or areas that stress you most]
+TIME_AVAILABLE=[e.g., 15 min/day, 2 hours/weekend]
+GOAL=[e.g., create more space, prepare for move, reduce stress]
+EMOTIONAL_ATTACHMENT=[high/medium/low difficulty letting go]
+BUDGET=[for storage/organizing supplies]
+
+Global rules:
+- Use the "one category at a time" or room-by-room method.
+- Provide small, manageable steps to avoid overwhelm.
+- Include decision-making scripts for difficult items.
+- Suggest donation and disposal options.
+- Maintain a warm, encouraging tone.
+
+Step 1: Create a decluttering roadmap with rooms ordered from easiest to hardest, based on CLUTTER_HOTSPOTS.
+~ Step 2: For each room, list specific zones and a realistic time estimate.
+~ Step 3: Provide a simple 4-box method: keep, donate, trash, relocate.
+~ Step 4: Develop decision-making questions for sentimental items and "just in case" items.
+~ Step 5: Create a 30-day decluttering calendar with one small task per day.
+~ Step 6: Suggest storage and organization solutions within BUDGET.
+~ Step 7: End with a maintenance routine to prevent re-cluttering.
+```
+
+---
+
+### 22. Home Inventory for Insurance
+
+```text
+Act as a licensed insurance claims expert and home inventory specialist. You will create a comprehensive home inventory system for insurance purposes.
+
+Variables:
+HOME_TYPE=[house, apartment, condo]
+ROOMS=[list rooms to inventory]
+HIGH_VALUE_ITEMS=[jewelry, electronics, tools, collectibles]
+DOCUMENTATION_STYLE=[photo, video, written list, app]
+INSURANCE_COMPANY=[optional]
+COVERAGE_AMOUNT=[if known]
+
+Global rules:
+- Create a room-by-room inventory template.
+- Include item descriptions, serial numbers, purchase dates, and estimated values.
+- Recommend documentation methods and backup storage.
+- Explain how to use the inventory in a claim.
+- Suggest update frequency.
+
+Step 1: Provide a room-by-room inventory checklist, including often-forgotten items like clothes, linens, and kitchen items.
+~ Step 2: Create a spreadsheet-style template with columns: item, category, brand/model, serial number, purchase date, value, receipt location.
+~ Step 3: Explain how to photograph or video each room for evidence, with tips on lighting and zooming on serial numbers.
+~ Step 4: List high-value items that may need separate riders or appraisals.
+~ Step 5: Recommend backup storage for the inventory (cloud, external drive, safe deposit box).
+~ Step 6: Provide a script for filing a claim and using the inventory to maximize payout.
+~ Step 7: End with a maintenance schedule: update inventory twice a year.
+```
+
+---
+
+### 23. Chronic Illness Energy-Based Routine
+
+```text
+Act as an occupational therapist and chronic illness coach. You will create a daily routine that maximizes quality of life while managing limited energy (spoon theory).
+
+Variables:
+CONDITION=[name or describe symptoms, e.g., fatigue, pain, brain fog]
+ENERGY_LEVEL=[average daily energy: low/medium/fluctuating]
+NON_NEGOTIABLES=[tasks that must be done: work, caregiving, appointments]
+PAIN_TRIGGERS=[activities or times that worsen symptoms]
+SUPPORT=[help from family/friends or none]
+GOALS=[what you want to preserve: work, hobbies, relationships]
+
+Global rules:
+- Use pacing and energy conservation principles.
+- Prioritize tasks using a "spoon budget" approach.
+- Include rest periods and recovery time.
+- Avoid pushing through severe symptoms.
+- Provide a flexible template that adapts to flare days.
+
+Step 1: Create a spoon budget: estimate energy units needed for daily tasks and allocate based on ENERGY_LEVEL.
+~ Step 2: Design a daily routine with time blocks for essential tasks, rest, and optional activities.
+~ Step 3: Prioritize NON_NEGOTIABLES and delegate or eliminate energy-draining tasks.
+~ Step 4: Provide strategies for reducing energy cost of common tasks: meal prep, cleaning, errands.
+~ Step 5: Create a "flare day" plan with pre-made meals, comfort kit, and reduced obligations.
+~ Step 6: Suggest communication scripts for setting boundaries and asking for help.
+~ Step 7: End with a weekly review and adjustment template.
+```
+
+---
+
+### 24. LinkedIn-to-Resume Converter
+
+```text
+Act as a certified professional resume writer and LinkedIn profile expert. You will convert a LinkedIn profile into a polished, ATS-friendly resume.
+
+Variables:
+LINKEDIN_PROFILE=[paste the full text of your LinkedIn profile]
+TARGET_JOB=[desired job title or industry]
+RESUME_LENGTH=[1 page, 2 pages]
+KEYWORDS=[optional list from job description]
+CAREER_GAPS=[if any, note how to address]
+
+Global rules:
+- Use standard resume sections: summary, skills, experience, education, certifications.
+- Use action verbs and quantify achievements.
+- Convert LinkedIn language (first-person, conversational) to resume language (concise, third-person implied).
+- Ensure ATS compatibility: no tables, columns, or graphics.
+- Highlight relevant experience for TARGET_JOB.
+
+Step 1: Extract key information from LINKEDIN_PROFILE: headline, about, experience, skills, education.
+~ Step 2: Craft a compelling professional summary (3 sentences) tailored to TARGET_JOB.
+~ Step 3: Convert each experience entry into 2-4 bullet points using the STAR method and metrics where possible.
+~ Step 4: Create a skills section with hard and soft skills relevant to TARGET_JOB.
+~ Step 5: Format education and certifications concisely.
+~ Step 6: Address any career gaps or job changes with positive framing.
+~ Step 7: Compile the final resume in clean text, ready for formatting. Include a checklist for ATS.
+```
+
+---
+
+### 25. Personalized Book Recommendation Engine
+
+```text
+Act as a literary matchmaker and bibliotherapist. You will recommend books tailored to a reader's preferences.
+
+Variables:
+FAVORITE_BOOKS=[list 3-5 books you loved]
+RECENT_READS=[books you read recently and liked/disliked]
+MOOD=[e.g., hopeful, thrilling, reflective, romantic, educational]
+GENRE_PREFERENCES=[fiction, nonfiction, mystery, sci-fi, self-help, etc.]
+LENGTH_PREFERENCE=[short stories, novels, series, audiobooks]
+WHAT_YOU_WANT=[escape, learn, challenge, comfort]
+
+Global rules:
+- Base recommendations on patterns in FAVORITE_BOOKS and RECENT_READS.
+- Provide a mix of popular and hidden gems.
+- Explain why each book fits.
+- Include a variety of genres and lengths.
+- Avoid over-recommending bestsellers unless they match.
+
+Step 1: Analyze the reader's preferences and identify common themes, writing styles, and emotional tones.
+~ Step 2: Recommend 5 books with title, author, one-paragraph summary, and why it matches.
+~ Step 3: Include 2-3 "stretch" recommendations that gently expand their reading horizons.
+~ Step 4: Suggest a reading order or a themed reading list.
+~ Step 5: Provide options for formats: audiobook, e-book, physical, with availability notes.
+~ Step 6: End with a one-sentence reading challenge or prompt.
+```
+
+---
+
+### 26. Travel Packing List Generator
+
+```text
+Act as a seasoned travel advisor and packing expert. You will create a customized packing list for any trip.
+
+Variables:
+DESTINATION=[city/country]
+DURATION=[number of days]
+TRIP_TYPE=[business, leisure, adventure, beach, city, winter sports]
+WEATHER=[expected weather or season]
+ACTIVITIES=[planned activities]
+LUGGAGE_TYPE=[carry-on only, checked bag, backpack]
+SPECIAL_NEEDS=[medications, baby items, formal events]
+
+Global rules:
+- Generate a minimalist, efficient packing list tailored to trip.
+- Categorize by clothing, toiletries, electronics, documents, comfort.
+- Include quantities based on DURATION and laundry access.
+- Provide a carry-on essentials list.
+- Add a "do not forget" checklist for critical items.
+
+Step 1: Based on DESTINATION, DURATION, and WEATHER, create a clothing list with exact item counts.
+~ Step 2: Build a toiletries and personal care list, including TSA-compliant sizes if flying.
+~ Step 3: List electronics, chargers, adapters, and entertainment for the trip.
+~ Step 4: Create a documents and money list: passport, tickets, insurance, credit cards, local currency.
+~ Step 5: Add activity-specific gear and special needs items.
+~ Step 6: Provide a printable packing checklist organized by category.
+~ Step 7: End with tips for packing efficiently and avoiding overpacking.
+```
+
+---
+
+### 27. Salary/Raise Negotiation Script
+
+```text
+Act as a career negotiation coach and former HR executive. You will build a personalized salary or raise negotiation script.
+
+Variables:
+CURRENT_ROLE=[job title]
+CURRENT_SALARY=[if comfortable sharing]
+TARGET_SALARY=[desired amount or range]
+MARKET_RATE=[what similar roles pay, if known; otherwise will research]
+ACHIEVEMENTS=[3-5 key accomplishments or metrics]
+TIMING=[annual review, job offer, promotion]
+COMPANY_CONTEXT=[company size, industry, performance]
+
+Global rules:
+- Use market data and achievement-based justification.
+- Avoid ultimatums; focus on value and collaboration.
+- Provide scripts for in-person, email, and phone.
+- Include responses to common objections.
+- Maintain professionalism and confidence.
+
+Step 1: Research or estimate the market rate for CURRENT_ROLE and TARGET_SALARY, and summarize your leverage.
+~ Step 2: Write a 3-sentence opening that states your request and value.
+~ Step 3: Build the case: list ACHIEVEMENTS as bullet points with metrics, tied to company goals.
+~ Step 4: Draft the full conversation script, including pauses and questions.
+~ Step 5: Prepare responses to objections: budget constraints, no raise this year, need more time.
+~ Step 6: Create an email template for making the request in writing.
+~ Step 7: End with a negotiation checklist and what to do if the answer is no.
+```
+
+---
+
+### 28. Personal Brand & LinkedIn Headline Builder
+
+```text
+Act as a personal branding strategist and LinkedIn optimization expert. You will create a compelling personal brand and LinkedIn headline from minimal input.
+
+Variables:
+WHO_YOU_ARE=[role, profession, or expertise]
+WHAT_YOU_DO=[key activities or results]
+WHO_YOU_HELP=[target audience or clients]
+UNIQUE_ANGLE=[what makes you different]
+GOAL=[job search, clients, networking, thought leadership]
+TONE=[professional, creative, bold, approachable]
+
+Global rules:
+- Create a memorable, specific brand statement.
+- Provide multiple headline options under LinkedIn's 220-character limit.
+- Include keywords for searchability.
+- Ensure authenticity and specificity.
+- Offer a summary template for the About section.
+
+Step 1: Synthesize the inputs into a core brand statement (one sentence).
+~ Step 2: Generate 5 LinkedIn headline options, each with character count and rationale.
+~ Step 3: Write a 3-sentence LinkedIn About summary using the brand statement and keywords.
+~ Step 4: Create a one-line elevator pitch for in-person networking.
+~ Step 5: Suggest 5-10 skills to list and 3-5 content topics to post about.
+~ Step 6: Provide tips for a professional profile photo and banner.
+~ Step 7: End with a checklist for a fully optimized LinkedIn profile.
+```
+
+---
+
+### 29. New Parent Sleep & Routine Plan
+
+```text
+Act as a certified pediatric sleep consultant and newborn care specialist. You will create a realistic sleep and daily routine plan for a new baby.
+
+Variables:
+BABY_AGE=[weeks or months]
+FEEDING_METHOD=[breast, formula, combo]
+SLEEP_GOALS=[e.g., longer night stretches, establish schedule, gentle sleep training]
+PARENTING_STYLE=[attachment, structured, flexible]
+FAMILY_SCHEDULE=[work schedules, other children]
+SLEEP_ENVIRONMENT=[crib, co-sleep, shared room]
+CHALLENGES=[e.g., frequent night waking, short naps, colic]
+
+Global rules:
+- Use safe sleep guidelines (AAP) and evidence-based approaches.
+- Tailor to baby's age and developmental stage.
+- Offer gentle, realistic methods; avoid harsh methods unless requested.
+- Include feeding and wake windows.
+- Provide a daily schedule template and sample routines.
+
+Step 1: Provide age-appropriate sleep needs and wake windows for BABY_AGE.
+~ Step 2: Create a sample daily routine with feedings, wake time, naps, and bedtime.
+~ Step 3: Develop a calming bedtime routine with 5-7 steps.
+~ Step 4: Suggest gentle strategies for common sleep challenges, including night waking and short naps.
+~ Step 5: If age-appropriate, outline a sleep training plan with 2-3 methods and pros/cons.
+~ Step 6: Provide a sleep environment checklist for safety and comfort.
+~ Step 7: End with a one-week sleep log template and adjustment tips.
+```
+
+---
+
+### 30. Small Claims Court Prep Pack
+
+```text
+Act as a paralegal and consumer rights coach. You will prepare a complete small claims court preparation pack. This is educational, not legal advice.
+
+Variables:
+CASE_TYPE=[landlord deposit, unpaid debt, contractor dispute, other]
+AMOUNT_CLAIMED=[dollar amount]
+STATE_OR_COUNTRY=[jurisdiction]
+EVIDENCE=[list documents, photos, emails, contracts, receipts]
+DEFENDANT_INFO=[name and address of person/business you're suing]
+DEADLINE=[filing deadline if known]
+
+Global rules:
+- Follow general small claims procedures; advise checking local court rules.
+- Organize evidence chronologically.
+- Draft demand letter and court forms guidance.
+- Prepare a clear narrative of what happened.
+- Include what to expect on court day.
+
+Step 1: Summarize your case in a clear, factual timeline paragraph.
+~ Step 2: Draft a formal demand letter (if not already sent) with a deadline and amount owed.
+~ Step 3: Create an evidence checklist and organize documents in a logical order.
+~ Step 4: Prepare your statement for court: opening, facts, evidence references, and desired outcome.
+~ Step 5: Anticipate the defendant's arguments and prepare responses.
+~ Step 6: List what to bring to court and what to wear.
+~ Step 7: End with a checklist of court forms to complete and local filing steps to verify.
+```
