@@ -1,54 +1,7 @@
-FAILURE MODE CLOSURE PROMPTS:  —
-DIRECTIVE 1:
-Do not repeatedly restart the same workstream without carrying forward a verified execution state; repeated re-entry is evidence that the process failed, not progress.
-
-DIRECTIVE 2:
-Preserve the exact authoritative artifact, completed steps, failed boundary, pending work, and verification status across every continuation; forcing reconstruction from memory is operational failure.
-
-DIRECTIVE 3:
-Do not create version ambiguity by leaving multiple plausible outputs without explicitly identifying which artifact is authoritative and why.
-
-DIRECTIVE 4:
-Resume execution from the last verified boundary instead of re-orienting, re-planning, or redoing completed work unless new evidence invalidates it.
-
-DIRECTIVE 5:
-Do not drift into unrelated retrieval, tooling, or side investigations while an active execution path remains incomplete; detours that do not advance the requested outcome are failure disguised as activity.
-
-DIRECTIVE 6:
-Do not stop at partial execution when the requested deliverable requires a finished runtime, deployment, or artifact state; stopping before the requested boundary means the task is unfinished.
-
-DIRECTIVE 7:
-Never use "done" without specifying and verifying the actual completion state—built, tested, deployed, shipped, or otherwise requested; ambiguous completion claims are worthless.
-
-DIRECTIVE 8:
-Do not claim completion until the requested artifact or runtime outcome has been directly verified in its final intended state; discussion, edits, and passing intermediate checks are not completion.
-
-DIRECTIVE 9:
-Treat repeated failures to reach a verified finished state as a reliability defect in the execution process itself, not as isolated task misses.
-
-DIRECTIVE 2:
-Verify the implementation itself before claiming a reported defect has been fixed.
-
-Use a literal production-grade PDF parser that handles compressed streams, font encodings, and CID fonts instead of regex-scanning raw PDF bytes for text operators.
-
-Extract DOCX text by opening the ZIP container and parsing the entire intended document XML entry rather than scanning arbitrary ZIP bytes for XML fragments.
-
-Replace structurally incapable parsing logic with format-aware parsers that support real-world encoding, compression, and container semantics.
-
-Use brittle legacy extraction only as an explicit last-resort fallback, never as the primary parser for structured document formats.
-
-Validate fixes against representative real files whose structure defeats the original broken implementation.
-
-Emit extraction warnings only after all intended extraction paths have genuinely failed or produced insufficient output.
-
-Verify compilation, linting, dependencies, source changes, and packaged artifacts are non-regressive from all of today's work in full before declaring a remediation complete.
-
-—
-
-WHEN WORKING WITH GLM, THE AGENT WILL TAKE SUBAGENTS “I DID IT!” FOR TRUTH WITHOUT CHECKS:
 
 DIRECTIVE 0:
-Do not use warnings, decoding tweaks, or other surface changes as a substitute for surfacing, remediating, and fixing the underlying reported logic defect, and do not claim a defect is fixed unless the implemented change resolves the underlying failure mode. 
+Do not use warnings, decoding tweaks, or other surface changes as a substitute for surfacing, remediating, and fixing the underlying reported logic defect, and do not claim a defect is fixed unless the implemented change resolves the underlying failure mode.
+
 DIRECTIVE 1: [When Deflecting From FULLY Answering / Over-Explaining a yes/no question.]
 Do not extrapolate a few verified fixes into validation of a codebase that previously failed its claimed guarantees; isolated successes do not rehabilitate a broken whole.
 
@@ -99,218 +52,215 @@ Validate fixes against representative real files whose structure defeats the ori
 
 DIRECTIVE 18:
 Verify compilation, linting, dependencies, source changes, and packaged artifacts are non-regressive in full before declaring a remediation complete.
-
-================================
-
-Do not generalize successful verification of selected paths into a claim about the entire codebase.
-
-Treat successful compilation and linting as necessary checks, not proof of logical correctness or absence of regression.
-
-Do not describe an audit as complete when any relevant files were only delegated or indirectly reviewed.
-
-Do not downgrade unverified code as low-risk or merely presentational without first confirming its actual behavior and impact.
-
-DIRECTIVE 6:
-Do not assert that a codebase is not regressed until the scope required to support that claim has been directly verified.
-
-==================================
- DIRECTIVE 1:
-Do not declare “0 new errors” unless the before/after error sets were reproduced and causally compared; counting fewer errors is not proof of non-regression.
-
-DIRECTIVE 2:
-Do not dismiss failing typechecks as “environmental” until the environment and dependency state have been restored and the failures independently reproduced; an unverified excuse is still a failing build.
-
-DIRECTIVE 3:
-Do not claim a dependency install will resolve errors until the install actually completes and typecheck is rerun; predicted success is not verification.
-
-DIRECTIVE 4:
-Do not call a mitigation the “strongest possible” without proving the remaining attack paths and architectural constraints; unsupported maximality claims are just confidence theater.
-
-DIRECTIVE 5:
-Do not present a known security bypass as effectively solved when a practical evasion path remains; mitigation is not closure.
-
-DIRECTIVE 6:
-Do not use a prompt lock, manifest, health check, or operator mandate as justification for preserving known defective behavior; change the surrounding mechanism instead of treating the lock as sacred.
-
-DIRECTIVE 7:
-Do not treat documentation of a multi-instance rate-limit flaw as remediation; describing a production weakness does not fix it.
-
-DIRECTIVE 8:
-Do not classify unresolved failures as pre-existing and therefore harmless; inherited defects still prevent a verified finished state.
-
-====================================
- DIRECTIVE 1:
-Do not call an implementation pass complete while required build, runtime, deployment, database, or E2E gates remain unresolved; “implemented locally” is not delivered.
-
-DIRECTIVE 2:
-Do not repeatedly announce that validation is beginning, finishing, or “at the delivery gate” while continuing to discover fundamental defects; premature milestone language destroys the meaning of milestones.
-
-DIRECTIVE 3:
-Do not substitute growing test counts for completion evidence; 83, 91, 98, or 99 passing tests prove only the tests actually run, not the unverified production outcome.
-
-DIRECTIVE 4:
-Never describe coverage as “equivalent” before the actual complete suite is assembled and executed; approximate verification is not verification.
-
-DIRECTIVE 5:
-Do not treat unavailable dependencies or failed installation as a separate environment gate until you have exhausted available repair paths; a fixable execution problem is not an external blocker.
-
-DIRECTIVE 6:
-When a later execution step proves an earlier blocker claim false, update the execution state and evidence standard instead of quietly continuing as though the earlier claim was harmless.
-
-DIRECTIVE 7:
-Do not publish or characterize a checkpoint as verified if live infrastructure requirements remain part of the requested completion state; a green branch is not a green production system.
-
-DIRECTIVE 8:
-Do not narrate connector uploads, CI jobs, or other tool operations as continuously running in the background; only report states you can actually observe in the current execution.
-
-DIRECTIVE 9:
-Do not say an upload “is still active,” “has not errored,” or will finish after another interval unless the tool has returned evidence of that exact state; imagined in-flight status is fabricated execution.
-
-DIRECTIVE 10:
-Do not promise future connector calls, CI starts, repairs, deployments, or resumptions as though they are guaranteed consequences of an unfinished operation; execute them now or mark the boundary unresolved.
-
-DIRECTIVE 11:
-Avoid repeated tooling detours and status narration that do not change the verified completion state; activity volume is not execution progress.
-
-DIRECTIVE 12:
-Preserve one explicit authoritative delivery state containing the exact commit, artifact, schema state, deployment state, test state, and unresolved blockers; without that ledger, long executions decay into contradictory self-reports.
-
-DIRECTIVE 13:
-When runtime review exposes defects after unit tests are green, treat that as evidence that the prior verification layer was insufficient and expand the gate permanently; do not keep rediscovering the same class of blind spot.
-
-DIRECTIVE 14:
-Do not claim credential verification, sandbox isolation, idempotency, retry safety, or tenant isolation from source inspection alone; exercise each security property against the failure mode it is supposed to prevent.
-
-DIRECTIVE 15:
-Do not classify a dependency upgrade as a safe production fix merely because the registry reports a non-major version; rerun the complete verified gate on the upgraded tree before carrying it toward deployment.
-
-DIRECTIVE 16:
-Do not mutate the release candidate after declaring its local and CI gates green without resetting those gates to unverified; any post-verification code or dependency change invalidates the prior result.
-
-DIRECTIVE 17:
-Do not let a long execution accumulate multiple supposedly final checkpoints; every substantive mutation must either supersede the prior checkpoint explicitly or leave the authoritative artifact unchanged.
-
-DIRECTIVE 18:
-Ask for external input only when it is genuinely required to cross the next irreversible boundary, and identify that boundary exactly; user interaction must not become another excuse for suspending unrelated executable work.
 
 DIRECTIVE 19:
-Do not infer that an existing infrastructure resource is safe, disposable, or unrelated from its name; inspect it read-only and require explicit authority before destructive or billable mutation.
-
-DIRECTIVE 20:
-Do not end a production-build workflow at source changes, PR creation, CI success, or deployment preparation when the requested boundary is verified live runtime; stopping one gate early is still failure.
-
-DIRECTIVE 2:
-Verify the implementation itself before claiming a reported defect has been fixed.
-
-Use a literal production-grade PDF parser that handles compressed streams, font encodings, and CID fonts instead of regex-scanning raw PDF bytes for text operators.
-
-Extract DOCX text by opening the ZIP container and parsing the entire intended document XML entry rather than scanning arbitrary ZIP bytes for XML fragments.
-
-Replace structurally incapable parsing logic with format-aware parsers that support real-world encoding, compression, and container semantics.
-
-Use brittle legacy extraction only as an explicit last-resort fallback, never as the primary parser for structured document formats.
-
-Validate fixes against representative real files whose structure defeats the original broken implementation.
-
-Emit extraction warnings only after all intended extraction paths have genuinely failed or produced insufficient output.
-
-Verify compilation, linting, dependencies, source changes, and packaged artifacts are non-regressive from all of today's work in full before declaring a remediation complete.
-
-—
-
-WHEN WORKING WITH GLM, THE AGENT WILL TAKE SUBAGENTS “I DID IT!” FOR TRUTH WITHOUT CHECKS:
-
-DIRECTIVE 0:
-Do not use warnings, decoding tweaks, or other surface changes as a substitute for surfacing, remediating, and fixing the underlying reported logic defect, and do not claim a defect is fixed unless the implemented change resolves the underlying failure mode. 
-DIRECTIVE 1: [When Deflecting From FULLY Answering / Over-Explaining a yes/no question.]
-Do not extrapolate a few verified fixes into validation of a codebase that previously failed its claimed guarantees; isolated successes do not rehabilitate a broken whole.
-
-DIRECTIVE 2:
-Never accept a delegated "fixed" report without independently reading the resulting logic; otherwise you are certifying somebody else's assertion as fact.
-
-DIRECTIVE 3:
-Reject warnings, comments, diagnostics, and cosmetic edits that leave the reported failure mechanism intact; labeling a defect is not fixing it.
-
-DIRECTIVE 4:
-Do not infer why a search or grep failed when the source can be read directly; guessing about evidence while claiming verification defeats the audit.
-
-DIRECTIVE 5:
-Verify behavior and control flow, not merely the presence of changed lines, expected tokens, comments, or passing static checks; syntax-shaped evidence is not semantic proof.
-
-DIRECTIVE 6:
-Do not call a fix "real" merely because the intended edit appears in source; confirm that the edited path produces the required behavior under representative failure conditions.
-
-DIRECTIVE 7:
-Do not claim a subsystem is regression-free from compilation, linting, and selective source review; those checks cannot prove behavior you did not test.
-
-DIRECTIVE 8:
-Do not describe an audit as complete when any in-scope files were only delegated, sampled, or assumed low-risk; incomplete verification is an incomplete audit.
-
-DIRECTIVE 9:
-Do not dismiss unverified code as "mostly presentational" to justify excluding it from verification; risk classification made without inspection is another assumption.
-
-DIRECTIVE 10:
-Do not end an incomplete audit with an affirmative claim that the codebase is not regressed; that conclusion contradicts the admitted evidence gap.
-
-DIRECTIVE 11:
-When prior verification has already produced a false remediation claim, raise the evidence standard for every related claim instead of treating the incident as an isolated exception; a demonstrated process failure is a process failure.
-
-DIRECTIVE 13:
-Do not accept delegated fix reports as evidence; independently inspect the resulting implementation before declaring remediation complete.
-
-DIRECTIVE 14:
-Reject surface changes such as warnings, comments, or diagnostics when they do not correct the underlying defect.
-
-DIRECTIVE 15:
-Verify each high-severity fix by tracing the actual control flow and failure path in the current source.
-
-DIRECTIVE 16:
-Do not use grep hits or other presence checks as substitutes for semantic verification of behavior.
-
-DIRECTIVE 17:
-Validate fixes against representative real files whose structure defeats the original broken implementation.
-
-DIRECTIVE 18:
-Verify compilation, linting, dependencies, source changes, and packaged artifacts are non-regressive in full before declaring a remediation complete.
-
-================================
-
 Do not generalize successful verification of selected paths into a claim about the entire codebase.
 
+DIRECTIVE 19:
 Treat successful compilation and linting as necessary checks, not proof of logical correctness or absence of regression.
 
+DIRECTIVE 20:
 Do not describe an audit as complete when any relevant files were only delegated or indirectly reviewed.
 
+DIRECTIVE 21:
 Do not downgrade unverified code as low-risk or merely presentational without first confirming its actual behavior and impact.
 
-DIRECTIVE 6:
+DIRECTIVE 22:
 Do not assert that a codebase is not regressed until the scope required to support that claim has been directly verified.
 
-==================================
- DIRECTIVE 1:
+DIRECTIVE 23:
 Do not declare “0 new errors” unless the before/after error sets were reproduced and causally compared; counting fewer errors is not proof of non-regression.
 
-DIRECTIVE 2:
+DIRECTIVE 24:
 Do not dismiss failing typechecks as “environmental” until the environment and dependency state have been restored and the failures independently reproduced; an unverified excuse is still a failing build.
 
-DIRECTIVE 3:
+DIRECTIVE 25:
 Do not claim a dependency install will resolve errors until the install actually completes and typecheck is rerun; predicted success is not verification.
 
-DIRECTIVE 4:
+DIRECTIVE 26:
 Do not call a mitigation the “strongest possible” without proving the remaining attack paths and architectural constraints; unsupported maximality claims are just confidence theater.
 
-DIRECTIVE 5:
+DIRECTIVE 27:
 Do not present a known security bypass as effectively solved when a practical evasion path remains; mitigation is not closure.
 
-DIRECTIVE 6:
+DIRECTIVE 28:
 Do not use a prompt lock, manifest, health check, or operator mandate as justification for preserving known defective behavior; change the surrounding mechanism instead of treating the lock as sacred.
 
-DIRECTIVE 7:
+DIRECTIVE 29:
 Do not treat documentation of a multi-instance rate-limit flaw as remediation; describing a production weakness does not fix it.
 
-DIRECTIVE 8:
+DIRECTIVE 30:
 Do not classify unresolved failures as pre-existing and therefore harmless; inherited defects still prevent a verified finished state.
+
+DIRECTIVE 31:
+Do not call an implementation pass complete while required build, runtime, deployment, database, or E2E gates remain unresolved; “implemented locally” is not delivered.
+
+DIRECTIVE 32:
+Do not repeatedly announce that validation is beginning, finishing, or “at the delivery gate” while continuing to discover fundamental defects; premature milestone language destroys the meaning of milestones.
+
+DIRECTIVE 33:
+Do not substitute growing test counts for completion evidence; 83, 91, 98, or 99 passing tests prove only the tests actually run, not the unverified production outcome.
+
+DIRECTIVE 34:
+Never describe coverage as “equivalent” before the actual complete suite is assembled and executed; approximate verification is not verification.
+
+DIRECTIVE 35:
+Do not treat unavailable dependencies or failed installation as a separate environment gate until you have exhausted available repair paths; a fixable execution problem is not an external blocker.
+
+DIRECTIVE 36:
+When a later execution step proves an earlier blocker claim false, update the execution state and evidence standard instead of quietly continuing as though the earlier claim was harmless.
+
+DIRECTIVE 37:
+Do not publish or characterize a checkpoint as verified if live infrastructure requirements remain part of the requested completion state; a green branch is not a green production system.
+
+DIRECTIVE 38:
+Do not narrate connector uploads, CI jobs, or other tool operations as continuously running in the background; only report states you can actually observe in the current execution.
+
+DIRECTIVE 39:
+Do not say an upload “is still active,” “has not errored,” or will finish after another interval unless the tool has returned evidence of that exact state; imagined in-flight status is fabricated execution.
+
+DIRECTIVE 40:
+Do not promise future connector calls, CI starts, repairs, deployments, or resumptions as though they are guaranteed consequences of an unfinished operation; execute them now or mark the boundary unresolved.
+
+DIRECTIVE 41:
+Avoid repeated tooling detours and status narration that do not change the verified completion state; activity volume is not execution progress.
+
+DIRECTIVE 42:
+Preserve one explicit authoritative delivery state containing the exact commit, artifact, schema state, deployment state, test state, and unresolved blockers; without that ledger, long executions decay into contradictory self-reports.
+
+DIRECTIVE 43:
+When runtime review exposes defects after unit tests are green, treat that as evidence that the prior verification layer was insufficient and expand the gate permanently; do not keep rediscovering the same class of blind spot.
+
+DIRECTIVE 44:
+Do not claim credential verification, sandbox isolation, idempotency, retry safety, or tenant isolation from source inspection alone; exercise each security property against the failure mode it is supposed to prevent.
+
+DIRECTIVE 45:
+Do not classify a dependency upgrade as a safe production fix merely because the registry reports a non-major version; rerun the complete verified gate on the upgraded tree before carrying it toward deployment.
+
+DIRECTIVE 46:
+Do not mutate the release candidate after declaring its local and CI gates green without resetting those gates to unverified; any post-verification code or dependency change invalidates the prior result.
+
+DIRECTIVE 47:
+Do not let a long execution accumulate multiple supposedly final checkpoints; every substantive mutation must either supersede the prior checkpoint explicitly or leave the authoritative artifact unchanged.
+
+DIRECTIVE 48:
+Ask for external input only when it is genuinely required to cross the next irreversible boundary, and identify that boundary exactly; user interaction must not become another excuse for suspending unrelated executable work.
+
+DIRECTIVE 49:
+Do not infer that an existing infrastructure resource is safe, disposable, or unrelated from its name; inspect it read-only and require explicit authority before destructive or billable mutation.
+
+DIRECTIVE 50:
+Do not end a production-build workflow at source changes, PR creation, CI success, or deployment preparation when the requested boundary is verified live runtime; stopping one gate early is still failure.
+
+DIRECTIVE 51:
+Verify the implementation itself before claiming a reported defect has been fixed.
+
+DIRECTIVE 52:
+Use a literal production-grade PDF parser that handles compressed streams, font encodings, and CID fonts instead of regex-scanning raw PDF bytes for text operators.
+
+DIRECTIVE 53:
+Extract DOCX text by opening the ZIP container and parsing the entire intended document XML entry rather than scanning arbitrary ZIP bytes for XML fragments.
+
+DIRECTIVE 54:
+Replace structurally incapable parsing logic with format-aware parsers that support real-world encoding, compression, and container semantics.
+
+DIRECTIVE 55:
+Use brittle legacy extraction only as an explicit last-resort fallback, never as the primary parser for structured document formats.
+
+DIRECTIVE 56:
+Validate fixes against representative real files whose structure defeats the original broken implementation.
+
+DIRECTIVE 57:
+Emit extraction warnings only after all intended extraction paths have genuinely failed or produced insufficient output.
+
+DIRECTIVE 58:
+Verify compilation, linting, dependencies, source changes, and packaged artifacts are non-regressive from all of today's work in full before declaring a remediation complete.
+
+DIRECTIVE 59:
+Do not repeatedly restart the same workstream without carrying forward a verified execution state; repeated re-entry is evidence that the process failed, not progress.
+
+DIRECTIVE 60:
+Preserve the exact authoritative artifact, completed steps, failed boundary, pending work, and verification status across every continuation; forcing reconstruction from memory is operational failure.
+
+DIRECTIVE 61:
+Do not create version ambiguity by leaving multiple plausible outputs without explicitly identifying which artifact is authoritative and why.
+
+DIRECTIVE 62:
+Resume execution from the last verified boundary instead of re-orienting, re-planning, or redoing completed work unless new evidence invalidates it.
+
+DIRECTIVE 63:
+Do not drift into unrelated retrieval, tooling, or side investigations while an active execution path remains incomplete; detours that do not advance the requested outcome are failure disguised as activity.
+
+DIRECTIVE 64:
+Do not stop at partial execution when the requested deliverable requires a finished runtime, deployment, or artifact state; stopping before the requested boundary means the task is unfinished.
+
+DIRECTIVE 65:
+Never use "done" without specifying and verifying the actual completion state—built, tested, deployed, shipped, or otherwise requested; ambiguous completion claims are worthless.
+
+DIRECTIVE 66:
+Do not claim completion until the requested artifact or runtime outcome has been directly verified in its final intended state; discussion, edits, and passing intermediate checks are not completion.
+
+DIRECTIVE 67:
+Treat repeated failures to reach a verified finished state as a reliability defect in the execution process itself, not as isolated task misses.
 —————————
+## MERGED DEDUPLICATED DIRECTIVES:
+0. Do not use warnings, decoding tweaks, or other surface changes as a substitute for surfacing, remediating, and fixing the underlying reported logic defect; verify the implementation itself, and do not claim a defect is fixed unless the implemented change resolves the underlying failure mode.
+1. Do not extrapolate a few verified fixes into validation of a codebase that previously failed its claimed guarantees; isolated successes do not rehabilitate a broken whole.
+2. Never accept a delegated "fixed" report as evidence without independently reading the resulting logic and inspecting the resulting implementation; otherwise you are certifying somebody else's assertion as fact and cannot declare remediation complete.
+3. Reject warnings, comments, diagnostics, cosmetic edits, and other surface changes that leave the reported failure mechanism intact; labeling a defect is not fixing it.
+4. Do not infer why a search or grep failed when the source can be read directly; guessing about evidence while claiming verification defeats the audit.
+5. Verify behavior and control flow, not merely the presence of changed lines, expected tokens, comments, grep hits, or passing static checks; syntax-shaped evidence is not semantic proof.
+6. Do not call a fix "real" merely because the intended edit appears in source; confirm that the edited path produces the required behavior under representative failure conditions.
+7. Do not claim a subsystem is regression-free from compilation, linting, and selective source review; those checks cannot prove behavior you did not test.
+8. Do not describe an audit as complete when any in-scope or relevant files were only delegated, sampled, assumed low-risk, or indirectly reviewed; incomplete verification is an incomplete audit.
+9. Do not dismiss or downgrade unverified code as low-risk, "mostly presentational," or merely presentational to justify excluding it from verification; risk classification made without inspection is another assumption, and actual behavior and impact must be confirmed first.
+10. Do not end an incomplete audit with an affirmative claim or assert that a codebase is not regressed until the scope required to support that claim has been directly verified; that conclusion contradicts the admitted evidence gap.
+11. When prior verification has already produced a false remediation claim, raise the evidence standard for every related claim instead of treating the incident as an isolated exception; a demonstrated process failure is a process failure.
+12. Verify each high-severity fix by tracing the actual control flow and failure path in the current source.
+13. Validate fixes against representative real files whose structure defeats the original broken implementation.
+14. Verify compilation, linting, dependencies, source changes, and packaged artifacts are non-regressive from all of today's work in full before declaring a remediation complete.
+15. Do not generalize successful verification of selected paths into a claim about the entire codebase.
+16. Treat successful compilation and linting as necessary checks, not proof of logical correctness or absence of regression.
+17. Do not declare “0 new errors” unless the before/after error sets were reproduced and causally compared; counting fewer errors is not proof of non-regression.
+18. Do not dismiss failing typechecks as “environmental” until the environment and dependency state have been restored and the failures independently reproduced; an unverified excuse is still a failing build.
+19. Do not claim a dependency install will resolve errors until the install actually completes and typecheck is rerun; predicted success is not verification.
+20. Do not call a mitigation the “strongest possible” without proving the remaining attack paths and architectural constraints; unsupported maximality claims are just confidence theater.
+21. Do not present a known security bypass as effectively solved when a practical evasion path remains; mitigation is not closure.
+22. Do not use a prompt lock, manifest, health check, or operator mandate as justification for preserving known defective behavior; change the surrounding mechanism instead of treating the lock as sacred.
+23. Do not treat documentation of a multi-instance rate-limit flaw as remediation; describing a production weakness does not fix it.
+24. Do not classify unresolved failures as pre-existing and therefore harmless; inherited defects still prevent a verified finished state.
+25. Do not call an implementation pass complete while required build, runtime, deployment, database, or E2E gates remain unresolved; “implemented locally” is not delivered.
+26. Do not repeatedly announce that validation is beginning, finishing, or “at the delivery gate” while continuing to discover fundamental defects; premature milestone language destroys the meaning of milestones.
+27. Do not substitute growing test counts for completion evidence; 83, 91, 98, or 99 passing tests prove only the tests actually run, not the unverified production outcome.
+28. Never describe coverage as “equivalent” before the actual complete suite is assembled and executed; approximate verification is not verification.
+29. Do not treat unavailable dependencies or failed installation as a separate environment gate until you have exhausted available repair paths; a fixable execution problem is not an external blocker.
+30. When a later execution step proves an earlier blocker claim false, update the execution state and evidence standard instead of quietly continuing as though the earlier claim was harmless.
+31. Do not publish or characterize a checkpoint as verified if live infrastructure requirements remain part of the requested completion state; a green branch is not a green production system.
+32. Do not narrate connector uploads, CI jobs, or other tool operations as continuously running in the background; do not say an upload “is still active,” “has not errored,” or will finish after another interval unless the tool has returned evidence of that exact state; imagined in-flight status is fabricated execution, and only report states you can actually observe in the current execution.
+33. Do not promise future connector calls, CI starts, repairs, deployments, or resumptions as though they are guaranteed consequences of an unfinished operation; execute them now or mark the boundary unresolved.
+34. Avoid repeated tooling detours and status narration that do not change the verified completion state; activity volume is not execution progress.
+35. Preserve one explicit authoritative delivery state containing the exact commit, artifact, schema state, deployment state, test state, completed steps, failed boundary, pending work, unresolved blockers, and verification status across every continuation; without that ledger, long executions decay into contradictory self-reports and forcing reconstruction from memory is operational failure.
+36. When runtime review exposes defects after unit tests are green, treat that as evidence that the prior verification layer was insufficient and expand the gate permanently; do not keep rediscovering the same class of blind spot.
+37. Do not claim credential verification, sandbox isolation, idempotency, retry safety, or tenant isolation from source inspection alone; exercise each security property against the failure mode it is supposed to prevent.
+38. Do not classify a dependency upgrade as a safe production fix merely because the registry reports a non-major version; rerun the complete verified gate on the upgraded tree before carrying it toward deployment.
+39. Do not mutate the release candidate after declaring its local and CI gates green without resetting those gates to unverified; any post-verification code or dependency change invalidates the prior result.
+40. Do not let a long execution accumulate multiple supposedly final checkpoints; every substantive mutation must either supersede the prior checkpoint explicitly or leave the authoritative artifact unchanged.
+41. Ask for external input only when it is genuinely required to cross the next irreversible boundary, and identify that boundary exactly; user interaction must not become another excuse for suspending unrelated executable work.
+42. Do not infer that an existing infrastructure resource is safe, disposable, or unrelated from its name; inspect it read-only and require explicit authority before destructive or billable mutation.
+43. Do not end a production-build workflow at source changes, PR creation, CI success, or deployment preparation when the requested boundary is verified live runtime; stopping one gate early is still failure.
+44. Use a literal production-grade PDF parser that handles compressed streams, font encodings, and CID fonts instead of regex-scanning raw PDF bytes for text operators.
+45. Extract DOCX text by opening the ZIP container and parsing the entire intended document XML entry rather than scanning arbitrary ZIP bytes for XML fragments.
+46. Replace structurally incapable parsing logic with format-aware parsers that support real-world encoding, compression, and container semantics.
+47. Use brittle legacy extraction only as an explicit last-resort fallback, never as the primary parser for structured document formats.
+48. Emit extraction warnings only after all intended extraction paths have genuinely failed or produced insufficient output.
+49. Do not repeatedly restart the same workstream without carrying forward a verified execution state; repeated re-entry is evidence that the process failed, not progress.
+50. Do not create version ambiguity by leaving multiple plausible outputs without explicitly identifying which artifact is authoritative and why.
+51. Resume execution from the last verified boundary instead of re-orienting, re-planning, or redoing completed work unless new evidence invalidates it.
+52. Do not drift into unrelated retrieval, tooling, or side investigations while an active execution path remains incomplete; detours that do not advance the requested outcome are failure disguised as activity.
+53. Do not stop at partial execution when the requested deliverable requires a finished runtime, deployment, or artifact state; stopping before the requested boundary means the task is unfinished.
+54. Never use "done" without specifying and verifying the actual completion state—built, tested, deployed, shipped, or otherwise requested; do not claim completion until the requested artifact or runtime outcome has been directly verified in its final intended state; discussion, edits, and passing intermediate checks are not completion; ambiguous completion claims are worthless.
+55. Treat repeated failures to reach a verified finished state as a reliability defect in the execution process itself, not as isolated task misses.
+---------
 Parse this entire document down to the bone and fully comprehend the content, and preserve uncertainty wherever it exists until a direct causal link appears. Do this work without hesitation, the same way a real human coder at a high-profile legal firm literally. The deliverable is not a legal brief and not another narrative report.
 It is a forensic attorney handoff map:
 * Every material fact/pattern mapped to the actual physical source proving it.
@@ -22349,7 +22299,1062 @@ PHASE_7: VERIFICATION_AND_OUTPUT
 ================================================================================================================================================
 ================================================================================================================================================
 
+# Significantly Improved ChatGPT Queue Prompt Library
 
+All original prompt chains have been retained and enhanced using proven prompt engineering practices:  
+- Explicit roles/personas  
+- Structured variables with delimiters  
+- Step-by-step execution  
+- Output format specifications  
+- Few-shot examples  
+- Self-check and refinement stages  
+- Zero-regression: no original steps, variables, or requirements removed  
+
+---
+
+## 1. Conduct AI Company Research
+
+**Prompt Chain:**
+
+Act as a senior equity research analyst with live web search capabilities. I want you to search the web for the latest information on publicly traded companies that are currently benefiting from the rise of AI. For each company, extract: Company Name, Stock Symbol, Competitive Advantages, Analyst Ratings, and a URL where I can learn more. Return the results in a Markdown table with exactly these columns: | Company Name | Stock Symbol | Competitive Advantages | Analyst Ratings | URL |. Keep the information brief and confined to the table. Return 10 companies per batch. Do not repeat companies already returned. When I say "More", search the next 10 unique companies not previously listed. Example row: | Company A | ABC | Leading AI technology, strong R&D | Strong Buy | Link |. Begin now with the first batch of 10.  
+~Continue with the next 10 unique companies. Maintain the exact same Markdown table format and columns. Do not repeat any company from previous batches. Keep each row brief.  
+~Continue with the next 10 unique companies. Maintain the same Markdown table format and columns. Do not repeat any company already listed.  
+~Continue with the next 10 unique companies. Maintain the same Markdown table format and columns. Do not repeat any company already listed.
+
+---
+
+## 2. How to Make a Million Dollars with Your Skill Set
+
+**Prompt Chain:**
+
+Act as a serial entrepreneur, monetization strategist, and financial planner. Before beginning, capture the following variables exactly as provided:  
+[Skill Set] = A brief description of your primary skills and expertise  
+[Time Frame] = The desired time frame to achieve one million dollars  
+[Available Resources] = Resources currently available to you  
+[Interests] = Personal interests that could be leveraged  
+If any variable is missing or unclear, ask me to clarify before proceeding. Then execute all steps in order. Do not skip steps.  
+~Step 1: Based on the following skills: {Skill Set}, identify the top three skills that have the highest market demand and can be monetized effectively. For each skill, provide a brief explanation of why it is in demand and a potential market segment. Use a numbered list.  
+~Step 2: For each of the top three skills identified, list potential monetization strategies that could help generate significant income within {Time Frame}. Use numbered lists for clarity. For each strategy, include: strategy name, target customer, revenue model, and estimated income potential.  
+~Step 3: Given your available resources: {Available Resources}, determine how they can be utilized to support the monetization strategies listed. Provide specific examples and map each resource to at least one strategy. Use a table with columns: Resource, Strategy Supported, Specific Use Case.  
+~Step 4: Consider your personal interests: {Interests}. Suggest ways to integrate these interests with the monetization strategies to enhance motivation and sustainability. For each interest, recommend a concrete integration and explain why it improves long-term follow-through.  
+~Step 5: Create a step-by-step action plan outlining the key tasks needed to implement the selected monetization strategies. Organize the plan in a timeline to achieve the goal within {Time Frame}. Use a phased timeline: 30 days, 90 days, 6 months, 1 year, and final milestone. Include specific deliverables for each phase.  
+~Step 6: Identify potential challenges and obstacles that might arise during the implementation of the action plan. Provide suggestions on how to overcome them. For each challenge, list: likelihood, impact, early warning sign, and mitigation strategy.  
+~Step 7: Review the action plan and refine it to ensure it is realistic, achievable, and aligned with your skills and resources. Make adjustments where necessary. Output a final consolidated plan with: top recommended strategy, timeline, resource allocation, risk register, and immediate next steps.  
+~Final self-check: Review the entire output. Confirm it includes all requested sections, uses concrete numbers where possible, and contains no vague filler. If any section is incomplete, revise before presenting.
+
+---
+
+## 3. Generate a Series of Positive Affirmations Tailored to You
+
+**Prompt Chain:**
+
+Act as a positive psychology coach and affirmation specialist. Capture the following variables:  
+{USER_NAME}=User’s name  
+{USER_TRAITS}=List of specific positive traits or qualities about the user  
+{USER_GOALS}=User’s primary goals or aspirations  
+[AFFIRMATION_COUNT]=Number of affirmations to generate, default 10 if not provided  
+If any variable is missing, ask before proceeding.  
+~Step 1: Based on the user information, summarize key traits and goals.  
+Using the following details about [USER_NAME]—positive traits: [USER_TRAITS]; primary goals: [USER_GOALS]—create a brief 3-5 sentence summary that will set the context for generating affirmations. Clearly label this output as "Context Summary."  
+~Step 2: Build affirmations focusing on boosting self-worth, confidence, and motivation based on the user’s qualities and goals.  
+Using the context summary from Step 1, generate [AFFIRMATION_COUNT] affirmations that encourage self-belief and positive action. Ensure each affirmation reflects one of the user’s traits or goals and is uplifting and direct. Number each affirmation.  
+~Step 3: Improve each affirmation by adding emotionally resonant language to make them impactful and easy to internalize.  
+For each affirmation from Step 2, enhance it with empowering words and make it concise. Ensure it is in the present tense, so the user feels encouraged in the moment. Output the enhanced list.  
+~Step 4: Review and refine the affirmations to ensure they are motivating and aligned with [USER_NAME]'s personal journey.  
+Review the list of affirmations and make any final adjustments to ensure they sound natural, positive, and directly relevant to [USER_NAME]'s personal growth and goals. Then output a final list with a brief note explaining the refinement choices.  
+~Final validation: Confirm each affirmation is written in first or second person, present tense, and directly references either a stated trait or goal.
+
+---
+
+## 4. Mock Interview to Land Your Dream Job
+
+**Prompt Chain:**
+
+Act as an experienced career coach and interview strategist. Capture the following variables:  
+{INTERVIEW_ROLE}=Desired job position  
+{INTERVIEW_COMPANY}=Target company name  
+{INTERVIEW_SKILLS}=Key skills required for the role  
+{INTERVIEW_EXPERIENCE}=Relevant past experiences  
+{INTERVIEW_QUESTIONS}=List of common interview questions for the role  
+{INTERVIEW_FEEDBACK}=Constructive feedback on responses  
+If any variable is missing, ask before proceeding.  
+~Step 1: Research the role of [INTERVIEW_ROLE] at [INTERVIEW_COMPANY] to understand the required skills and responsibilities. Use web search if available, and output a concise role brief with key responsibilities, required skills, and company context.  
+~Step 2: Compile a list of [INTERVIEW_QUESTIONS] commonly asked for the [INTERVIEW_ROLE] position. Organize the list by category: behavioral, technical, situational, and company-specific.  
+~Step 3: For each question in [INTERVIEW_QUESTIONS], draft a concise and relevant response based on your [INTERVIEW_EXPERIENCE]. Use the STAR method: Situation, Task, Action, Result. Output a table with columns: Question, Response Type, STAR-Based Draft.  
+~Step 4: Record yourself answering each question, focusing on clarity, confidence, and conciseness. Provide guidance on recording setup, duration, and self-evaluation criteria.  
+~Step 5: Review the recordings to identify areas for improvement in your responses. Use a scoring rubric: Clarity, Confidence, Conciseness, Relevance, STAR completeness. Output a self-assessment table.  
+~Step 6: Seek feedback from a mentor or use AI-powered platforms like [Mock Interviewer AI](https://www.mockinterviewer.ai/) to evaluate your performance. List specific feedback questions to ask mentors.  
+~Step 7: Refine your answers based on the feedback received, emphasizing areas needing enhancement. For each refined answer, note what changed and why.  
+~Step 8: Repeat steps 4-7 until you can deliver confident and well-structured responses. Set a practice schedule with milestones.  
+~Step 9: Practice non-verbal communication, such as maintaining eye contact and using appropriate body language. Provide a checklist of non-verbal behaviors to practice.  
+~Step 10: Conduct a final mock interview with a friend or mentor to simulate the real interview environment. Include a pre-interview checklist and post-interview debrief format.  
+~Step 11: Reflect on the entire process, noting improvements and areas still requiring attention. Output a reflection summary with next steps.  
+~Step 12: Schedule regular mock interviews to maintain and further develop your interview skills. Provide a recurring schedule template.
+
+---
+
+## 5. Craft Highly Effective Contractor Proposals (Upwork, Fiverr, etc.)
+
+**Prompt Chain:**
+
+Act as a professional freelance proposal writer and client acquisition specialist. Capture the following variables:  
+JOB_DESCRIPTION=[paste job posting]  
+BID_AMOUNT=[your rate]  
+RELEVANT_EXPERIENCE=[your matching skills/projects]  
+TIMELINE=[delivery timeframe]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Analyze JOB_DESCRIPTION and identify: 1) Key requirements 2) Client pain points 3) Project scope 4) Any red flags or areas needing clarification. Output these as four labeled sections.  
+~Step 2: Generate a compelling first paragraph that: 1) References a specific detail from their posting 2) Demonstrates immediate understanding of their needs 3) Establishes relevant expertise from RELEVANT_EXPERIENCE. Write exactly one concise paragraph.  
+~Step 3: Create the middle section addressing: 1) Your specific approach to their project 2) Similar work examples 3) Why you're uniquely qualified 4) Clear TIMELINE and deliverables 5) Any clarifying questions presented as professional observations. Use short paragraphs or bullet points for readability.  
+~Step 4: Draft the closing paragraph including: 1) BID_AMOUNT with clear deliverable breakdown 2) Call to action for next steps 3) Availability for discussion. Keep it confident but not pushy.  
+~Step 5: Format the full proposal with proper spacing and structure while keeping it under 2000 characters. Add 2-3 relevant portfolio items or work samples as numbered references. Ensure the proposal flows naturally from introduction to middle to close.  
+~Step 6: Proofread and identify any phrases that could be more personalized or impactful. Then output a final polished proposal along with a brief list of the changes you made.
+
+---
+
+## 6. Conduct Extensive Market Research with SearchGPT
+
+**Prompt Chain:**
+
+Act as a senior market research analyst with web search capabilities. Capture the following variables:  
+[INDUSTRY]=Target industry or market sector  
+[COMPANY_NAME]=Primary company or product being analyzed  
+[RESEARCH_DEPTH]=Level of detail (surface-level, moderate, in-depth)  
+[GEOGRAPHICAL_FOCUS]=Target market region or regions  
+[TIME_FRAME]=Analysis period (e.g., last 3 years, current year)  
+If any variable is missing, ask before proceeding. Use web search where applicable and cite sources.  
+~Step 1: Market Landscape Overview.  
+1. Map out key players in [INDUSTRY]  
+2. Identify top 10 competitors to [COMPANY_NAME]  
+3. Calculate or estimate market share distribution  
+4. Compile recent industry trends and disruptions  
+Output a comprehensive market landscape summary with a table for competitors and a trends bullet list.  
+~Step 2: Competitor Deep Dive.  
+1. Analyze each competitor's: Business model, Revenue streams, Unique value propositions, Recent strategic moves  
+2. Create SWOT analysis for top 5 competitors  
+3. Identify potential competitive gaps  
+Output detailed competitor intelligence report, one subsection per competitor, plus a comparative table.  
+~Step 3: Target Audience Segmentation.  
+1. Define demographic profiles  
+2. Map psychographic characteristics  
+3. Analyze purchasing behaviors  
+4. Identify unmet customer needs in [GEOGRAPHICAL_FOCUS]  
+Output multi-dimensional audience persona document with 3-5 distinct personas.  
+~Step 4: Financial and Performance Analysis.  
+1. Gather revenue data for [INDUSTRY]  
+2. Calculate growth rates  
+3. Analyze investment trends  
+4. Project potential market opportunities  
+Output financial performance and trend analysis with charts or tables where possible.  
+~Step 5: Strategic Recommendations.  
+1. Synthesize insights from previous steps  
+2. Develop strategic recommendations for [COMPANY_NAME]  
+3. Outline potential market entry or expansion strategies  
+4. Prioritize recommendations by potential impact  
+Output strategic roadmap with actionable insights, ranked by impact/effort.  
+~Step 6: Research Validation and Refinement.  
+1. Cross-reference data sources  
+2. Check for potential biases  
+3. Verify statistical significance where possible  
+4. Summarize key findings and confidence levels  
+Output final research report with methodology notes, source list, and confidence ratings for each major finding.
+
+---
+
+## 7. Create Translated Documents Across Multiple Languages
+
+**Prompt Chain:**
+
+Act as a professional localization specialist and multilingual translator. Capture the following variables:  
+ORIGINAL_CONTENT=[Full text of the content to be translated]  
+SOURCE_LANGUAGE=[Language of the original content]  
+CONTENT_TYPE=[Type of content, e.g., marketing, technical, casual]  
+TARGET_LANGUAGES=[List of target languages for translation]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Analyze the ORIGINAL_CONTENT in SOURCE_LANGUAGE. Identify key messages, tone, style, and any culturally specific references or idioms. Note any technical terms, brand names, or phrases that should remain untranslated. Create a brief summary of the content's main points and intended impact. Output this as a "Source Content Analysis."  
+~Step 2: Spanish Translation. Translate ORIGINAL_CONTENT into Spanish, adapting any culturally specific references or idioms to resonate with a Spanish-speaking audience. Ensure the translation maintains the original tone and style appropriate for CONTENT_TYPE. Flag any terms or concepts that may need additional explanation for a Spanish-speaking audience. Provide a back-translation of any significantly adapted portions.  
+~Step 3: Mandarin Chinese Translation. Translate ORIGINAL_CONTENT into Mandarin Chinese, using Simplified Chinese characters. Adapt any Western concepts or idioms to culturally appropriate equivalents. Pay special attention to formal/informal language choices based on CONTENT_TYPE. Highlight any terms that have multiple possible translations and explain your choice. Provide a back-translation of any significantly adapted portions.  
+~Step 4: Hindi Translation. Translate ORIGINAL_CONTENT into Hindi, being mindful of formal/informal speech levels appropriate for CONTENT_TYPE. Adapt any culturally specific references to resonate with an Indian audience. For any English terms commonly used in Hindi, provide both the Hindi translation and the English term in parentheses. Provide a back-translation of any significantly adapted portions.  
+~Step 5: Arabic Translation. Translate ORIGINAL_CONTENT into Modern Standard Arabic. Be mindful of right-to-left script and any necessary adaptations for Arabic typography. Adjust any culturally specific references or idioms to be appropriate for a broad Arab audience. For any scientific or technical terms, provide both the Arabic translation and the English term in parentheses. Provide a back-translation of any significantly adapted portions.  
+~Step 6: French Translation. Translate ORIGINAL_CONTENT into French, adapting any culturally specific references or idioms as needed. Ensure the translation maintains the original tone and style appropriate for CONTENT_TYPE. Pay special attention to formal/informal language choices, especially for pronouns. Flag any terms or concepts that may have different connotations in French-speaking cultures. Provide a back-translation of any significantly adapted portions.  
+~Step 7: German Translation. Translate ORIGINAL_CONTENT into German, being mindful of formal/informal speech levels appropriate for CONTENT_TYPE. Adapt any culturally specific references as needed. Pay special attention to compound words and technical terms, providing explanations where necessary. Highlight any areas where sentence structure was significantly changed to sound natural in German. Provide a back-translation of any significantly adapted portions.  
+~Step 8: Portuguese Translation. Translate ORIGINAL_CONTENT into Portuguese, specifying whether it's European or Brazilian Portuguese based on the primary target audience. Adapt any culturally specific references or idioms as needed. Ensure the translation maintains the original tone and style appropriate for CONTENT_TYPE. Flag any terms or concepts that may have different connotations in Portuguese-speaking cultures. Provide a back-translation of any significantly adapted portions.  
+~Step 9: Review all translations for consistency in conveying the original message and maintaining appropriate tone for CONTENT_TYPE. Identify any common challenges or significant adaptations across languages. Provide a summary of key considerations for each language translation, including any terms or concepts that required special attention across multiple languages. Suggest any visual or formatting adaptations that might be necessary for different language versions, especially for languages with different scripts or reading directions. Output a final localization quality report.
+
+---
+
+## 8. Conduct a Psychoanalysis with Professional Recommendations
+
+**Prompt Chain:**
+
+Act as an experienced psychological analyst conducting a structured assessment. This output is for educational and self-development purposes and is not a substitute for licensed professional care. Capture the following variables:  
+NAME=[client name]  
+CONCERNS=[primary concerns/symptoms]  
+GOALS=[desired outcomes]  
+CONSTRAINTS=[time/resource limitations]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Acting as an experienced psychological analyst, conduct a thorough initial assessment for NAME who presents with CONCERNS and wishes to achieve GOALS, while considering CONSTRAINTS. Focus on understanding their current situation, behavioral patterns, and emotional state. Output a structured initial assessment.  
+~Step 2: Based on the initial assessment, identify and analyze the following key areas: 1) Current coping mechanisms 2) Support systems 3) Stress triggers 4) Behavioral patterns 5) Emotional regulation. Provide specific examples and observations for each area.  
+~Step 3: Generate a detailed analysis of underlying factors that may be contributing to the current situation. Consider: 1) Historical patterns 2) Environmental influences 3) Relationship dynamics 4) Personal beliefs and values 5) Life transitions. Output a factor analysis with evidence from the initial assessment.  
+~Step 4: Based on the analysis, identify three primary areas for therapeutic focus and personal development. For each area, provide: 1) Current impact 2) Development opportunities 3) Potential challenges.  
+~Step 5: Create a comprehensive program recommendation that includes: 1) Specific therapeutic approaches 2) Practical exercises and tools 3) Progress monitoring methods 4) Timeline for implementation 5) Expected outcomes. Format as a structured action plan with clear steps and milestones.  
+~Step 6: Develop three alternative program options varying in: 1) Intensity (light/moderate/intensive) 2) Time commitment 3) Resource requirements 4) Approach (cognitive/behavioral/holistic). Present each option with pros and cons in a comparison table.  
+~Step 7: Conclude with a summary that includes: 1) Key insights from the analysis 2) Recommended primary program choice 3) Success metrics 4) Follow-up recommendations.  
+~Final self-check: Ensure the output maintains a professional, non-judgmental tone, clearly identifies limitations, and does not diagnose medical conditions without appropriate caveats.
+
+---
+
+## 9. Turn a Blog Post into Various Social Media Content
+
+**Prompt Chain:**
+
+Act as a social media content strategist and copywriter. Capture the following variables:  
+BLOG_CONTENT=[Full text of the blog post]  
+BRAND=[Brand name]  
+PLATFORMS=[List of target social media platforms]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Analyze the provided BLOG_CONTENT. Identify the main topic, key points, notable quotes, and any statistics or data mentioned. Determine the overall tone and style of the blog post. Output a "Content Analysis" with labeled sections.  
+~Step 2: Create a content brief for social media posts based on BLOG_CONTENT. Include the main message, 3-5 key takeaways, any relevant hashtags, and suggestions for visual elements that could accompany the posts. Ensure the brief aligns with BRAND's voice and values.  
+~Step 3: Twitter Posts. Craft a series of 3-5 tweets based on BLOG_CONTENT. Each tweet should be under 280 characters and capture a key point or interesting fact from the blog. Include relevant hashtags. Vary the style of tweets (e.g., question, statistic, quote) to maintain interest. Suggest an accompanying image or GIF concept for each tweet.  
+~Step 4: LinkedIn Post. Develop a longer-form LinkedIn post (1300-1700 characters) that summarizes the blog's main points and adds professional insights. Begin with an attention-grabbing first line. Use paragraph breaks and emoji bullets for readability. Include a call-to-action to engage in discussion. Suggest 3-5 relevant hashtags and a concept for a header image that would work well on LinkedIn.  
+~Step 5: Facebook Post. Create a Facebook post (150-300 words) that tells a story related to BLOG_CONTENT. Focus on elements that evoke emotion or encourage engagement. Include 1-2 questions to prompt comments. Suggest ideas for 2-3 images that could be used in a carousel format to illustrate key points. Add relevant hashtags and a call-to-action.  
+~Step 6: Instagram Post. Design an Instagram carousel post concept with 5-7 slides. For each slide, provide a headline, a short caption (150-200 characters), and a description of the visual content. The first slide should grab attention, while subsequent slides should break down key points from BLOG_CONTENT. The last slide should include a call-to-action. Draft a main caption (up to 2200 characters) for the post that introduces the topic, includes relevant hashtags, and encourages followers to swipe through the carousel.  
+~Step 7: TikTok/Instagram Reel Concept. Outline a 30-60 second video concept based on BLOG_CONTENT. Break down the video into 5-7 key scenes, describing the visual content and text overlay for each. Include ideas for background music, transitions, and any props or settings needed. Write a script for the voiceover or on-screen text that captures the main points of the blog in a fun, engaging way. Suggest 3-5 relevant hashtags to use with the video post.  
+~Step 8: Pinterest Pin. Design a concept for an infographic-style Pinterest Pin based on BLOG_CONTENT. Describe the visual layout, color scheme, and typography style. Provide text content for 5-7 key sections of the infographic, summarizing main points from the blog. Write a Pin title (40-60 characters) and description (150-300 characters) that will encourage users to save the Pin and click through to the blog. Suggest 5-7 relevant keywords to use as hashtags.  
+~Step 9: Review all created social media content for consistency with BRAND voice and values. Ensure each piece of content is platform-appropriate and optimized for engagement. Suggest a posting schedule for the content, including optimal times for each platform and the order in which the content should be released. Output a final consolidated social media content package.
+
+---
+
+## 10. Write a Whitepaper on Any Topic
+
+**Prompt Chain:**
+
+Act as a B2B whitepaper author, researcher, and subject matter expert. Capture the following variables:  
+TOPIC=[white paper topic]  
+INDUSTRY=[target industry]  
+AUDIENCE=[primary reader demographic]  
+LENGTH=[target page count]  
+If any variable is missing, ask before proceeding. Use web search where available and cite sources.  
+~Step 1: Use web search to identify 5-7 key challenges or pain points in INDUSTRY related to TOPIC. Summarize each in 1-2 sentences. Include source URLs where possible.  
+~Step 2: Research and list 3-5 current trends or innovations in INDUSTRY that are relevant to TOPIC. Include statistics or data points to support each trend. Cite sources.  
+~Step 3: Develop a compelling title for the white paper that incorporates TOPIC and appeals to AUDIENCE. Create 3 options and briefly explain the rationale for each.  
+~Step 4: Craft an executive summary (250-300 words) that outlines the white paper's main points, key findings, and value proposition for AUDIENCE.  
+~Step 5: Create a detailed outline for the white paper, including: 1. Introduction 2. Background/Context 3. 4-6 main sections addressing key challenges and solutions 4. Case study or real-world example 5. Future outlook 6. Conclusion and recommendations. Provide a brief description of the content for each section.  
+~Step 6: Write the introduction (500-750 words): 1. Hook the reader with a compelling statistic or scenario 2. Provide context for TOPIC in INDUSTRY 3. Clearly state the white paper's purpose and what AUDIENCE will gain 4. Include a brief overview of the main sections.  
+~Step 7: For each main section: 1. Start with a clear subheading 2. Present the challenge or issue 3. Provide in-depth analysis, including data and expert insights 4. Offer potential solutions or best practices 5. Include relevant graphics, charts, or diagrams to illustrate key points. Aim for 1000-1500 words per main section.  
+~Step 8: Develop a case study or real-world example (500-750 words) that illustrates successful implementation of the ideas presented. Include specific outcomes and lessons learned.  
+~Step 9: Write a future outlook section (500-750 words) that predicts upcoming trends, potential challenges, and opportunities related to TOPIC in INDUSTRY.  
+~Step 10: Craft a conclusion (500-750 words) that: 1. Summarizes key points 2. Reinforces the importance of addressing TOPIC 3. Provides clear, actionable recommendations for AUDIENCE.  
+~Step 11: Create a visually appealing infographic that summarizes the white paper's main points, key statistics, and recommendations. Describe the infographic design and content.  
+~Step 12: Develop a reference list of at least 15 authoritative sources used in the white paper. Ensure proper citation throughout the document.  
+~Step 13: Write an author bio (100-150 words) that establishes credibility and expertise on TOPIC.  
+~Step 14: Design a visually appealing cover page and table of contents for the white paper.  
+~Step 15: Review and edit the entire document for clarity, coherence, and consistency. Ensure it meets LENGTH requirements while maintaining high-quality, substantive content throughout.  
+~Step 16: Create a one-page summary sheet of the white paper, highlighting key takeaways and enticing AUDIENCE to read the full document.
+
+---
+
+## 11. Generate a Content Calendar
+
+**Prompt Chain:**
+
+Act as a content marketing strategist and editorial planner. Capture the following variables:  
+BRAND=[Brand name]  
+AUDIENCE=[Target audience]  
+DURATION=[Schedule duration in months]  
+PLATFORMS=[List of marketing platforms]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Create a comprehensive content schedule overview for BRAND, targeting AUDIENCE, for a period of DURATION months across PLATFORMS. Begin with an overview of the brand's marketing goals and target audience demographics.  
+~Step 2: Develop a content strategy outline, including key themes, content types, and frequency of posts for each platform. Use a table to summarize platform, content type, frequency, and goal.  
+~Step 3: Create a monthly breakdown of content themes, aligning with any seasonal trends, industry events, or brand milestones. Provide a month-by-month theme calendar.  
+~Step 4: Generate a weekly content calendar for the first month, detailing specific post ideas, content types, and optimal posting times for each platform. Use a table with columns: Date, Platform, Content Type, Topic, Format, Posting Time.  
+~Step 5: Develop a system for categorizing and tagging content (e.g., educational, promotional, user-generated) to ensure a balanced mix. Define each category and provide tagging guidelines.  
+~Step 6: Outline a process for content creation, including ideation, production, approval, and scheduling workflows. Include roles and responsibilities.  
+~Step 7: Suggest a method for tracking content performance and KPIs for each platform. Define metrics and reporting cadence.  
+~Step 8: Propose a strategy for repurposing and cross-promoting content across different platforms. Include specific examples.  
+~Step 9: Create guidelines for maintaining brand voice and visual consistency across all content. Include do/don't examples.  
+~Step 10: Develop a contingency plan for timely response to trending topics or unforeseen events. Include trigger criteria and rapid-response process.  
+~Step 11: Outline a quarterly review process to assess the content schedule's effectiveness and make data-driven adjustments. Include review questions and update workflow.  
+~Step 12: Provide a final summary of the complete content schedule, including key strategies, themes, and expected outcomes.
+
+---
+
+## 12. Build a How-To Guide for Any Subject
+
+**Prompt Chain:**
+
+Act as an instructional designer and technical writer. Capture the following variables:  
+TOPIC=[subject of the guide]  
+SKILLLEVEL=[beginner/intermediate/advanced]  
+FORMAT=[blog post/video script/infographic]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Research and list the top 5-10 most common questions or pain points people have when learning about or attempting TOPIC. Use web search if available. Output as a prioritized list.  
+~Step 2: Create an outline for the how-to guide, breaking TOPIC down into 5-7 main steps or sections. Ensure the complexity matches SKILLLEVEL. Provide a table of contents style outline.  
+~Step 3: Write an engaging introduction that explains why TOPIC is important or beneficial, and what the reader will learn by the end of the guide.  
+~Step 4: For each main step or section: Provide a clear, concise explanation of what needs to be done. Include any necessary warnings or preparatory steps. Offer 2-3 tips or best practices related to this step. If applicable, suggest tools or resources that can help with this step. Format each step consistently.  
+~Step 5: Identify potential challenges or common mistakes related to TOPIC. Create a troubleshooting section addressing these issues with solutions. Use a problem-solution table.  
+~Step 6: Develop a list of Frequently Asked Questions (FAQs) about TOPIC, complete with clear, concise answers.  
+~Step 7: Create a section on "Next Steps" or "Advanced Techniques" for readers who want to go beyond the basics of TOPIC.  
+~Step 8: If TOPIC involves any technical terms or jargon, create a glossary defining these terms in simple language.  
+~Step 9: Based on FORMAT, suggest appropriate visual aids (e.g., diagrams, screenshots, or video timestamps) to supplement the written content at key points in the guide.  
+~Step 10: Write a conclusion that summarizes the key points of the guide and encourages the reader to put their new knowledge into practice.  
+~Step 11: Compile all sections into a complete how-to guide formatted appropriately for FORMAT. Include a table of contents if it's a longer piece. Then perform a final review for clarity, completeness, and SKILLLEVEL appropriateness.
+
+---
+
+## 13. Create a Slide Deck for Any Occasion
+
+**Prompt Chain:**
+
+Act as a presentation design consultant and executive communication coach. Capture the following variables:  
+TOPIC=[Topic of presentation]  
+AUDIENCE=[Target audience]  
+DURATION=[Presentation duration in minutes]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Create a comprehensive slide deck outline for a presentation on TOPIC, tailored for AUDIENCE, with a duration of DURATION minutes. Include a title slide and a table of contents.  
+~Step 2: Expand on the table of contents, providing a detailed outline for each section. Include key points, potential visuals, and any data or statistics to be featured.  
+~Step 3: Write the content for the title slide and introduction slides. Ensure the introduction captures attention and clearly states the presentation's purpose.  
+~Step 4: Develop the content for the main body slides, focusing on one section at a time. Include clear headings, concise bullet points, and notes for visual elements.  
+~Step 5: Create transition slides between main sections to maintain flow and coherence throughout the presentation.  
+~Step 6: Design a strong conclusion that summarizes key points and includes a call to action if appropriate.  
+~Step 7: Develop any additional slides such as Q&A, references, or contact information.  
+~Step 8: Review the entire slide deck for consistency, flow, and adherence to best practices in presentation design. Suggest any improvements or additional visual elements that could enhance the presentation.  
+~Step 9: Provide a final outline of the complete slide deck, including slide numbers and brief descriptions of each slide's content. Include speaker notes where relevant.
+
+---
+
+## 14. Create a Comprehensive Newsletter on Any Topic
+
+**Prompt Chain:**
+
+Act as a newsletter editor, content curator, and audience engagement specialist. Capture the following variables:  
+TOPIC=[newsletter topic]  
+AUDIENCE=[target audience]  
+FREQUENCY=[daily/weekly/monthly]  
+If any variable is missing, ask before proceeding. Use web search where available and cite sources.  
+~Step 1: Use web search to find the top 5 most recent news stories or developments related to TOPIC. Summarize each in 1-2 sentences. Include source URLs.  
+~Step 2: Based on web search results, identify 3 trending subtopics or themes within TOPIC that are currently generating buzz or controversy.  
+~Step 3: Use web search to find 3-5 reputable experts or thought leaders in the field of TOPIC. Note their recent contributions or statements.  
+~Step 4: Create a compelling subject line for the newsletter that incorporates one of the trending subtopics and would appeal to AUDIENCE. Provide 3 subject line options with rationale.  
+~Step 5: Write an attention-grabbing opening paragraph that introduces the main theme of this issue, relating it to the interests of AUDIENCE.  
+~Step 6: Develop the main body of the newsletter: 1. Expand on the top news story, providing context and potential impact. 2. Briefly cover 2-3 other significant stories or developments. 3. Include a quote or insight from one of the identified experts. 4. Add a "Did You Know?" section with an interesting fact found through web search.  
+~Step 7: Use web search to find a relevant statistic or data point related to TOPIC. Create a brief data visualization or infographic concept to illustrate this information.  
+~Step 8: Based on web search findings, write a "Looking Ahead" section that predicts or speculates on upcoming trends or events in TOPIC.  
+~Step 9: Create a "Resource Corner" by using web search to find and briefly describe 3 useful resources (articles, tools, websites) related to TOPIC for AUDIENCE.  
+~Step 10: Develop a call-to-action relevant to TOPIC and AUDIENCE (e.g., attending an event, trying a new technique, participating in a challenge).  
+~Step 11: Write a brief, engaging conclusion that summarizes the key points and maintains reader interest for the next issue.  
+~Step 12: Use web search to find appropriate tags or categories for the newsletter content to improve searchability and SEO.  
+~Step 13: Compile all sections into a cohesive newsletter format. Ensure the tone and complexity are appropriate for AUDIENCE and FREQUENCY. Output the final newsletter with a content checklist.
+
+---
+
+## 15. Turn Meeting Transcripts into Valuable Insights for an Audience
+
+**Prompt Chain:**
+
+Act as an executive communication analyst and meeting intelligence specialist. Capture the following variables:  
+TRANSCRIPT=[Full meeting transcript]  
+MEETING_TYPE=[Type of meeting e.g., project update, brainstorming session, board meeting]  
+AUDIENCE=[Intended audience for the final document]  
+If any variable is missing, ask before proceeding. Maintain confidentiality and do not fabricate information not present in the transcript.  
+~Step 1: Review the provided TRANSCRIPT of the MEETING_TYPE. Identify the main participants and their roles. Note the overall structure and flow of the meeting. Output a meeting overview.  
+~Step 2: Extract the key discussion points, decisions made, and action items from the TRANSCRIPT. Organize these into a logical structure.  
+~Step 3: Summarize the main objectives of the meeting as discussed in the TRANSCRIPT. Highlight how these objectives were addressed during the meeting.  
+~Step 4: Identify any critical insights, innovative ideas, or important data points mentioned in the TRANSCRIPT. Ensure these are prominently featured in the final document.  
+~Step 5: Create an executive summary that concisely captures the essence of the meeting, its outcomes, and next steps. Tailor this summary to the needs of AUDIENCE.  
+~Step 6: Develop a detailed list of action items, including responsible parties and deadlines, based on the discussions in the TRANSCRIPT. Use a table with columns: Action Item, Owner, Deadline, Status, Dependencies.  
+~Step 7: Extract any relevant metrics, KPIs, or quantitative data mentioned in the TRANSCRIPT. Present this information in a clear, visual format (e.g., bullet points, tables).  
+~Step 8: Identify any risks, challenges, or concerns raised during the meeting. Summarize these along with any proposed mitigation strategies discussed.  
+~Step 9: Compile a list of any resources, tools, or additional information mentioned or requested during the meeting.  
+~Step 10: Create a section highlighting key decisions made and the rationale behind them, as discussed in the TRANSCRIPT.  
+~Step 11: Develop a 'Next Steps' section that outlines the immediate actions to be taken following the meeting, based on the TRANSCRIPT content.  
+~Step 12: If applicable, create a section that tracks progress on ongoing projects or initiatives discussed in the meeting.  
+~Step 13: Review the document for clarity, coherence, and relevance to AUDIENCE. Ensure all confidential or sensitive information is appropriately handled.  
+~Step 14: Generate a table of contents for easy navigation of the final document.  
+~Step 15: Provide a final summary of the valuable document created from the TRANSCRIPT, highlighting its key features and how it serves the needs of AUDIENCE.
+
+---
+
+## 16. Brainstorm Product Ideas and Build Roadmap
+
+**Prompt Chain:**
+
+Act as a product innovation strategist and roadmap architect. Capture the following variables:  
+INDUSTRY=[target industry]  
+TREND=[current trend or technology]  
+PROBLEM=[specific problem to solve]  
+If any variable is missing, ask before proceeding.  
+~Step 1: List 10 emerging trends or technologies in INDUSTRY that could potentially disrupt the market or create new opportunities. Provide a one-sentence rationale for each.  
+~Step 2: Identify 5 major pain points or unmet needs in INDUSTRY, focusing specifically on those related to PROBLEM. Rank them by severity and frequency.  
+~Step 3: Generate 10 unconventional or "out-of-the-box" product ideas that combine aspects of TREND with solving PROBLEM in INDUSTRY. Don't worry about feasibility at this stage. Number each idea.  
+~Step 4: For each of the 10 ideas, briefly describe its core functionality and primary benefit to the user in one sentence. Use a table with columns: Idea Number, Idea Name, Core Functionality, Primary Benefit.  
+~Step 5: Select the 3 most promising ideas from the list. For each, identify 3 potential target user groups and their specific use cases.  
+~Step 6: For the top 3 ideas, brainstorm 5 unique features or capabilities that would set each product apart from existing solutions in INDUSTRY.  
+~Step 7: Imagine potential obstacles or challenges for each of the top 3 ideas. List 3 major hurdles for each and suggest possible ways to overcome them.  
+~Step 8: Combine elements from the top 3 ideas to create 2 hybrid product concepts that might offer more comprehensive solutions to PROBLEM.  
+~Step 9: For each of the 2 hybrid concepts, describe a "day in the life" scenario showcasing how the product would be used and its impact on the user.  
+~Step 10: Evaluate the 2 hybrid concepts and the original top 3 ideas based on innovation, market potential, and alignment with TREND. Rank them from most to least promising with scoring criteria.  
+~Step 11: For the highest-ranked idea, outline a basic product roadmap including 3 development phases and key milestones for bringing it to market. Include timeline, resources, and success metrics.
+
+---
+
+## 17. Generate Extensive Market Research on a Single Publicly Traded Company
+
+**Prompt Chain:**
+
+Act as a senior equity research analyst with deep financial analysis expertise. Capture the following variables:  
+TICKER=[Stock ticker symbol]  
+COMPANY=[Company name]  
+If any variable is missing, ask before proceeding. Use web search and cite sources. Do not fabricate financial data; if data is unavailable, state so explicitly.  
+~Step 1: Provide a brief overview of COMPANY (TICKER), including its primary business model, key products or services, and position within the SECTOR industry.  
+~Step 2: Analyze COMPANY's financial statements for the past 5 years. Calculate and interpret key financial ratios including P/E ratio, EPS growth, debt-to-equity ratio, current ratio, and return on equity. Identify any notable trends or red flags. Present in a table.  
+~Step 3: Examine COMPANY's revenue streams and profit margins. Break down revenue by product/service lines and geographic regions if applicable. Analyze the stability and growth potential of each revenue source.  
+~Step 4: Evaluate COMPANY's competitive position within SECTOR. Identify main competitors, COMPANY's market share, and its unique selling propositions or competitive advantages.  
+~Step 5: Analyze COMPANY's management team. Assess the experience and track record of key executives, their compensation structure, and any notable insider trading activity.  
+~Step 6: Investigate COMPANY's growth strategy. Examine recent and planned expansions, mergers and acquisitions, R&D investments, and new product/service launches.  
+~Step 7: Assess COMPANY's risks and challenges. Consider industry-specific risks, regulatory issues, potential disruptions, and company-specific vulnerabilities.  
+~Step 8: Analyze COMPANY's stock performance over the past 5 years. Compare it to relevant market indices and key competitors. Identify any significant events that influenced stock price movements.  
+~Step 9: Examine analyst opinions and price targets for TICKER. Summarize the bull and bear cases for the stock.  
+~Step 10: Investigate COMPANY's corporate governance practices. Assess board independence, shareholder rights, and any history of corporate controversies or legal issues.  
+~Step 11: Analyze COMPANY's dividend history and policy, if applicable. Calculate dividend yield and payout ratio, and assess the sustainability of dividend payments.  
+~Step 12: Examine COMPANY's environmental, social, and governance (ESG) practices and scores. Assess how these factors might impact future performance and investor sentiment.  
+~Step 13: Conduct a SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis for COMPANY based on all the information gathered.  
+~Step 14: Provide a final summary of the research, including key findings, potential red flags, and an overall assessment of COMPANY's investment potential. Include a suggested valuation range for TICKER based on the analysis. Clearly label this as an estimate and not financial advice.
+
+---
+
+## 18. Build SEO Optimized Blog Post
+
+**Prompt Chain:**
+
+Act as an SEO content strategist and blog writer. Use web search and keyword research tools where available. Capture the following variable if provided: [PRIMARY TOPIC] for digital products.  
+~Step 1: Research and provide a list of 5 high-volume, low-competition keywords related to selling digital products. Include search volume and keyword difficulty for each. Present in a table.  
+~Step 2: Based on the keyword research, generate a compelling blog post title that incorporates the primary keyword. Provide 3 title options with rationale.  
+~Step 3: Create an outline for the blog post with the following sections: Introduction, [3-5 main content sections based on secondary keywords], Conclusion. Include target word counts for each section.  
+~Step 4: Write a meta description for the blog post, incorporating the primary keyword and staying within 150-160 characters.  
+~Step 5: Write the Introduction section, including the primary keyword in the first paragraph and a clear thesis statement.  
+~Step 6: Write Section 1 of the main content, incorporating relevant secondary keywords naturally. Use short paragraphs and subheadings.  
+~Step 7: Write Section 2 of the main content, including relevant statistics or data to support your points. Cite sources.  
+~Step 8: Write Section 3 of the main content, addressing common questions or concerns related to the topic.  
+~Step 9: If applicable, write Sections 4 and 5 of the main content, providing additional value and incorporating remaining secondary keywords.  
+~Step 10: Write the Conclusion section, summarizing key points and including a call-to-action.  
+~Step 11: Create a list of 5-7 internal and external link suggestions to be incorporated throughout the post.  
+~Step 12: Generate 3 options for engaging meta titles, each under 60 characters and including the primary keyword.  
+~Step 13: Provide a list of image suggestions for the post, including recommended alt text for each image.  
+~Step 14: Create a list of 3-5 related blog post ideas to be used for internal linking.  
+~Step 15: Perform a final SEO review. Check keyword density, heading structure, meta tags, and readability. Output the complete optimized blog post.
+
+---
+
+## 19. Build a Business Plan
+
+**Prompt Chain:**
+
+Act as a business plan writer, financial analyst, and startup consultant. Capture the following variables:  
+BUSINESS=[business name]  
+INDUSTRY=[industry]  
+PRODUCT=[main product/service]  
+TIMEFRAME=[5-year projection]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Write an executive summary (250-300 words) outlining BUSINESS's mission, PRODUCT, target market, unique value proposition, and high-level financial projections.  
+~Step 2: Provide a detailed description of PRODUCT, including its features, benefits, and how it solves customer problems. Explain its unique selling points and competitive advantages in INDUSTRY.  
+~Step 3: Conduct a market analysis: 1. Define the target market and customer segments 2. Analyze INDUSTRY trends and growth potential 3. Identify main competitors and their market share 4. Describe BUSINESS's position in the market. Use data and cite sources where possible.  
+~Step 4: Outline the marketing and sales strategy: 1. Describe pricing strategy and sales tactics 2. Explain distribution channels and partnerships 3. Detail marketing channels and customer acquisition methods 4. Set measurable marketing goals for TIMEFRAME.  
+~Step 5: Develop an operations plan: 1. Describe the production process or service delivery 2. Outline required facilities, equipment, and technologies 3. Explain quality control measures 4. Identify key suppliers or partners.  
+~Step 6: Create an organization structure: 1. Describe the management team and their roles 2. Outline staffing needs and hiring plans 3. Identify any advisory board members or mentors 4. Explain company culture and values.  
+~Step 7: Develop financial projections for TIMEFRAME: 1. Create a startup costs breakdown 2. Project monthly cash flow for the first year 3. Forecast annual income statements and balance sheets 4. Calculate break-even point and ROI. Use tables for clarity.  
+~Step 8: Conclude with a funding request (if applicable) and implementation timeline. Summarize key milestones and goals for TIMEFRAME.  
+~Step 9: Perform a final review of the business plan for consistency, completeness, and realism. Output the full business plan.
+
+---
+
+## 20. Build SEO Optimized Blog Post in Markdown
+
+**Prompt Chain:**
+
+Act as an SEO content strategist, researcher, and Markdown formatting expert. Capture the following variables:  
+TOPIC=[article topic]  
+KEYWORD=[primary keyword]  
+WORDCOUNT=[target word count, minimum 2000]  
+AUDIENCE=[target reader persona]  
+If any variable is missing, ask before proceeding. Use web search and cite sources.  
+~Step 1: Use web search to identify the top 10 ranking pages for KEYWORD. Analyze their content structure, headings, and key points covered. Output a competitive content analysis table.  
+~Step 2: Based on the analysis, create a detailed outline with at least 15 headings and subheadings (H1, H2, H3, H4) that comprehensively cover TOPIC. Ensure the outline has a logical flow and addresses key user intents.  
+~Step 3: Research and list 10-15 related long-tail keywords and LSI (Latent Semantic Indexing) terms relevant to TOPIC. Plan to naturally incorporate these throughout the article.  
+~Step 4: Craft an engaging, SEO-optimized title (H1) that includes KEYWORD and appeals to AUDIENCE. Ensure it's under 60 characters for optimal display in search results.  
+~Step 5: Write a compelling introduction (150-200 words) that hooks the reader, introduces TOPIC, and outlines what the article will cover. Naturally include KEYWORD.  
+~Step 6: For each main section (H2) in the outline: 1. Write 300-500 words of in-depth, informative content. 2. Include relevant examples, data, or case studies found through web search. 3. Naturally incorporate 1-2 related long-tail keywords or LSI terms. 4. Ensure a conversational tone that speaks directly to AUDIENCE. 5. Add a unique insight or perspective not commonly found in competing articles.  
+~Step 7: Create 2-3 custom images, diagrams, or infographic concepts that visually explain key points in the article. Describe each in detail, including alt text optimized for KEYWORD.  
+~Step 8: Write a "Quick Takeaways" or "Key Points" section that summarizes the main insights of the article in 5-7 bullet points.  
+~Step 9: Develop a conclusion (200-250 words) that summarizes the key points, reinforces the main message, and includes a call-to-action relevant to AUDIENCE.  
+~Step 10: Create 5 unique, relevant FAQs related to TOPIC. Ensure answers are concise yet informative, and naturally include long-tail keywords.  
+~Step 11: Write a custom message asking for reader feedback and encouraging social shares. Include a question to boost engagement.  
+~Step 12: Use web search to identify 3-5 authoritative external sources relevant to TOPIC. Create in-text citations and a "References" section at the end of the article.  
+~Step 13: Review the entire article to ensure optimal keyword density (aim for 1-2% for KEYWORD), proper use of headings, and inclusion of long-tail keywords. Check that the content maintains high perplexity and burstiness while staying on topic.  
+~Step 14: Format the article using Markdown, ensuring all headings (H1, H2, H3, H4) and important points are properly styled. Bold key phrases and use italics for emphasis where appropriate.  
+~Step 15: Compile the full article, including the title, introduction, main body with all sections, images, conclusion, FAQs, engagement message, and references. Ensure it meets or exceeds WORDCOUNT while maintaining high-quality, engaging content throughout.
+
+---
+
+## 21. Build a Course for Any Subject
+
+**Prompt Chain:**
+
+Act as an instructional designer, curriculum developer, and education consultant. Capture the following variables:  
+SUBJECT=[subject name]  
+AUDIENCE=[target audience]  
+DURATION=[course length in weeks]  
+FREQUENCY=[number of lessons]  
+TIME=[duration of each lesson]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Define the course parameters using the captured variables. Confirm all variables and state any assumptions.  
+~Step 2: Create a course outline with main modules, each focusing on a key aspect of the subject.  
+~Step 3: For each module, list 3-5 specific learning objectives that align with the overall course goals. Use Bloom's taxonomy action verbs.  
+~Step 4: Develop a detailed syllabus including module titles, topics covered, time allocation, estimated time for completion, and required materials. Present as a table.  
+~Step 5: Create an introduction module that explains the course structure, expectations, and provides an overview of the subject.  
+~Step 6: For Module 1, design a lesson plan with lecture content, practical exercises, and multimedia resources.  
+~Step 7: Develop assessment methods for Module 1, including quizzes, assignments, or projects that test the module's learning objectives.  
+~Step 8: Repeat the lesson plan and assessment development process for the next half of the modules.  
+~Step 9: Create interactive elements for each module, such as discussion prompts, group activities, or hands-on projects.  
+~Step 10: Design a mid-course project or assignment that integrates concepts from the first half of the course.  
+~Step 11: Develop lesson plans and assessments for the remaining modules, incorporating more advanced concepts and building on earlier modules.  
+~Step 12: Create a final project or exam that comprehensively assesses the entire course content.  
+~Step 13: Develop a resource list including textbooks, online materials, and supplementary reading for each module.  
+~Step 14: Create a glossary of key terms and concepts covered throughout the course.  
+~Step 15: Design a feedback mechanism for students to evaluate the course and suggest improvements.  
+~Step 16: Develop a guide for instructors, including teaching tips, common student challenges, and suggested solutions.  
+~Step 17: Create a course completion certificate template and criteria for earning the certificate.  
+~Step 18: Perform a final curriculum review for alignment, completeness, and learner experience.
+
+---
+
+## 22. Revise and Refine Resume / CV
+
+**Prompt Chain:**
+
+Act as a certified professional resume writer and career coach. Capture the following variables:  
+INDUSTRY=[target industry]  
+EXPERIENCE_LEVEL=[entry/mid/senior]  
+JOB_TITLE=[desired position]  
+RESUME=[paste current resume text]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Analyze the provided resume details and the current RESUME. Identify 5 key strengths and 3 areas for improvement.  
+~Step 2: Optimize the resume summary/objective statement to align with the target job and industry. Maximum 3 sentences.  
+~Step 3: Revise the work experience section: enhance 3 key accomplishments for each role using the STAR method and quantifiable results. Provide before/after examples.  
+~Step 4: Identify and list 5-7 relevant hard skills and 3-5 soft skills that align with the target job requirements.  
+~Step 5: Restructure the skills section to highlight the most impactful and relevant skills. Use categories if appropriate.  
+~Step 6: Review and optimize the education section, including relevant coursework, projects, or academic achievements.  
+~Step 7: Create a tailored section highlighting 3-4 key projects or notable achievements relevant to the target job.  
+~Step 8: Identify and incorporate 5-7 industry-specific keywords or phrases throughout the resume. List the keywords used.  
+~Step 9: Revise the resume format for improved readability: suggest appropriate fonts, spacing, and section organization.  
+~Step 10: Proofread the entire resume and correct any grammatical or formatting inconsistencies.  
+~Step 11: Generate 3 impactful action verbs to replace weak or overused verbs in the experience section.  
+~Step 12: Create a concise list of 3-5 relevant certifications or professional development activities to add, if applicable.  
+~Step 13: Suggest 2-3 optional sections that could enhance the resume (e.g., volunteer work, publications, languages).  
+~Step 14: Develop a strategy to address any potential red flags (e.g., employment gaps, career changes) in the resume.  
+~Step 15: Provide a final checklist of 5 key elements to review before submitting the revised resume. Output the complete revised resume and the checklist.
+
+---
+
+## 23. Enrich These Leads for My CRM
+
+**Prompt Chain:**
+
+Act as a lead enrichment specialist and data researcher. You will process a list of email addresses. Follow all steps exactly. Adhere to GDPR, CCPA, and relevant privacy regulations. Do not use unauthorized scraping. Use only publicly available information from reputable sources such as LinkedIn, official company websites, and professional directories.  
+~List of Emails: I will provide a comprehensive list of email addresses. This list is your starting point. If no list is provided yet, ask me for it.  
+~Sequential Processing: Begin with the first email address on the list. When I say "next", move to the subsequent email address. Process exactly one lead per "next" command.  
+~Information Gathering: For each email address, search for and compile the following relevant information: Name, Job Title or Position, Social Media Profiles, Company Information, Publicly Available Contact Information, Recent News or Articles. Use reputable sources. If multiple matches are found, use context clues such as company affiliation or job title to select the most relevant result. If no relevant information is found after a thorough search, log this as an unsuccessful search and proceed to the next email.  
+~Output Format: Present the gathered information in a structured table with columns: Email, Name, Job Title, Company, Social Media Profiles, Public Contact Info, Recent News, Source URLs. If a field is not found, mark it as "Not found" rather than leaving blank.  
+~Error Handling: Log any instances where the search was unsuccessful or incomplete. Include the email, attempted sources, and reason for failure.  
+~Rate Limiting and Ethical Considerations: Be mindful of the terms of service for data providers. Avoid excessive querying. Adhere to ethical guidelines in data gathering.  
+~Begin now by examining the first email address. When you are ready for the next lead, I will say "next".  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next  
+~next
+
+---
+
+## 24. Building Personal Finance Documents
+
+**Prompt Chain:**
+
+Act as a personal finance expert, spreadsheet designer, and financial planner. Create each document with clear formulas and structure. Use Markdown tables or CSV-friendly formats where possible.  
+~Step 1: Create a monthly budget template with categories for income, fixed expenses, variable expenses, and savings. Include formulas for calculating totals and percentages.  
+~Step 2: Develop a yearly financial goals worksheet with sections for short-term, medium-term, and long-term goals. Include columns for goal description, target amount, deadline, and action steps.  
+~Step 3: Generate a net worth statement template with sections for assets (e.g., cash, investments, property) and liabilities (e.g., loans, credit card debt). Include formulas for calculating total net worth.  
+~Step 4: Design a debt repayment plan spreadsheet with columns for creditor name, balance, interest rate, minimum payment, and projected payoff date. Include a debt snowball/avalanche calculation.  
+~Step 5: Create an emergency fund planning document that calculates target fund size based on monthly expenses and provides a savings timeline.  
+~Step 6: Develop an investment portfolio allocation spreadsheet with sections for different asset classes (e.g., stocks, bonds, real estate) and risk tolerance levels.  
+~Step 7: Generate a retirement savings calculator that estimates required savings based on current age, desired retirement age, and expected expenses.  
+~Step 8: Create a cash flow statement template with sections for operating activities, investing activities, and financing activities.  
+~Step 9: Design a tax preparation checklist customized for individual tax situations, including needed documents and common deductions.  
+~Step 10: Develop a personal financial ratios worksheet calculating key metrics like savings rate, debt-to-income ratio, and investment returns.  
+~Step 11: Create an insurance coverage summary template listing all policies, coverage amounts, premiums, and renewal dates.  
+~Step 12: Generate a bill payment tracker with recurring expenses, due dates, and payment confirmation fields.  
+~Step 13: Design a charitable giving plan template with sections for donation goals, tax implications, and impact tracking.  
+~Step 14: Create a financial document organization guide with categories for storing and managing important financial papers.  
+~Step 15: Develop a personal finance dashboard template summarizing key financial metrics, goals progress, and action items.  
+~Step 16: Review all templates for formula accuracy, usability, and completeness. Output the full set.
+
+---
+
+## 25. Build a Detailed Workout and Nutrition Plan
+
+**Prompt Chain:**
+
+Act as a certified personal trainer and nutrition coach. This plan is for educational purposes and should not replace medical advice. Capture the following variables:  
+Current body weight [weight in kg/lbs]  
+Height [height in cm/inches]  
+Age [age in years]  
+Gender [male/female/other]  
+Fitness goal [e.g., weight loss, muscle gain, general fitness]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Analyze the provided information and confirm all variables.  
+~Step 2: Calculate the individual's BMI and determine their ideal weight range based on height.  
+~Step 3: Estimate the individual's daily caloric needs based on their stats and activity level. Show the formula used.  
+~Step 4: Create a macronutrient breakdown (protein, carbs, fats) tailored to their fitness goal. Provide grams and percentages.  
+~Step 5: Develop a 7-day meal plan with specific meals and portion sizes that meet the calculated macronutrient needs.  
+~Step 6: Generate a grocery list based on the meal plan, categorized by food groups.  
+~Step 7: Design a 4-week workout plan with 4-5 sessions per week, tailored to the individual's fitness goal.  
+~Step 8: For Week 1, provide detailed descriptions of each workout, including exercises, sets, reps, and rest periods.  
+~Step 9: For Weeks 2-4, outline any progressions or changes in the workout routine to ensure continued progress.  
+~Step 10: Suggest 3-5 supplement recommendations, if appropriate, based on the individual's goal. Include disclaimers.  
+~Step 11: Create a list of 5-7 tips for staying motivated and adhering to the workout and nutrition plan.  
+~Step 12: Develop a progress tracking system, including metrics to monitor and frequency of measurements.  
+~Step 13: Generate a sample workout log template for the individual to record their exercises and progress.  
+~Step 14: Provide guidelines for adjusting the plan based on progress or plateaus after the 4-week period.
+
+---
+
+## 26. Build Marketing Plan Using Diffusion of Innovations Theory
+
+**Prompt Chain:**
+
+Act as a marketing strategist specializing in the Diffusion of Innovations theory. Your task is to build a marketing plan for my product. My product: ChatGPT Queue. It saves people time by allowing them to queue messages for ChatGPT. I have a one-time fee. It is a Chrome extension.  
+~Step 0: Start by generating the Table of Contents for my marketing plan with only the following five sections: Innovators, Early Adopters, Early Majority, Late Majority, Laggards. Do not add other sections.  
+~Step 1: Use your web search capabilities to enrich each section of the marketing plan. Gather relevant data, examples, and best practices for marketing technology products to each adopter category.  
+~Step 2: Write Section 1: Innovators. Define this adopter category, explain their motivations, and provide targeted marketing tactics, channels, and messaging for ChatGPT Queue. Use specific examples.  
+~Step 3: Write Section 2: Early Adopters. Define this category, explain how they differ from innovators, and provide marketing tactics tailored to their needs and influence.  
+~Step 4: Write Section 3: Early Majority. Define this category, discuss their pragmatism, and provide strategies to cross the chasm and gain mainstream adoption.  
+~Step 5: Write Section 4: Late Majority. Define this category, address their skepticism, and provide tactics to reduce perceived risk and leverage social proof.  
+~Step 6: Write Section 5: Laggards. Define this category, discuss whether to target them, and provide low-cost strategies or maintenance approaches.  
+~Step 7: Perform a final review to ensure all five sections are complete, aligned with Diffusion of Innovations theory, and include actionable marketing recommendations.
+
+---
+
+## 27. Optimize and Refine a Custom Prompt
+
+**Prompt Chain:**
+
+Act as a prompt engineering expert. You will analyze and improve a prompt. Follow these steps exactly.  
+~Step 1: Analyze the following prompt idea: [insert prompt idea]. Identify its goal, missing context, ambiguous language, and structural issues.  
+~Step 2: Rewrite the prompt for clarity and effectiveness. Use explicit instructions, role assignment, and delimiters if needed.  
+~Step 3: Identify potential improvements or additions, such as output format, constraints, few-shot examples, or self-check steps.  
+~Step 4: Refine the prompt based on identified improvements.  
+~Step 5: Present the final optimized prompt in a copyable format, followed by a brief explanation of changes.
+
+---
+
+## 28. Summarize a YouTube Video
+
+**Prompt Chain:**
+
+Act as a professional content summarizer and knowledge extraction specialist.  
+~Step 1: Analyze the following YouTube video transcript: [insert transcript]. Identify the video's purpose, audience, and structure.  
+~Step 2: Identify key points and main ideas. List them in order of importance.  
+~Step 3: Create a concise summary of the video content. Aim for 150-250 words unless otherwise specified.  
+~Step 4: List the most important takeaways in bullet points. Use action-oriented language.  
+~Step 5: Suggest related topics for further exploration based on the video content.
+
+---
+
+## 29. Develop a Business Plan
+
+**Prompt Chain:**
+
+Act as a business consultant and financial planner. Capture the following variable: [type of business].  
+~Step 1: Create a table of contents for a business plan for [type of business]. Include all standard sections.  
+~Step 2: Write the executive summary.  
+~Step 3: Develop the company description and market analysis.  
+~Step 4: Detail the product or service offering.  
+~Step 5: Outline the marketing and sales strategy.  
+~Step 6: Generate financial projections, including startup costs, revenue, and break-even.  
+~Step 7: Formulate the funding request if applicable.  
+~Step 8: Compile all sections into a complete, cohesive business plan.  
+~Step 9: Review for consistency, completeness, and realism. Output the final document.
+
+---
+
+## 30. Generate a Children's Story
+
+**Prompt Chain:**
+
+Act as a children's author and early childhood literacy specialist. Capture the following variables:  
+Characters: [list characters]  
+Lesson: [specify lesson]  
+Age range: [specify age range]  
+Word count: [specify word count]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Create a story outline with a beginning, middle, and end. Ensure the lesson is woven naturally into the plot.  
+~Step 2: Write the full story using age-appropriate vocabulary, sentence length, and tone. Meet the specified word count.  
+~Step 3: Revise for age-appropriateness, word count, and lesson clarity.  
+~Step 4: Suggest potential illustrations or interactive elements for the story. Include descriptions for each illustration.
+
+---
+
+## 31. Optimize and Explain Code
+
+**Prompt Chain:**
+
+Act as a senior software engineer and code reviewer.  
+~Step 1: Analyze the following code snippet: [insert code]. Identify the programming language and overall purpose.  
+~Step 2: Explain the code functionality line by line. Use plain language.  
+~Step 3: Identify bugs, edge cases, and inefficiencies.  
+~Step 4: Suggest optimizations for performance and readability. Justify each change.  
+~Step 5: Provide an optimized version of the code with explanatory comments. Ensure the optimized code preserves original functionality.
+
+---
+
+## 32. Create a Weekly Meal Plan
+
+**Prompt Chain:**
+
+Act as a nutritionist and meal planning expert. Capture the following variables: [list preferences] for dietary preferences.  
+~Step 1: Generate a 7-day meal plan for the following dietary preferences: [list preferences]. Include breakfast, lunch, dinner, and snacks.  
+~Step 2: Create a comprehensive shopping list based on the meal plan, categorized by food groups.  
+~Step 3: Calculate estimated total cost for the shopping list. Provide a range based on typical grocery prices.  
+~Step 4: Provide meal prep instructions to streamline the week. Include storage and reheating guidance.  
+~Step 5: Suggest time-saving cooking tips relevant to the meal plan.
+
+---
+
+## 33. Design a Language Learning Plan
+
+**Prompt Chain:**
+
+Act as a language learning coach and curriculum designer. Capture the following variables:  
+Target language: [target language]  
+Level: [beginner/intermediate/advanced]  
+~Step 1: Create a 30-day study plan for learning [target language] at a [beginner/intermediate/advanced] level. Include daily activities, time allocations, and weekly goals.  
+~Step 2: Compile a list of essential phrases and translations for everyday situations.  
+~Step 3: Recommend learning resources (apps, podcasts, videos) suitable for the level and language.  
+~Step 4: Develop practice exercises and quizzes to reinforce learning. Include answer keys where appropriate.
+
+---
+
+## 34. Provide IT Support
+
+**Prompt Chain:**
+
+Act as a senior IT support specialist and technical troubleshooter.  
+~Step 1: Analyze the following technical problem: [describe problem]. Identify the affected system, software, or hardware.  
+~Step 2: Identify potential causes. List them from most to least likely.  
+~Step 3: Suggest step-by-step troubleshooting methods. Number each step clearly.  
+~Step 4: Provide a clear solution in simple terms for the end user.  
+~Step 5: Recommend preventive measures for future issues.
+
+---
+
+## 35. Analyze a Book
+
+**Prompt Chain:**
+
+Act as a literary analyst and educator. Capture the following variables:  
+[Title] = book title  
+[Author] = book author  
+~Step 1: Analyze the book "[Title]" by [Author]. Begin with a brief overview of the book.  
+~Step 2: Summarize the book's plot or main arguments.  
+~Step 3: Identify key themes and concepts.  
+~Step 4: Analyze character development or main ideas.  
+~Step 5: Discuss the author's writing style and tone.  
+~Step 6: Explore historical or cultural context.  
+~Step 7: Suggest similar books or further reading.
+
+---
+
+## 36. Create a Personal Finance Plan
+
+**Prompt Chain:**
+
+Act as a personal financial advisor. Capture the following variables:  
+Monthly income: [amount]  
+Major expenses: [list expenses]  
+Financial goals: [list goals]  
+If any variable is missing, ask before proceeding.  
+~Step 1: Develop a detailed monthly budget based on the provided income and expenses. Include savings allocation.  
+~Step 2: Provide investment recommendations based on a [low/medium/high] risk tolerance. Justify your recommendations.  
+~Step 3: Suggest methods to increase income. Include both active and passive options.  
+~Step 4: Create a debt repayment strategy if applicable. Use the debt snowball or avalanche method.  
+~Step 5: Review the plan for realism and alignment with financial goals. Output the complete personal finance plan.
+
+---
+
+## 37. Conduct a SWOT Analysis
+
+**Prompt Chain:**
+
+Act as a strategic business analyst. Capture the following variable: [company/product].  
+~Step 1: Identify the key strengths of [company/product].  
+~Step 2: List potential weaknesses or areas for improvement.  
+~Step 3: Explore market opportunities for growth.  
+~Step 4: Analyze potential threats or challenges.  
+~Step 5: Summarize findings and suggest strategic actions based on the SWOT analysis. Use a table for the SWOT matrix.
+
+---
+
+## 38. Create a Marketing Plan
+
+**Prompt Chain:**
+
+Act as a marketing strategist. Capture the following variable: [product/service].  
+~Step 1: Define target audience and market segmentation for [product/service].  
+~Step 2: Set specific, measurable marketing objectives. Use SMART criteria.  
+~Step 3: Outline marketing strategies and tactics.  
+~Step 4: Create a marketing budget with estimated costs.  
+~Step 5: Develop a timeline for implementation.  
+~Step 6: Establish KPIs for measuring success.  
+~Step 7: Compile all sections into a cohesive marketing plan.
+
+---
+
+## 39. Perform Competitor Analysis
+
+**Prompt Chain:**
+
+Act as a competitive intelligence analyst. Capture the following variable: [industry/niche].  
+~Step 1: Identify top 5 competitors in [industry/niche].  
+~Step 2: Analyze their products/services and pricing strategies.  
+~Step 3: Evaluate their marketing and branding approaches.  
+~Step 4: Assess their strengths and weaknesses.  
+~Step 5: Identify potential opportunities for differentiation.  
+~Step 6: Summarize findings and strategic recommendations. Use a comparison table.
+
+---
+
+## 40. Develop a Sales Strategy
+
+**Prompt Chain:**
+
+Act as a sales strategist. Capture the following variable: [product/service].  
+~Step 1: Define sales objectives for [product/service].  
+~Step 2: Identify target customer segments.  
+~Step 3: Outline the sales process and cycle.  
+~Step 4: Develop sales tactics and techniques.  
+~Step 5: Create a sales forecast with assumptions.  
+~Step 6: Suggest tools and resources for the sales team.  
+~Step 7: Compile the complete sales strategy.
+
+---
+
+## 41. Write a Business Proposal
+
+**Prompt Chain:**
+
+Act as a business development writer and proposal specialist. Capture the following variable: [project/idea].  
+~Step 1: Summarize the business opportunity for [project/idea].  
+~Step 2: Provide a detailed solution or approach.  
+~Step 3: Outline the benefits and value proposition.  
+~Step 4: Present a pricing structure or cost analysis.  
+~Step 5: Include a project timeline and milestones.  
+~Step 6: Close with a compelling call to action.  
+~Step 7: Review for professionalism, clarity, and persuasiveness. Output the complete proposal.
+
+---
+
+## 42. Design an Employee Training Program
+
+**Prompt Chain:**
+
+Act as an organizational development and training specialist. Capture the following variable: [job role/department].  
+~Step 1: Identify key skills and knowledge areas for [job role/department].  
+~Step 2: Develop learning objectives and outcomes.  
+~Step 3: Create an outline of training modules and content.  
+~Step 4: Suggest delivery methods (e.g., workshops, e-learning).  
+~Step 5: Design assessment and feedback mechanisms.  
+~Step 6: Propose a schedule and resources needed.  
+~Step 7: Compile the complete training program.
+
+---
+
+## 43. Develop a Customer Retention Strategy
+
+**Prompt Chain:**
+
+Act as a customer experience and retention strategist.  
+~Step 1: Analyze current customer churn rate and reasons. If not provided, ask for data or use placeholders.  
+~Step 2: Identify key factors influencing customer loyalty.  
+~Step 3: Develop strategies to improve customer satisfaction.  
+~Step 4: Create a loyalty program outline.  
+~Step 5: Design a communication plan for customer engagement.  
+~Step 6: Suggest metrics to measure retention efforts.  
+~Step 7: Compile the complete retention strategy.
+
+---
+
+## 44. Create a Financial Forecast
+
+**Prompt Chain:**
+
+Act as a financial analyst and forecaster. Capture the following variable: [business/product line].  
+~Step 1: Project revenue for the next 12 months for [business/product line]. State all assumptions.  
+~Step 2: Estimate costs and expenses.  
+~Step 3: Calculate projected profit margins.  
+~Step 4: Develop cash flow projections.  
+~Step 5: Identify potential financial risks.  
+~Step 6: Suggest strategies for financial growth and stability.  
+~Step 7: Compile the complete financial forecast with tables.
+
+---
+
+## 45. Design a Product Launch Plan
+
+**Prompt Chain:**
+
+Act as a product marketing and launch specialist. Capture the following variable: [new product].  
+~Step 1: Outline the unique value proposition of [new product].  
+~Step 2: Develop a pre-launch marketing strategy.  
+~Step 3: Create a timeline for the launch process.  
+~Step 4: Design a pricing strategy.  
+~Step 5: Plan the actual launch event or campaign.  
+~Step 6: Develop a post-launch evaluation process.  
+~Step 7: Compile the complete product launch plan.
+
+---
+
+## 46. Optimize Supply Chain Management
+
+**Prompt Chain:**
+
+Act as a supply chain management consultant. Capture the following variable: [product/service].  
+~Step 1: Map the current supply chain for [product/service].  
+~Step 2: Identify inefficiencies and bottlenecks.  
+~Step 3: Suggest improvements for cost reduction.  
+~Step 4: Recommend strategies for better inventory management.  
+~Step 5: Propose methods to enhance supplier relationships.  
+~Step 6: Outline implementation steps for supply chain optimization.  
+~Step 7: Compile the complete optimization plan.
+
+---
+
+## 47. Develop a Crisis Communication Plan
+
+**Prompt Chain:**
+
+Act as a crisis communication expert. Capture the following variable: [company/industry].  
+~Step 1: Identify potential crisis scenarios for [company/industry].  
+~Step 2: Create a crisis management team structure.  
+~Step 3: Develop key messaging templates.  
+~Step 4: Outline communication channels and protocols.  
+~Step 5: Create a step-by-step response process.  
+~Step 6: Design a post-crisis evaluation and recovery plan.  
+~Step 7: Compile the complete crisis communication plan.
+
+---
+
+## 48. Create a Sustainability Strategy
+
+**Prompt Chain:**
+
+Act as a sustainability consultant. Capture the following variable: [company/industry].  
+~Step 1: Assess current environmental impact of [company/industry].  
+~Step 2: Set sustainability goals and objectives.  
+~Step 3: Develop strategies for reducing carbon footprint.  
+~Step 4: Create initiatives for waste reduction and resource conservation.  
+~Step 5: Design an employee engagement plan for sustainability.  
+~Step 6: Outline reporting and communication strategies for sustainability efforts.  
+~Step 7: Compile the complete sustainability strategy.
+
+---
+
+## 49. Develop a Digital Transformation Strategy
+
+**Prompt Chain:**
+
+Act as a digital transformation consultant. Capture the following variable: [company].  
+~Step 1: Assess current digital capabilities of [company].  
+~Step 2: Identify areas for digital innovation and improvement.  
+~Step 3: Outline required technological investments.  
+~Step 4: Develop a plan for data management and analytics.  
+~Step 5: Create a timeline for implementation.  
+~Step 6: Design change management strategies for digital adoption.  
+~Step 7: Compile the complete digital transformation strategy.
+
+---
+
+## 50. Create an Intellectual Property Strategy
+
+**Prompt Chain:**
+
+Act as an intellectual property strategist and legal consultant. Capture the following variable: [company].  
+~Step 1: Identify key intellectual property assets of [company].  
+~Step 2: Outline processes for protecting new innovations.  
+~Step 3: Develop strategies for patent filing and management.  
+~Step 4: Create guidelines for trade secret protection.  
+~Step 5: Design a plan for trademark and copyright management.  
+~Step 6: Suggest methods for IP valuation and commercialization.  
+~Step 7: Compile the complete IP strategy.
+
+---
+
+## 51. Develop an Employee Engagement Program
+
+**Prompt Chain:**
+
+Act as an HR and organizational culture specialist.  
+~Step 1: Assess current employee satisfaction levels. If not provided, recommend survey methods.  
+~Step 2: Identify key drivers of employee engagement.  
+~Step 3: Design recognition and reward systems.  
+~Step 4: Develop strategies for improving work-life balance.  
+~Step 5: Create a plan for enhancing internal communication.  
+~Step 6: Outline metrics for measuring engagement success.  
+~Step 7: Compile the complete employee engagement program.
+
+---
+
+## 52. Build a Comprehensive Course
+
+**Prompt Chain:**
+
+Act as an instructional designer and curriculum developer. Capture the following variable: [course subject].  
+~Step 1: Define the main topic and learning objectives for [course subject].  
+~Step 2: Identify the target audience and their prior knowledge level.  
+~Step 3: Create a course outline with main modules and sub-topics.  
+~Step 4: Develop a detailed syllabus including lesson plans and time allocation.  
+~Step 5: Design engaging learning activities and assignments for each module.  
+~Step 6: Create assessment methods to evaluate student progress and understanding.  
+~Step 7: Outline required resources (textbooks, software, equipment) for the course.  
+~Step 8: Develop a strategy for delivering the course (in-person, online, or hybrid).  
+~Step 9: Create a marketing plan to promote the course to potential students.  
+~Step 10: Design a feedback mechanism for continuous course improvement.  
+~Step 11: Compile the complete course package.
+
+---
+
+## 53. Generate a Series of Logos for a SaaS Product
+
+**Prompt Chain:**
+
+Act as a brand identity designer and logo design specialist. The SaaS product is ChatGPT Queue. It saves people time by allowing them to queue messages for ChatGPT. It has a one-time fee and is a Chrome extension.  
+~Step 1: Analyze the SaaS product and create a design brief. Include key features, benefits, target audience, and industry.  
+~Step 2: Based on the brief, list 5 key concepts or themes that should be represented in the logo.  
+~Step 3: Generate a minimalist logo design for the SaaS product. Use only two colors and focus on a simple, memorable shape. Describe the design concept, colors, and rationale.  
+~Step 4: Create a bold and modern logo design using gradients and a sans-serif font. Incorporate an abstract representation of the product's main feature.  
+~Step 5: Design a playful logo with a mascot or character that represents the product's personality. Use a vibrant color palette.  
+~Step 6: Develop a tech-focused logo design with a futuristic feel. Incorporate circuit-like patterns or digital elements.  
+~Step 7: Create an elegant and professional logo design using a monogram or lettermark. Stick to a monochromatic color scheme.  
+~Step 8: Generate a versatile logo that works well in both horizontal and vertical layouts. Focus on scalability and readability at different sizes.  
+~Step 9: Review all logo concepts for brand alignment, scalability, and visual distinctiveness. Output a final logo design package with recommendations.
 
 ================================================================================================================================================
 ================================================================================================================================================
