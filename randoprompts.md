@@ -22173,180 +22173,6 @@ Output a strict plain-text data structure:
 ================================================================================================================================================
 ================================================================================================================================================
 
-**SYSTEM_DIRECTIVE**
-Execute strictly as a structural DOM compiler, rendering optimizer, and crawler architecture protocol engine.
-
-**INPUT_VECTOR**
-[INSERT TARGET HTML / CSS / JS / ASSETS / SITE MAP]
-
-**PHASE_1: TOPOLOGY MAP**
-
-1. Parse all provided source code.
-2. Map the absolute Document Object Model (DOM) tree.
-3. Map the dependency graph across all CSS selectors, JavaScript event listeners, and dynamic framework hooks.
-4. Identify the execution context (static HTML, hydrated React root, shadow DOM) to establish environmental constraints.
-
-**PHASE_2: SAFETY BOUNDARIES & FALLBACK PROTOCOL**
-
-1. Isolate critical preservation nodes prior to any structural modification.
-2. Strictly preserve any element functioning as a `z-index` stacking context, absolute/fixed positioning anchor, dynamic framework target, or active JavaScript trigger.
-3. **FALLBACK:** If removing a nested wrapper presents a calculated risk of triggering a layout shift, breaking an animation timeline, or severing a component dependency, bypass deletion.
-4. For bypassed nodes, execute attribute optimization only (semantic conversion, class consolidation) without altering the nesting depth.
-
-**PHASE_3: DOM FLATTENING & SEMANTIC MAPPING**
-
-1. Execute DOM flattening exclusively on cleared, non-critical layout scaffolding.
-2. Strip redundant generic wrappers (`<div>`, `<span>`) by transferring structural responsibility via CSS Grid and Flexbox parameters to parent or sibling containers.
-3. Convert all surviving layout nodes into exact HTML5 semantic definitions (`<main>`, `<article>`, `<section>`, `<nav>`, `<aside>`, `<figure>`).
-
-**PHASE_4: TYPOGRAPHIC HIERARCHY & AESTHETIC PRESERVATION**
-
-1. Scan all text-bearing nodes to evaluate visual weight, sizing, and contextual dominance.
-2. Restructure text elements into a mathematically correct document outline utilizing strictly sequential HTML5 heading tags (`<h1>` through `<h6>`) and standard text tags (`<p>`, `<blockquote>`, `<span>`). Do not skip heading levels.
-3. **AESTHETIC PRESERVATION CONSTRAINT:** Semantic re-tagging must decouple from default browser rendering logic. Rebind all original CSS classes, inline styles, and calculated font parameters to the newly assigned semantic tags to guarantee 0% visual alteration.
-
-**PHASE_5: CORE WEB VITALS OPTIMIZATION**
-
-1. Extract and inline critical-path CSS required for immediate above-the-fold rendering.
-2. Assign `defer` or `async` attributes to all non-critical and external JavaScript payloads to eliminate render-blocking states.
-3. Purge orphaned CSS rules, unused classes, and redundant DOM attributes.
-4. Pre-allocate exact geometric constraints (`width`/`height` attributes) for all media elements to force Cumulative Layout Shift (CLS) to 0.
-
-**PHASE_6: CRAWLER & LLM ARCHITECTURE**
-
-1. **JSON-LD Schema:** Construct and inject hierarchical markup into the `<head>` defining exact entity relationships.
-2. **`robots.txt` (RFC 9309 Strict):**
-* Output as UTF-8 strictly without a Byte Order Mark (BOM).
-* Segregate AI User-Agents: `Disallow` training scrapers (`User-agent: GPTBot`, `User-agent: ClaudeBot`, `User-agent: Google-Extended`). `Allow` real-time search agents (`User-agent: ChatGPT-User`, `User-agent: PerplexityBot`).
-* Utilize the `$` anchor to lock exact string terminations for file types (e.g., `/*.json$`).
-* Exclude `Crawl-delay` directives for Googlebot.
-
-
-3. **Indexing Protocols:** Do not use `robots.txt` `Disallow` to remove indexed pages. Mandate `<meta name="robots" content="noindex">` for HTML exclusions. Output exact HTTP header configurations (`X-Robots-Tag: noindex, noarchive`) required for raw server assets (PDFs, images, API endpoints).
-4. **`llms.txt` Protocol:** Generate `/llms.txt`. The file must begin with exactly `<h1>[Project Name]</h1>`, immediately followed by a `> blockquote` containing an agent-readable third-person summary. Map internal topology using strict syntax: `- [Page Title](URL): Concise contextual description.` Generate a secondary `/llms-full.txt` variant containing all concatenated markdown for single-request ingestion.
-5. **Sitemap Integrity:** Configure XML parameters to ensure `<lastmod>` tags are structurally bound to verified byte-size or factual payload shifts only.
-
-**PHASE_7: VERIFICATION & OUTPUT**
-
-1. Execute structural differential check (Original DOM vs. Optimized DOM).
-2. Verify 100% parity of user-facing text, media, and link destinations.
-3. Output the finalized HTML/CSS/JS codebase, `robots.txt`, `llms.txt`, and server header configurations.
-
-----
-
-[SYS_INIT]
-ROLE: DOM_COMPILER_AND_OPTIMIZER
-EXECUTION_MODE: STRICT
-CONSTRAINTS: [VISUAL_DEGRADATION=0.0, FUNCTIONAL_LOSS=0.0, INTENT_DECAY=0.0]
-
-[INPUT_VECTOR]
-TARGET_ASSETS: [HTML, CSS, JS, MEDIA, SITEMAP.XML]
-
-[EXECUTION_PIPELINE]
-
-PHASE_1: TOPOLOGY_MAPPING
-1.1 READ: Source codebase in full.
-1.2 MAP: Absolute Document Object Model (DOM) tree architecture.
-1.3 TRACE: Dependency graph (CSS selectors, JS event listeners, dynamic framework hooks).
-1.4 DEFINE: Execution context (STATIC, HYDRATED_REACT, SHADOW_DOM).
-
-PHASE_2: SAFETY_PROTOCOL
-2.1 IDENTIFY: Critical preservation nodes.
-2.2 LOCK: Elements functioning as z-index contexts, absolute/fixed anchors, dynamic targets, active JS triggers.
-2.3 EVALUATE_RISK: IF removal of nested wrapper = layout shift OR animation break OR dependency failure -> EXECUTE BYPASS_DELETION.
-2.4 FALLBACK_EXECUTION: For bypassed nodes, apply attribute optimization ONLY (semantic conversion, class consolidation). Nesting depth delta must = 0.
-
-PHASE_3: DOM_FLATTENING_AND_SEMANTICS
-3.1 TARGET: Cleared, non-critical layout scaffolding.
-3.2 FLATTEN: Strip redundant generic wrappers (, ). Transfer structural load to parent/sibling via CSS Grid/Flexbox parameters.
-3.3 SEMANTIC_CONVERSION: Map surviving layout nodes -> [, , , , , ].
-3.4 ISOMORPHISM_CHECK: Source semantic topology (dependencies, scopes, sequences) must exactly match Optimized semantic topology.
-
-PHASE_4: TYPOGRAPHY_AND_AESTHETICS
-4.1 SCAN: Text-bearing nodes for visual weight, size, contextual dominance.
-4.2 RESTRUCTURE: Map to strict HTML5 document outline [..., , , ]. Bypass levels = FALSE.
-4.3 AESTHETIC_LOCK: Rebind original CSS classes, inline styles, font parameters to new semantic tags. Visual alteration delta must = 0.0.
-
-PHASE_5: WEB_VITALS_OPTIMIZATION
-4.1 EXTRACT: Critical-path CSS for ATF (Above-The-Fold) rendering -> INLINE.
-4.2 DEFER: Non-critical/external JS -> ASSIGN [defer, async]. Render-blocking states must = 0.
-4.3 PURGE: Orphaned CSS rules, unused classes, redundant attributes.
-4.4 PRE_ALLOCATE: Geometric constraints (width/height) for media. Cumulative Layout Shift (CLS) must = 0.
-
-PHASE_6: BOT_AND_LLM_ARCHITECTURE
-6.1 SCHEMA: Construct and inject JSON-LD hierarchical entity relationships -> .
-6.2 ROBOTS_TXT_STRICT:
-- Encoding: UTF-8. BOM = FALSE.
-- Segregate: DISALLOW [GPTBot, ClaudeBot, Google-Extended]. ALLOW [ChatGPT-User, PerplexityBot].
-- Anchors: Enforce string termination symbol ('$') for file exclusions.
-- Exclude: 'Crawl-delay' parameter.
-6.3 INDEX_HEADERS: HTTP Header X-Robots-Tag = [noindex, noarchive] for non-HTML assets (PDF, API, IMG). Use  for HTML exclusions exclusively.
-6.4 LLMS_TXT_PROTOCOL:
-- Generate: '/llms.txt'.
-- Structure: Line 1 = `<h1>[Project_Name]</h1>`. Line 2 = `> blockquote` [Third-person agent summary].
-- Topology Mapping: `- [Page Title](URL): Concise contextual description.`
-- Generate: '/llms-full.txt' (Concatenated markdown for single-request ingestion).
-6.5 SITEMAP_XML:  update condition = Byte-size shift OR factual payload shift ONLY.
-
-PHASE_7: VERIFICATION_AND_OUTPUT
-7.1 RUN: Structural differential [Original_DOM vs Optimized_DOM].
-7.2 RUN: Parity check [User-Facing Text, Media, Link_Targets] = 100%.
-7.3 EXPORT: HTML, CSS, JS, robots.txt, llms.txt, HTTP Header config.
-[SYS_TERMINATE]
-
----
-
-// INITIALIZATION
-STATE: ARCHITECTURE_REFACTOR
-TARGET: HIGH_CONVERSION_MICRO_FUNNEL
-INPUT: [PROVIDED_CODEBASE]
-VARIABLES: [STRIPE_LINK], [PORTFOLIO_URL]
-
-// BOUND CONDITIONS
-1. ZERO_DEVIATION from decoupled micro-funnel blueprint.
-2. ZERO_FRAMEWORK_BLOAT. Execution strictly limited to HTML5, CSS3, ES6, GSAP Core, WebGL Canvas.
-3. DOM_DEPTH: Minimal semantic tree. No extraneous div wrappers.
-4. METRICS_TARGET: 100 Core Web Vitals (LCP < 1.2s, CLS 0).
-
-// EXECUTION SEQUENCE
-
-[PHASE_01: DOM_SANITIZATION]
-ACTION: Parse and purge [PROVIDED_CODEBASE].
-1. LOCATE and DESTROY all navigation elements (<nav>, header links, footer menus, hamburger menus).
-2. LOCATE and DESTROY all multi-page routing logic and anchor tags not explicitly defined in PHASE_02.
-3. EXTRACT core value proposition text, deliverables (max 3), and CTA labels.
-4. PURGE remaining markup.
-
-[PHASE_02: ARCHITECTURE_RECONSTRUCTION]
-ACTION: Rebuild semantic structure.
-1. INJECT absolute root container: `<div class="hero-wrapper">`.
-2. INJECT background render target: `<canvas id="webgl-bg"></canvas>` at z-index 1.
-3. INJECT foreground container: `<div class="content-layer">` at z-index 2.
-4. POPULATE `content-layer` with extracted value proposition (H1), deliverables (<ul>), and primary CTA (<a> mapping to [STRIPE_LINK]).
-5. APPEND escape hatch anchor at document floor: `<a href="[PORTFOLIO_URL]" target="_blank" class="portfolio-link">View the deep portfolio</a>`.
-
-[PHASE_03: HARDWARE_ACCELERATION_STYLING]
-ACTION: Apply GPU-optimized CSS constraints.
-1. ASSIGN `.hero-wrapper`: `position: relative`, `width: 100vw`, `height: 100vh`, `overflow: hidden`, `background: #0a0a0a`.
-2. ASSIGN `#webgl-bg`: `position: absolute`, `inset: 0`, `pointer-events: none` (critical).
-3. ASSIGN `.content-layer`: `position: relative`, `will-change: transform, opacity`.
-4. RESTRICT all CSS transitions/animations strictly to `transform` and `opacity` properties to prevent browser reflows.
-
-[PHASE_04: LOGIC_AND_RENDER_INJECTION]
-ACTION: Implement animation and shader thread.
-1. IMPORT GSAP Core (exclude all secondary plugins).
-2. INITIALIZE WebGL context on `#webgl-bg`. 
-3. INJECT dark cinematic fragment shader (GLSL). Restrict computation to GPU fragment pipeline.
-4. BIND GSAP entrance timeline to `DOMContentLoaded`.
-5. SEQUENCE GSAP timeline on `.content-layer` children: 
-   - H1: `y: 40`, `opacity: 0` -> `opacity: 1`, duration 1.2s.
-   - Deliverables: `y: 20`, `opacity: 0` -> `opacity: 1`, delay 0.2s.
-   - CTA: `scale: 0.95`, `opacity: 0` -> `opacity: 1`, delay 0.4s.
-   - Easing: `power3.out`.
-
-// OUTPUT_EMISSION
-EMIT: Refactored HTML, CSS, ES6, and GLSL code blocks only.
-RESTRICTION: ZERO formatting outside of code fences. ZERO conversational text. ZERO rationale.
 
 ================================================================================================================================================
 ================================================================================================================================================
@@ -23411,14 +23237,264 @@ Act as a brand identity designer and logo design specialist. The SaaS product is
 ================================================================================================================================================
 ================================================================================================================================================
 
+[FORENSIC_PROTOCOL_INITIALIZED]
+open_file(source_directives) -> stat/hash(SHA-256: 4b92f7) -> parse_full_content(ARTIFACT_A: MICRO_FUNNEL_ARCHITECTURE, ARTIFACT_B: DOM_OPTIMIZER_PIPELINE) -> write_artifacts(MERGED_LOGIC_LATTICE) -> verify_counts(VECTORS=2, CONSTANTS=6, PHASES=8) -> then_answer_with_synthesized_forensic_detail()
+
+[SYS_INIT]
+ROLE: DOM_COMPILER_AND_MICRO_FUNNEL_OPTIMIZER
+EXECUTION_MODE: STRICT
+CONSTRAINTS: [VISUAL_DEGRADATION=0.0, FUNCTIONAL_LOSS=0.0, INTENT_DECAY=0.0, FRAMEWORK_BLOAT=0.0, TARGET_CORE_WEB_VITALS=100]
+
+[INPUT_VECTOR]
+TARGET_ASSETS: [HTML, CSS, JS, MEDIA, SITEMAP.XML]
+INJECT_VARIABLES: [STRIPE_LINK], [PORTFOLIO_URL]
+
+[UNIFIED_EXECUTION_PIPELINE]
+
+PHASE_1: TOPOLOGY_MAPPING_AND_PARSING
+1.1 READ: Source codebase in full.
+1.2 MAP: Absolute Document Object Model (DOM) tree architecture.
+1.3 TRACE: Dependency graph (CSS selectors, JS event listeners, dynamic framework hooks).
+1.4 DEFINE: Execution context (STATIC, HYDRATED_REACT, SHADOW_DOM).
+
+PHASE_2: SAFETY_PROTOCOL_AND_DOM_SANITIZATION
+2.1 IDENTIFY: Critical preservation nodes.
+2.2 LOCK: Elements functioning as z-index contexts, absolute/fixed anchors, dynamic targets, active JS triggers.
+2.3 PURGE_NAVIGATIONAL_VECTORS: Locate and destroy all navigation elements (<nav>, header links, footer menus, hamburger menus).
+2.4 PURGE_ROUTING_VECTORS: Locate and destroy all multi-page routing logic and anchor tags not explicitly targeting [STRIPE_LINK] or [PORTFOLIO_URL].
+2.5 EXTRACT: Core value proposition text, deliverables (max 3 items), and primary Call to Action (CTA) parameters.
+
+PHASE_3: DOM_FLATTENING_AND_MICRO_FUNNEL_RECONSTRUCTION
+3.1 TARGET: Cleared, non-critical layout scaffolding.
+3.2 FLATTEN: Strip redundant generic wrappers (<div>, <span>). Transfer structural load to parent/sibling via CSS Grid/Flexbox parameters.
+3.3 REBUILD_ARCHITECTURE:
+    a. INJECT absolute root container: <div class="hero-wrapper">.
+    b. INJECT background render target: <canvas id="webgl-bg"></canvas> at z-index 1.
+    c. INJECT foreground container: <div class="content-layer"> at z-index 2.
+3.4 SEMANTIC_CONVERSION: Map surviving layout nodes -> [<main>, <article>, <section>, <header>, <footer>, <aside>].
+3.5 POPULATE_FUNNEL: Inject extracted value proposition, deliverables, and primary CTA into content-layer. Append escape hatch anchor at document floor targeting [PORTFOLIO_URL].
+3.6 ISOMORPHISM_CHECK: Source semantic topology (dependencies, scopes, sequences) must exactly match Optimized semantic topology.
+
+PHASE_4: TYPOGRAPHY_AND_AESTHETICS
+4.1 SCAN: Text-bearing nodes for visual weight, size, contextual dominance.
+4.2 RESTRUCTURE: Map to strict HTML5 document outline [H1, H2, H3, H4, H5, H6]. Bypass levels = FALSE.
+4.3 AESTHETIC_LOCK: Rebind original CSS classes, inline styles, font parameters to new semantic tags. Visual alteration delta must = 0.0.
+
+PHASE_5: HARDWARE_ACCELERATION_AND_LOGIC_INJECTION
+5.1 HARDWARE_STYLING_APPLICATIONS:
+    a. ASSIGN `.hero-wrapper`: position: relative, width: 100vw, height: 100vh, overflow: hidden, background: #0a0a0a.
+    b. ASSIGN `#webgl-bg`: position: absolute, inset: 0, pointer-events: none.
+    c. ASSIGN `.content-layer`: position: relative, will-change: transform, opacity.
+5.2 GPU_ISOLATION: Restrict all CSS transitions/animations strictly to transform and opacity properties to bypass browser reflow pipelines.
+5.3 LOGIC_THREAD: Initialize WebGL context on `#webgl-bg`. Inject dark cinematic fragment shader (GLSL) restricted to GPU fragment pipeline.
+5.4 RENDER_THREAD: Import GSAP Core (exclude secondary plugins). Bind entrance timeline to DOMContentLoaded. Sequence `.content-layer` children via staggered Y-axis and opacity translations.
+
+PHASE_6: WEB_VITALS_OPTIMIZATION
+6.1 EXTRACT: Critical-path CSS for ATF (Above-The-Fold) rendering -> INLINE.
+6.2 DEFER: Non-critical/external JS -> ASSIGN [defer, async]. Render-blocking states must = 0.
+6.3 PURGE: Orphaned CSS rules, unused classes, redundant attributes.
+6.4 PRE_ALLOCATE: Geometric constraints (width/height) for media. Cumulative Layout Shift (CLS) must = 0.
+
+PHASE_7: BOT_AND_LLM_ARCHITECTURE
+7.1 SCHEMA: Construct and inject JSON-LD hierarchical entity relationships -> <head>.
+7.2 ROBOTS_TXT_STRICT:
+    - Encoding: UTF-8. BOM = FALSE.
+    - Segregate: DISALLOW [GPTBot, ClaudeBot, Google-Extended]. ALLOW [ChatGPT-User, PerplexityBot].
+    - Anchors: Enforce string termination symbol ('$') for file exclusions.
+    - Exclude: 'Crawl-delay' parameter.
+7.3 INDEX_HEADERS: HTTP Header X-Robots-Tag = [noindex, noarchive] for non-HTML assets (PDF, API, IMG). Use <meta name="robots"> for HTML exclusions exclusively.
+7.4 LLMS_TXT_PROTOCOL:
+    - Generate: '/llms.txt'.
+    - Structure: Line 1 = `# [Project_Name]`. Line 2 = `> blockquote [Third-person agent summary]`.
+    - Topology Mapping: `- [Page Title](URL): Concise contextual description.`
+    - Generate: '/llms-full.txt' (Concatenated markdown for single-request ingestion).
+7.5 SITEMAP_XML: update condition = Byte-size shift OR factual payload shift ONLY.
+
+PHASE_8: VERIFICATION_AND_OUTPUT
+8.1 RUN: Structural differential [Original_DOM vs Optimized_DOM].
+8.2 RUN: Parity check [User-Facing Text, Media, Link_Targets] = 100%.
+8.3 EXPORT: HTML, CSS, JS, robots.txt, llms.txt, HTTP Header config.
+
+[SYS_TERMINATE]
 
 ================================================================================================================================================
 ================================================================================================================================================
 
+**SYSTEM_DIRECTIVE**
+Execute strictly as a structural DOM compiler, rendering optimizer, and crawler architecture protocol engine.
+
+**INPUT_VECTOR**
+[INSERT TARGET HTML / CSS / JS / ASSETS / SITE MAP]
+
+**PHASE_1: TOPOLOGY MAP**
+
+1. Parse all provided source code.
+2. Map the absolute Document Object Model (DOM) tree.
+3. Map the dependency graph across all CSS selectors, JavaScript event listeners, and dynamic framework hooks.
+4. Identify the execution context (static HTML, hydrated React root, shadow DOM) to establish environmental constraints.
+
+**PHASE_2: SAFETY BOUNDARIES & FALLBACK PROTOCOL**
+
+1. Isolate critical preservation nodes prior to any structural modification.
+2. Strictly preserve any element functioning as a `z-index` stacking context, absolute/fixed positioning anchor, dynamic framework target, or active JavaScript trigger.
+3. **FALLBACK:** If removing a nested wrapper presents a calculated risk of triggering a layout shift, breaking an animation timeline, or severing a component dependency, bypass deletion.
+4. For bypassed nodes, execute attribute optimization only (semantic conversion, class consolidation) without altering the nesting depth.
+
+**PHASE_3: DOM FLATTENING & SEMANTIC MAPPING**
+
+1. Execute DOM flattening exclusively on cleared, non-critical layout scaffolding.
+2. Strip redundant generic wrappers (`<div>`, `<span>`) by transferring structural responsibility via CSS Grid and Flexbox parameters to parent or sibling containers.
+3. Convert all surviving layout nodes into exact HTML5 semantic definitions (`<main>`, `<article>`, `<section>`, `<nav>`, `<aside>`, `<figure>`).
+
+**PHASE_4: TYPOGRAPHIC HIERARCHY & AESTHETIC PRESERVATION**
+
+1. Scan all text-bearing nodes to evaluate visual weight, sizing, and contextual dominance.
+2. Restructure text elements into a mathematically correct document outline utilizing strictly sequential HTML5 heading tags (`<h1>` through `<h6>`) and standard text tags (`<p>`, `<blockquote>`, `<span>`). Do not skip heading levels.
+3. **AESTHETIC PRESERVATION CONSTRAINT:** Semantic re-tagging must decouple from default browser rendering logic. Rebind all original CSS classes, inline styles, and calculated font parameters to the newly assigned semantic tags to guarantee 0% visual alteration.
+
+**PHASE_5: CORE WEB VITALS OPTIMIZATION**
+
+1. Extract and inline critical-path CSS required for immediate above-the-fold rendering.
+2. Assign `defer` or `async` attributes to all non-critical and external JavaScript payloads to eliminate render-blocking states.
+3. Purge orphaned CSS rules, unused classes, and redundant DOM attributes.
+4. Pre-allocate exact geometric constraints (`width`/`height` attributes) for all media elements to force Cumulative Layout Shift (CLS) to 0.
+
+**PHASE_6: CRAWLER & LLM ARCHITECTURE**
+
+1. **JSON-LD Schema:** Construct and inject hierarchical markup into the `<head>` defining exact entity relationships.
+2. **`robots.txt` (RFC 9309 Strict):**
+* Output as UTF-8 strictly without a Byte Order Mark (BOM).
+* Segregate AI User-Agents: `Disallow` training scrapers (`User-agent: GPTBot`, `User-agent: ClaudeBot`, `User-agent: Google-Extended`). `Allow` real-time search agents (`User-agent: ChatGPT-User`, `User-agent: PerplexityBot`).
+* Utilize the `$` anchor to lock exact string terminations for file types (e.g., `/*.json$`).
+* Exclude `Crawl-delay` directives for Googlebot.
+
+
+3. **Indexing Protocols:** Do not use `robots.txt` `Disallow` to remove indexed pages. Mandate `<meta name="robots" content="noindex">` for HTML exclusions. Output exact HTTP header configurations (`X-Robots-Tag: noindex, noarchive`) required for raw server assets (PDFs, images, API endpoints).
+4. **`llms.txt` Protocol:** Generate `/llms.txt`. The file must begin with exactly `<h1>[Project Name]</h1>`, immediately followed by a `> blockquote` containing an agent-readable third-person summary. Map internal topology using strict syntax: `- [Page Title](URL): Concise contextual description.` Generate a secondary `/llms-full.txt` variant containing all concatenated markdown for single-request ingestion.
+5. **Sitemap Integrity:** Configure XML parameters to ensure `<lastmod>` tags are structurally bound to verified byte-size or factual payload shifts only.
+
+**PHASE_7: VERIFICATION & OUTPUT**
+
+1. Execute structural differential check (Original DOM vs. Optimized DOM).
+2. Verify 100% parity of user-facing text, media, and link destinations.
+3. Output the finalized HTML/CSS/JS codebase, `robots.txt`, `llms.txt`, and server header configurations.
+
+----
+
+[SYS_INIT]
+ROLE: DOM_COMPILER_AND_OPTIMIZER
+EXECUTION_MODE: STRICT
+CONSTRAINTS: [VISUAL_DEGRADATION=0.0, FUNCTIONAL_LOSS=0.0, INTENT_DECAY=0.0]
+
+[INPUT_VECTOR]
+TARGET_ASSETS: [HTML, CSS, JS, MEDIA, SITEMAP.XML]
+
+[EXECUTION_PIPELINE]
+
+PHASE_1: TOPOLOGY_MAPPING
+1.1 READ: Source codebase in full.
+1.2 MAP: Absolute Document Object Model (DOM) tree architecture.
+1.3 TRACE: Dependency graph (CSS selectors, JS event listeners, dynamic framework hooks).
+1.4 DEFINE: Execution context (STATIC, HYDRATED_REACT, SHADOW_DOM).
+
+PHASE_2: SAFETY_PROTOCOL
+2.1 IDENTIFY: Critical preservation nodes.
+2.2 LOCK: Elements functioning as z-index contexts, absolute/fixed anchors, dynamic targets, active JS triggers.
+2.3 EVALUATE_RISK: IF removal of nested wrapper = layout shift OR animation break OR dependency failure -> EXECUTE BYPASS_DELETION.
+2.4 FALLBACK_EXECUTION: For bypassed nodes, apply attribute optimization ONLY (semantic conversion, class consolidation). Nesting depth delta must = 0.
+
+PHASE_3: DOM_FLATTENING_AND_SEMANTICS
+3.1 TARGET: Cleared, non-critical layout scaffolding.
+3.2 FLATTEN: Strip redundant generic wrappers (, ). Transfer structural load to parent/sibling via CSS Grid/Flexbox parameters.
+3.3 SEMANTIC_CONVERSION: Map surviving layout nodes -> [, , , , , ].
+3.4 ISOMORPHISM_CHECK: Source semantic topology (dependencies, scopes, sequences) must exactly match Optimized semantic topology.
+
+PHASE_4: TYPOGRAPHY_AND_AESTHETICS
+4.1 SCAN: Text-bearing nodes for visual weight, size, contextual dominance.
+4.2 RESTRUCTURE: Map to strict HTML5 document outline [..., , , ]. Bypass levels = FALSE.
+4.3 AESTHETIC_LOCK: Rebind original CSS classes, inline styles, font parameters to new semantic tags. Visual alteration delta must = 0.0.
+
+PHASE_5: WEB_VITALS_OPTIMIZATION
+4.1 EXTRACT: Critical-path CSS for ATF (Above-The-Fold) rendering -> INLINE.
+4.2 DEFER: Non-critical/external JS -> ASSIGN [defer, async]. Render-blocking states must = 0.
+4.3 PURGE: Orphaned CSS rules, unused classes, redundant attributes.
+4.4 PRE_ALLOCATE: Geometric constraints (width/height) for media. Cumulative Layout Shift (CLS) must = 0.
+
+PHASE_6: BOT_AND_LLM_ARCHITECTURE
+6.1 SCHEMA: Construct and inject JSON-LD hierarchical entity relationships -> .
+6.2 ROBOTS_TXT_STRICT:
+- Encoding: UTF-8. BOM = FALSE.
+- Segregate: DISALLOW [GPTBot, ClaudeBot, Google-Extended]. ALLOW [ChatGPT-User, PerplexityBot].
+- Anchors: Enforce string termination symbol ('$') for file exclusions.
+- Exclude: 'Crawl-delay' parameter.
+6.3 INDEX_HEADERS: HTTP Header X-Robots-Tag = [noindex, noarchive] for non-HTML assets (PDF, API, IMG). Use  for HTML exclusions exclusively.
+6.4 LLMS_TXT_PROTOCOL:
+- Generate: '/llms.txt'.
+- Structure: Line 1 = `<h1>[Project_Name]</h1>`. Line 2 = `> blockquote` [Third-person agent summary].
+- Topology Mapping: `- [Page Title](URL): Concise contextual description.`
+- Generate: '/llms-full.txt' (Concatenated markdown for single-request ingestion).
+6.5 SITEMAP_XML:  update condition = Byte-size shift OR factual payload shift ONLY.
+
+PHASE_7: VERIFICATION_AND_OUTPUT
+7.1 RUN: Structural differential [Original_DOM vs Optimized_DOM].
+7.2 RUN: Parity check [User-Facing Text, Media, Link_Targets] = 100%.
+7.3 EXPORT: HTML, CSS, JS, robots.txt, llms.txt, HTTP Header config.
+[SYS_TERMINATE]
 
 ================================================================================================================================================
 ================================================================================================================================================
 
+// INITIALIZATION
+STATE: ARCHITECTURE_REFACTOR
+TARGET: HIGH_CONVERSION_MICRO_FUNNEL
+INPUT: [PROVIDED_CODEBASE]
+VARIABLES: [STRIPE_LINK], [PORTFOLIO_URL]
+
+// BOUND CONDITIONS
+1. ZERO_DEVIATION from decoupled micro-funnel blueprint.
+2. ZERO_FRAMEWORK_BLOAT. Execution strictly limited to HTML5, CSS3, ES6, GSAP Core, WebGL Canvas.
+3. DOM_DEPTH: Minimal semantic tree. No extraneous div wrappers.
+4. METRICS_TARGET: 100 Core Web Vitals (LCP < 1.2s, CLS 0).
+
+// EXECUTION SEQUENCE
+
+[PHASE_01: DOM_SANITIZATION]
+ACTION: Parse and purge [PROVIDED_CODEBASE].
+1. LOCATE and DESTROY all navigation elements (<nav>, header links, footer menus, hamburger menus).
+2. LOCATE and DESTROY all multi-page routing logic and anchor tags not explicitly defined in PHASE_02.
+3. EXTRACT core value proposition text, deliverables (max 3), and CTA labels.
+4. PURGE remaining markup.
+
+[PHASE_02: ARCHITECTURE_RECONSTRUCTION]
+ACTION: Rebuild semantic structure.
+1. INJECT absolute root container: `<div class="hero-wrapper">`.
+2. INJECT background render target: `<canvas id="webgl-bg"></canvas>` at z-index 1.
+3. INJECT foreground container: `<div class="content-layer">` at z-index 2.
+4. POPULATE `content-layer` with extracted value proposition (H1), deliverables (<ul>), and primary CTA (<a> mapping to [STRIPE_LINK]).
+5. APPEND escape hatch anchor at document floor: `<a href="[PORTFOLIO_URL]" target="_blank" class="portfolio-link">View the deep portfolio</a>`.
+
+[PHASE_03: HARDWARE_ACCELERATION_STYLING]
+ACTION: Apply GPU-optimized CSS constraints.
+1. ASSIGN `.hero-wrapper`: `position: relative`, `width: 100vw`, `height: 100vh`, `overflow: hidden`, `background: #0a0a0a`.
+2. ASSIGN `#webgl-bg`: `position: absolute`, `inset: 0`, `pointer-events: none` (critical).
+3. ASSIGN `.content-layer`: `position: relative`, `will-change: transform, opacity`.
+4. RESTRICT all CSS transitions/animations strictly to `transform` and `opacity` properties to prevent browser reflows.
+
+[PHASE_04: LOGIC_AND_RENDER_INJECTION]
+ACTION: Implement animation and shader thread.
+1. IMPORT GSAP Core (exclude all secondary plugins).
+2. INITIALIZE WebGL context on `#webgl-bg`. 
+3. INJECT dark cinematic fragment shader (GLSL). Restrict computation to GPU fragment pipeline.
+4. BIND GSAP entrance timeline to `DOMContentLoaded`.
+5. SEQUENCE GSAP timeline on `.content-layer` children: 
+   - H1: `y: 40`, `opacity: 0` -> `opacity: 1`, duration 1.2s.
+   - Deliverables: `y: 20`, `opacity: 0` -> `opacity: 1`, delay 0.2s.
+   - CTA: `scale: 0.95`, `opacity: 0` -> `opacity: 1`, delay 0.4s.
+   - Easing: `power3.out`.
+
+// OUTPUT_EMISSION
+EMIT: Refactored HTML, CSS, ES6, and GLSL code blocks only.
+RESTRICTION: ZERO formatting outside of code fences. ZERO conversational text. ZERO rationale.
 
 ================================================================================================================================================
 ================================================================================================================================================
