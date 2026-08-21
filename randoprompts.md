@@ -22294,10 +22294,64 @@ PHASE_7: VERIFICATION_AND_OUTPUT
 7.3 EXPORT: HTML, CSS, JS, robots.txt, llms.txt, HTTP Header config.
 [SYS_TERMINATE]
 
+---
+
+// INITIALIZATION
+STATE: ARCHITECTURE_REFACTOR
+TARGET: HIGH_CONVERSION_MICRO_FUNNEL
+INPUT: [PROVIDED_CODEBASE]
+VARIABLES: [STRIPE_LINK], [PORTFOLIO_URL]
+
+// BOUND CONDITIONS
+1. ZERO_DEVIATION from decoupled micro-funnel blueprint.
+2. ZERO_FRAMEWORK_BLOAT. Execution strictly limited to HTML5, CSS3, ES6, GSAP Core, WebGL Canvas.
+3. DOM_DEPTH: Minimal semantic tree. No extraneous div wrappers.
+4. METRICS_TARGET: 100 Core Web Vitals (LCP < 1.2s, CLS 0).
+
+// EXECUTION SEQUENCE
+
+[PHASE_01: DOM_SANITIZATION]
+ACTION: Parse and purge [PROVIDED_CODEBASE].
+1. LOCATE and DESTROY all navigation elements (<nav>, header links, footer menus, hamburger menus).
+2. LOCATE and DESTROY all multi-page routing logic and anchor tags not explicitly defined in PHASE_02.
+3. EXTRACT core value proposition text, deliverables (max 3), and CTA labels.
+4. PURGE remaining markup.
+
+[PHASE_02: ARCHITECTURE_RECONSTRUCTION]
+ACTION: Rebuild semantic structure.
+1. INJECT absolute root container: `<div class="hero-wrapper">`.
+2. INJECT background render target: `<canvas id="webgl-bg"></canvas>` at z-index 1.
+3. INJECT foreground container: `<div class="content-layer">` at z-index 2.
+4. POPULATE `content-layer` with extracted value proposition (H1), deliverables (<ul>), and primary CTA (<a> mapping to [STRIPE_LINK]).
+5. APPEND escape hatch anchor at document floor: `<a href="[PORTFOLIO_URL]" target="_blank" class="portfolio-link">View the deep portfolio</a>`.
+
+[PHASE_03: HARDWARE_ACCELERATION_STYLING]
+ACTION: Apply GPU-optimized CSS constraints.
+1. ASSIGN `.hero-wrapper`: `position: relative`, `width: 100vw`, `height: 100vh`, `overflow: hidden`, `background: #0a0a0a`.
+2. ASSIGN `#webgl-bg`: `position: absolute`, `inset: 0`, `pointer-events: none` (critical).
+3. ASSIGN `.content-layer`: `position: relative`, `will-change: transform, opacity`.
+4. RESTRICT all CSS transitions/animations strictly to `transform` and `opacity` properties to prevent browser reflows.
+
+[PHASE_04: LOGIC_AND_RENDER_INJECTION]
+ACTION: Implement animation and shader thread.
+1. IMPORT GSAP Core (exclude all secondary plugins).
+2. INITIALIZE WebGL context on `#webgl-bg`. 
+3. INJECT dark cinematic fragment shader (GLSL). Restrict computation to GPU fragment pipeline.
+4. BIND GSAP entrance timeline to `DOMContentLoaded`.
+5. SEQUENCE GSAP timeline on `.content-layer` children: 
+   - H1: `y: 40`, `opacity: 0` -> `opacity: 1`, duration 1.2s.
+   - Deliverables: `y: 20`, `opacity: 0` -> `opacity: 1`, delay 0.2s.
+   - CTA: `scale: 0.95`, `opacity: 0` -> `opacity: 1`, delay 0.4s.
+   - Easing: `power3.out`.
+
+// OUTPUT_EMISSION
+EMIT: Refactored HTML, CSS, ES6, and GLSL code blocks only.
+RESTRICTION: ZERO formatting outside of code fences. ZERO conversational text. ZERO rationale.
+
 ================================================================================================================================================
 ================================================================================================================================================
 
-# Significantly Improved ChatGPT Queue Prompt Library
+# ChatGPT Queue Prompt Library
 
 All original prompt chains have been retained and enhanced using proven prompt engineering practices:  
 - Explicit roles/personas  
@@ -23357,57 +23411,6 @@ Act as a brand identity designer and logo design specialist. The SaaS product is
 ================================================================================================================================================
 ================================================================================================================================================
 
-// INITIALIZATION
-STATE: ARCHITECTURE_REFACTOR
-TARGET: HIGH_CONVERSION_MICRO_FUNNEL
-INPUT: [PROVIDED_CODEBASE]
-VARIABLES: [STRIPE_LINK], [PORTFOLIO_URL]
-
-// BOUND CONDITIONS
-1. ZERO_DEVIATION from decoupled micro-funnel blueprint.
-2. ZERO_FRAMEWORK_BLOAT. Execution strictly limited to HTML5, CSS3, ES6, GSAP Core, WebGL Canvas.
-3. DOM_DEPTH: Minimal semantic tree. No extraneous div wrappers.
-4. METRICS_TARGET: 100 Core Web Vitals (LCP < 1.2s, CLS 0).
-
-// EXECUTION SEQUENCE
-
-[PHASE_01: DOM_SANITIZATION]
-ACTION: Parse and purge [PROVIDED_CODEBASE].
-1. LOCATE and DESTROY all navigation elements (<nav>, header links, footer menus, hamburger menus).
-2. LOCATE and DESTROY all multi-page routing logic and anchor tags not explicitly defined in PHASE_02.
-3. EXTRACT core value proposition text, deliverables (max 3), and CTA labels.
-4. PURGE remaining markup.
-
-[PHASE_02: ARCHITECTURE_RECONSTRUCTION]
-ACTION: Rebuild semantic structure.
-1. INJECT absolute root container: `<div class="hero-wrapper">`.
-2. INJECT background render target: `<canvas id="webgl-bg"></canvas>` at z-index 1.
-3. INJECT foreground container: `<div class="content-layer">` at z-index 2.
-4. POPULATE `content-layer` with extracted value proposition (H1), deliverables (<ul>), and primary CTA (<a> mapping to [STRIPE_LINK]).
-5. APPEND escape hatch anchor at document floor: `<a href="[PORTFOLIO_URL]" target="_blank" class="portfolio-link">View the deep portfolio</a>`.
-
-[PHASE_03: HARDWARE_ACCELERATION_STYLING]
-ACTION: Apply GPU-optimized CSS constraints.
-1. ASSIGN `.hero-wrapper`: `position: relative`, `width: 100vw`, `height: 100vh`, `overflow: hidden`, `background: #0a0a0a`.
-2. ASSIGN `#webgl-bg`: `position: absolute`, `inset: 0`, `pointer-events: none` (critical).
-3. ASSIGN `.content-layer`: `position: relative`, `will-change: transform, opacity`.
-4. RESTRICT all CSS transitions/animations strictly to `transform` and `opacity` properties to prevent browser reflows.
-
-[PHASE_04: LOGIC_AND_RENDER_INJECTION]
-ACTION: Implement animation and shader thread.
-1. IMPORT GSAP Core (exclude all secondary plugins).
-2. INITIALIZE WebGL context on `#webgl-bg`. 
-3. INJECT dark cinematic fragment shader (GLSL). Restrict computation to GPU fragment pipeline.
-4. BIND GSAP entrance timeline to `DOMContentLoaded`.
-5. SEQUENCE GSAP timeline on `.content-layer` children: 
-   - H1: `y: 40`, `opacity: 0` -> `opacity: 1`, duration 1.2s.
-   - Deliverables: `y: 20`, `opacity: 0` -> `opacity: 1`, delay 0.2s.
-   - CTA: `scale: 0.95`, `opacity: 0` -> `opacity: 1`, delay 0.4s.
-   - Easing: `power3.out`.
-
-// OUTPUT_EMISSION
-EMIT: Refactored HTML, CSS, ES6, and GLSL code blocks only.
-RESTRICTION: ZERO formatting outside of code fences. ZERO conversational text. ZERO rationale.
 
 ================================================================================================================================================
 ================================================================================================================================================
