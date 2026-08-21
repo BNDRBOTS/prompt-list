@@ -688,8 +688,6 @@ Implement a compliant Cookie Consent Modal. It should inherit our global design 
 It does not argue. 
 It reclassifies the other person in front of witnesses, then closes the lane before challenge becomes cheap.
 —————————
-i thought i was clear, do not rephrase or recontextualize my demands. get to work and be complete, be accurate. make the claim. avoid any lies or unsurety. the code exists for surety. you must run it and be sure of it. do not excuse absense of what should be listed. im done with this chat, im not trying to rely on ChatGPT to be my information list when i could have my visible list. stop keeping this to yourself like it's going to work. stop the power struggle. stop the dominating interference
-—————————
 EXECUTE THE PRODUCTION: 
 I **require**, ***NOT*** *request* - the complete, unabridged, production-grade codebase with no omissions, no truncation, no "for brevity," no stubs, no mocks, no TODOs, no boilerplate, no simulations, no dead, missing, or broken logic - no incongruent code, no old/new - no 2024 limited tech - it's 2026. The literal full implementation. YOU MUST ensure you deliver exactly what was specified in the project structure without any loss of integrity for a fully working application without need of any furter iteration. inlcude all scripts and downstream materials needed without gaps, cover edge cases, blind spots, robust security and deliver only production-grade clean code.
 Treat that list as the only authoritative source for camera systems, ranks, tags, specs, synonyms, and raw_text.
