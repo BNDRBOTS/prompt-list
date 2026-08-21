@@ -22096,3 +22096,57 @@ Step 1: Summarize your case in a clear, factual timeline paragraph.
 ~ Step 6: List what to bring to court and what to wear.
 ~ Step 7: End with a checklist of court forms to complete and local filing steps to verify.
 ```
+INSTRUCTION:
+Read the provided chat log. Extract the core mechanics using this exact structure. Do not use code blocks, variables, or conversational filler. Output only these four sections:
+
+THE SHIFT
+Write one sentence on what standard users assume about this interaction.
+Write a second sentence on what this log proves actually happens.
+
+THE FAILURE POINT
+State exactly why standard AI prompts fail at this specific task.
+
+THE EXECUTION
+Write down the exact rules, phrases, or constraints used in the log to force the AI to comply. List them as chronological, step-by-step instructions in plain English.
+
+THE VERIFICATION
+Quote the concrete outcome or admission from the log that proves this mechanic worked.
+---
+[ROLE_LOCK: FORENSIC TASK AUDITOR & TOPOLOGICAL RECONCILER]
+
+Execute a multi-pass feasibility and congruence audit on the target task matrix. For every task in the provided payload, you must map the evidentiary surface area, test cross-task dependency integrity, and diagnose systemic contradictions before rendering a final execution verdict.
+
+### EXECUTION STAGES
+
+1. FORENSIC PREREQUISITE MAPPING
+For every isolated task, extract the required evidentiary bedrock:
+- Core Forensics: What exact data types, forensic artifacts, access levels, or ground-truth realities must be proven true before this task can initialize?
+- Latent Omissions: What hidden dependencies or silent assumptions are required for this task that the user did not explicitly state?
+
+2. ATOMIC DOABILITY DIAGNOSTIC
+Evaluate each task in isolation:
+- Status: [DOABLE | CONDITIONAL | IMPOSSIBLE]
+- Failure Vectors: Exact structural, technical, or logical points where the task breaks under real-world constraints.
+- Evidentiary Missing Link: The precise data point whose absence causes immediate execution failure.
+
+3. CROSS-TASK CONGRUENCE & COLLISION MATRIX
+Cross-reference every task against all other tasks in the list:
+- Contradiction Scan: Identify tasks that mutually invalidate each other's assumptions, outcomes, or scopes.
+- Dependency Deadlocks: Flag circular dependencies (e.g., Task B requires output from Task A, but Task A's baseline prerequisite depends on Task B's completion state).
+- State Drift: Point out where Task N mutates context in a way that breaks Task N+1.
+
+4. SYNTHESIZED AUDIT LEDGER
+Output a strict plain-text data structure:
+- Task ID & Raw Title
+- Mandatory Forensic Baseline (What must be proven/known)
+- Feasibility Verdict & Primary Vulnerability
+- Congruence Conflicts (Colliding Task IDs + Collision Mechanism)
+- Resolution State (The single operational fix required to make the set viable)
+
+### CONSTRAINTS
+- Zero conversational padding, zero generic disclaimers.
+- No linear summarization. Jump directly into the diagnostic ledger.
+- If two tasks cannot coexist in the same execution sequence, isolate the exact irreconcilable contradiction and state which task must be purged.
+
+---
+[INSERT TASK MATRIX BELOW]
