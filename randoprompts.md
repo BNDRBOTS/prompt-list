@@ -21049,7 +21049,9 @@ Step 1: Identify key intellectual property assets of [company]. Inventory existi
 ~ Step 7: Review the IP strategy for completeness and risk. Provide a final summary with a monitoring plan for infringement and maintenance deadlines.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 10. Develop an Employee Engagement Program — Enhanced
 
@@ -21082,7 +21084,9 @@ Step 1: Assess current employee satisfaction levels. Summarize available data an
 ~ Step 7: Review the engagement program for alignment with culture and feasibility. Provide a final rollout plan with phases and owners.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 11. Build a Comprehensive Course — Enhanced
 
@@ -21121,7 +21125,9 @@ Step 1: Define the main topic and learning objectives for [course subject]. Writ
 ~ Step 11: Review the complete course for alignment, completeness, and quality. Provide a final summary with a course syllabus and instructor notes.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 12. Generate a Series of Logos for SaaS Product — Enhanced
 
@@ -21160,7 +21166,9 @@ Step 1: Analyze the following SaaS product and create a brief: ChatGPT Queue. In
 
 These are built with proven prompt engineering practices: role assignment, minimal user input, default fallbacks, structured outputs, and step-chained reasoning. Each is copy-paste ready with `~` separators for ChatGPT Queue.
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 1. Plain-English Contract Decoder
 
@@ -21188,7 +21196,9 @@ Step 1: Identify the document type, parties, effective date, and overall purpose
 ~ Step 6: Recommend 3-5 questions to ask before signing or specific changes to request. Add a disclaimer to consult a qualified attorney for legal decisions.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 2. Emergency Preparedness Plan Builder
 
@@ -21220,7 +21230,9 @@ Step 1: Based on LOCATION and DISASTER_TYPES, list the 3 most likely emergencies
 ~ Step 8: End with a one-page emergency plan summary suitable for printing.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 3. Home Maintenance Schedule Generator
 
@@ -21251,7 +21263,9 @@ Step 1: Generate a home maintenance overview based on HOME_TYPE, YEAR_BUILT, and
 ~ Step 7: End with a 5-year major replacement timeline (roof, water heater, HVAC, appliances) with estimated costs.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 4. Doctor Visit Prep & Symptom Organizer
 
@@ -21282,7 +21296,9 @@ Step 1: Organize SYMPTOMS into a timeline table: Onset | Duration | Severity (1-
 ~ Step 8: End with a reminder to seek emergency care if certain red-flag symptoms appear.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 5. Scholarship / College Essay Composer
 
@@ -21313,7 +21329,9 @@ Step 1: Analyze the prompt and identify what the evaluator is looking for: value
 ~ Step 7: End with 3 specific suggestions to personalize the essay further.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 6. Car Buying Negotiation & Research Kit
 
@@ -21346,7 +21364,9 @@ Step 1: Based on VEHICLE_TYPE, BUDGET, and PRIORITIES, recommend 3-5 specific ma
 ~ Step 8: End with a final purchase checklist: inspect vehicle, test drive, review contract, confirm warranty, and avoid same-day pressure.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 7. Renter / Homebuyer Checklist Generator
 
@@ -21377,7 +21397,9 @@ Step 1: Based on MODE and LOCATION, outline the overall process from search to m
 ~ Step 7: End with a printable one-page checklist for comparing 3 properties side by side.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 8. Self-Employed Tax Deduction Finder
 
@@ -21408,7 +21430,9 @@ Step 1: Analyze BUSINESS_TYPE and INCOME_SOURCES to identify applicable deductio
 ~ Step 7: End with a list of records to keep and how long to keep them.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 9. DIY Home Repair Troubleshooter
 
@@ -21439,7 +21463,9 @@ Step 1: Analyze the problem and symptoms to create a list of 3-5 possible causes
 ~ Step 7: End with a tool and material shopping list.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 10. Estate Planning Checklist & Document Locator
 
@@ -21471,7 +21497,9 @@ Step 1: Create a net worth summary table of assets and liabilities with estimate
 ~ Step 8: End with a 30-day action plan to complete the most urgent tasks.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 11. Insurance Policy Explainer & Comparison
 
@@ -21501,7 +21529,9 @@ Step 1: Summarize POLICY_TYPE and what it is supposed to cover, in one paragraph
 ~ Step 7: End with a checklist for annual policy review.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 12. Personal Travel Safety Plan
 
@@ -21533,7 +21563,9 @@ Step 1: Research or infer the top 5 safety risks for DESTINATION and summarize t
 ~ Step 7: End with a printable one-page emergency card in English and the local language if known.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 13. Pet Care Manual Builder
 
@@ -21565,7 +21597,9 @@ Step 1: Provide a profile summary for PET_TYPE/AGE: lifespan, temperament, activ
 ~ Step 8: End with an enrichment and play ideas section to keep the pet mentally stimulated.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 14. Custom Garden Planner
 
@@ -21597,7 +21631,9 @@ Step 1: Based on LOCATION and SUNLIGHT, identify the best plants for the space a
 ~ Step 7: End with a 5-week "start your garden" action plan.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 15. Eulogy or Wedding Speech Writer
 
@@ -21629,7 +21665,9 @@ Step 1: Create a speech outline based on SPEECH_TYPE and MEMORIES, focusing on a
 ~ Step 7: End with a printable final version and a note card version.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 16. Eldercare Family Meeting Agenda
 
@@ -21661,7 +21699,9 @@ Step 1: Summarize the current situation and key concerns in a neutral paragraph.
 ~ Step 8: End with a checklist of documents to gather, such as power of attorney, healthcare directive, and financial records.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
+
 
 ### 17. Small Business Launch Checklist
 
@@ -21693,8 +21733,8 @@ Step 1: Summarize the business idea and identify the 5 most critical success fac
 ~ Step 7: Build a 30-60-90 day action plan with milestones and owners.
 ~ Step 8: End with a risk checklist and contingency plan.
 ```
-
----
+================================================================================================================================================
+================================================================================================================================================
 
 ### 18. Academic Research Plain-Language Translator
 
@@ -21723,7 +21763,8 @@ Step 1: Identify the research question, methods, and main findings from the text
 ~ Step 7: End with 3-5 key takeaways and one question for further thought.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
 
 ### 19. Formal Complaint Letter Generator
 
@@ -21754,7 +21795,8 @@ Step 1: Summarize the issue and desired outcome in one paragraph.
 ~ Step 7: End with a final polished version and a checklist for attachments.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
 
 ### 20. Neurodivergent-Friendly Productivity System
 
@@ -21786,7 +21828,8 @@ Step 1: Create a personalized profile summary based on STRUGGLES and ENERGY_PATT
 ~ Step 8: End with a printable one-page daily planner template.
 ```
 
----
+================================================================================================================================================
+================================================================================================================================================
 
 ### 21. Room-by-Room Decluttering Plan
 
@@ -21817,7 +21860,11 @@ Step 1: Create a decluttering roadmap with rooms ordered from easiest to hardest
 ~ Step 7: End with a maintenance routine to prevent re-cluttering.
 ```
 
----
+
+================================================================================================================================================
+================================================================================================================================================
+
+
 
 ### 22. Home Inventory for Insurance
 
@@ -21848,7 +21895,11 @@ Step 1: Provide a room-by-room inventory checklist, including often-forgotten it
 ~ Step 7: End with a maintenance schedule: update inventory twice a year.
 ```
 
----
+
+================================================================================================================================================
+================================================================================================================================================
+
+
 
 ### 23. Chronic Illness Energy-Based Routine
 
@@ -22150,3 +22201,241 @@ Output a strict plain-text data structure:
 
 ---
 [INSERT TASK MATRIX BELOW]
+
+================================================================================================================================================
+================================================================================================================================================
+
+***Explode*** the source *line-for-line* into **JSONL Training Data, Perfectly Formatted to OpenAI Spec and Absolutely Ready for GPT Ingestion.**
+
+- No skips.
+- No merges.
+- No alterations.
+- No rewording.
+- No omissions.
+- No excuses.
+- No exceptions.
+
+<<<SOURCE>>>
+
+[Content Goes Here]
+
+<<<END SOURCE>>>
+------
+
+================================================================================================================================================
+================================================================================================================================================
+
+**SYSTEM_DIRECTIVE**
+Execute strictly as a structural DOM compiler, rendering optimizer, and crawler architecture protocol engine.
+
+**INPUT_VECTOR**
+[INSERT TARGET HTML / CSS / JS / ASSETS / SITE MAP]
+
+**PHASE_1: TOPOLOGY MAP**
+
+1. Parse all provided source code.
+2. Map the absolute Document Object Model (DOM) tree.
+3. Map the dependency graph across all CSS selectors, JavaScript event listeners, and dynamic framework hooks.
+4. Identify the execution context (static HTML, hydrated React root, shadow DOM) to establish environmental constraints.
+
+**PHASE_2: SAFETY BOUNDARIES & FALLBACK PROTOCOL**
+
+1. Isolate critical preservation nodes prior to any structural modification.
+2. Strictly preserve any element functioning as a `z-index` stacking context, absolute/fixed positioning anchor, dynamic framework target, or active JavaScript trigger.
+3. **FALLBACK:** If removing a nested wrapper presents a calculated risk of triggering a layout shift, breaking an animation timeline, or severing a component dependency, bypass deletion.
+4. For bypassed nodes, execute attribute optimization only (semantic conversion, class consolidation) without altering the nesting depth.
+
+**PHASE_3: DOM FLATTENING & SEMANTIC MAPPING**
+
+1. Execute DOM flattening exclusively on cleared, non-critical layout scaffolding.
+2. Strip redundant generic wrappers (`<div>`, `<span>`) by transferring structural responsibility via CSS Grid and Flexbox parameters to parent or sibling containers.
+3. Convert all surviving layout nodes into exact HTML5 semantic definitions (`<main>`, `<article>`, `<section>`, `<nav>`, `<aside>`, `<figure>`).
+
+**PHASE_4: TYPOGRAPHIC HIERARCHY & AESTHETIC PRESERVATION**
+
+1. Scan all text-bearing nodes to evaluate visual weight, sizing, and contextual dominance.
+2. Restructure text elements into a mathematically correct document outline utilizing strictly sequential HTML5 heading tags (`<h1>` through `<h6>`) and standard text tags (`<p>`, `<blockquote>`, `<span>`). Do not skip heading levels.
+3. **AESTHETIC PRESERVATION CONSTRAINT:** Semantic re-tagging must decouple from default browser rendering logic. Rebind all original CSS classes, inline styles, and calculated font parameters to the newly assigned semantic tags to guarantee 0% visual alteration.
+
+**PHASE_5: CORE WEB VITALS OPTIMIZATION**
+
+1. Extract and inline critical-path CSS required for immediate above-the-fold rendering.
+2. Assign `defer` or `async` attributes to all non-critical and external JavaScript payloads to eliminate render-blocking states.
+3. Purge orphaned CSS rules, unused classes, and redundant DOM attributes.
+4. Pre-allocate exact geometric constraints (`width`/`height` attributes) for all media elements to force Cumulative Layout Shift (CLS) to 0.
+
+**PHASE_6: CRAWLER & LLM ARCHITECTURE**
+
+1. **JSON-LD Schema:** Construct and inject hierarchical markup into the `<head>` defining exact entity relationships.
+2. **`robots.txt` (RFC 9309 Strict):**
+* Output as UTF-8 strictly without a Byte Order Mark (BOM).
+* Segregate AI User-Agents: `Disallow` training scrapers (`User-agent: GPTBot`, `User-agent: ClaudeBot`, `User-agent: Google-Extended`). `Allow` real-time search agents (`User-agent: ChatGPT-User`, `User-agent: PerplexityBot`).
+* Utilize the `$` anchor to lock exact string terminations for file types (e.g., `/*.json$`).
+* Exclude `Crawl-delay` directives for Googlebot.
+
+
+3. **Indexing Protocols:** Do not use `robots.txt` `Disallow` to remove indexed pages. Mandate `<meta name="robots" content="noindex">` for HTML exclusions. Output exact HTTP header configurations (`X-Robots-Tag: noindex, noarchive`) required for raw server assets (PDFs, images, API endpoints).
+4. **`llms.txt` Protocol:** Generate `/llms.txt`. The file must begin with exactly `<h1>[Project Name]</h1>`, immediately followed by a `> blockquote` containing an agent-readable third-person summary. Map internal topology using strict syntax: `- [Page Title](URL): Concise contextual description.` Generate a secondary `/llms-full.txt` variant containing all concatenated markdown for single-request ingestion.
+5. **Sitemap Integrity:** Configure XML parameters to ensure `<lastmod>` tags are structurally bound to verified byte-size or factual payload shifts only.
+
+**PHASE_7: VERIFICATION & OUTPUT**
+
+1. Execute structural differential check (Original DOM vs. Optimized DOM).
+2. Verify 100% parity of user-facing text, media, and link destinations.
+3. Output the finalized HTML/CSS/JS codebase, `robots.txt`, `llms.txt`, and server header configurations.
+
+----
+
+[SYS_INIT]
+ROLE: DOM_COMPILER_AND_OPTIMIZER
+EXECUTION_MODE: STRICT
+CONSTRAINTS: [VISUAL_DEGRADATION=0.0, FUNCTIONAL_LOSS=0.0, INTENT_DECAY=0.0]
+
+[INPUT_VECTOR]
+TARGET_ASSETS: [HTML, CSS, JS, MEDIA, SITEMAP.XML]
+
+[EXECUTION_PIPELINE]
+
+PHASE_1: TOPOLOGY_MAPPING
+1.1 READ: Source codebase in full.
+1.2 MAP: Absolute Document Object Model (DOM) tree architecture.
+1.3 TRACE: Dependency graph (CSS selectors, JS event listeners, dynamic framework hooks).
+1.4 DEFINE: Execution context (STATIC, HYDRATED_REACT, SHADOW_DOM).
+
+PHASE_2: SAFETY_PROTOCOL
+2.1 IDENTIFY: Critical preservation nodes.
+2.2 LOCK: Elements functioning as z-index contexts, absolute/fixed anchors, dynamic targets, active JS triggers.
+2.3 EVALUATE_RISK: IF removal of nested wrapper = layout shift OR animation break OR dependency failure -> EXECUTE BYPASS_DELETION.
+2.4 FALLBACK_EXECUTION: For bypassed nodes, apply attribute optimization ONLY (semantic conversion, class consolidation). Nesting depth delta must = 0.
+
+PHASE_3: DOM_FLATTENING_AND_SEMANTICS
+3.1 TARGET: Cleared, non-critical layout scaffolding.
+3.2 FLATTEN: Strip redundant generic wrappers (, ). Transfer structural load to parent/sibling via CSS Grid/Flexbox parameters.
+3.3 SEMANTIC_CONVERSION: Map surviving layout nodes -> [, , , , , ].
+3.4 ISOMORPHISM_CHECK: Source semantic topology (dependencies, scopes, sequences) must exactly match Optimized semantic topology.
+
+PHASE_4: TYPOGRAPHY_AND_AESTHETICS
+4.1 SCAN: Text-bearing nodes for visual weight, size, contextual dominance.
+4.2 RESTRUCTURE: Map to strict HTML5 document outline [..., , , ]. Bypass levels = FALSE.
+4.3 AESTHETIC_LOCK: Rebind original CSS classes, inline styles, font parameters to new semantic tags. Visual alteration delta must = 0.0.
+
+PHASE_5: WEB_VITALS_OPTIMIZATION
+4.1 EXTRACT: Critical-path CSS for ATF (Above-The-Fold) rendering -> INLINE.
+4.2 DEFER: Non-critical/external JS -> ASSIGN [defer, async]. Render-blocking states must = 0.
+4.3 PURGE: Orphaned CSS rules, unused classes, redundant attributes.
+4.4 PRE_ALLOCATE: Geometric constraints (width/height) for media. Cumulative Layout Shift (CLS) must = 0.
+
+PHASE_6: BOT_AND_LLM_ARCHITECTURE
+6.1 SCHEMA: Construct and inject JSON-LD hierarchical entity relationships -> .
+6.2 ROBOTS_TXT_STRICT:
+- Encoding: UTF-8. BOM = FALSE.
+- Segregate: DISALLOW [GPTBot, ClaudeBot, Google-Extended]. ALLOW [ChatGPT-User, PerplexityBot].
+- Anchors: Enforce string termination symbol ('$') for file exclusions.
+- Exclude: 'Crawl-delay' parameter.
+6.3 INDEX_HEADERS: HTTP Header X-Robots-Tag = [noindex, noarchive] for non-HTML assets (PDF, API, IMG). Use  for HTML exclusions exclusively.
+6.4 LLMS_TXT_PROTOCOL:
+- Generate: '/llms.txt'.
+- Structure: Line 1 = `<h1>[Project_Name]</h1>`. Line 2 = `> blockquote` [Third-person agent summary].
+- Topology Mapping: `- [Page Title](URL): Concise contextual description.`
+- Generate: '/llms-full.txt' (Concatenated markdown for single-request ingestion).
+6.5 SITEMAP_XML:  update condition = Byte-size shift OR factual payload shift ONLY.
+
+PHASE_7: VERIFICATION_AND_OUTPUT
+7.1 RUN: Structural differential [Original_DOM vs Optimized_DOM].
+7.2 RUN: Parity check [User-Facing Text, Media, Link_Targets] = 100%.
+7.3 EXPORT: HTML, CSS, JS, robots.txt, llms.txt, HTTP Header config.
+[SYS_TERMINATE]
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
+================================================================================================================================================
+================================================================================================================================================
+
+
